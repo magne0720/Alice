@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyBulletDirection : MonoBehaviour {
+public class U_EnemyBulletDirection : MonoBehaviour {
     public List<GameObject> EnemyBullet = new List<GameObject>();
     int BulletNumber;
     int BulletCount;

@@ -2,18 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet : MonoBehaviour {
+public class U_Bullet : MonoBehaviour {
     // Use this for initialization
     public float Speed;
-    public int Relod;
+    public static int Relod;
 	protected void Start () {
-        Speed = 0.2f;
+        Speed = 10f;
         Destroy(gameObject, 2.0f);
 	}
 
     // Update is called once per frame
     protected void Update () {
-        gameObject.transform.position +=transform.up*Speed;
+        gameObject.transform.position +=transform.up*Speed*Time.deltaTime;
         
 	}
 }

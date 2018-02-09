@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBulletDirection : MonoBehaviour {
+public class U_PlayerBulletDirection : MonoBehaviour {
     int BulletNumber;
     public List<GameObject> Bullet;
     private int BulletCount;
+     int BulletRecol=10;
     // Use this for initialization
     void Start()
     {
@@ -16,18 +17,19 @@ public class PlayerBulletDirection : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        BulletCount++;
         if (Input.GetKey(KeyCode.Space))
         {
             switch (BulletNumber)
             {
                 case 0:
-                    BulletCreate(0, 2);
+                    BulletCreate(0);
                     break;
                 case 1:
-                    BulletCreate(1, 15);
+                    BulletCreate(1);
                     break;
                 case 2:
-                    BulletCreate(2, 30);
+                    BulletCreate(2);
                     break;
             }
         }
@@ -53,10 +55,10 @@ public class PlayerBulletDirection : MonoBehaviour {
             BulletNumber = 2;
         }
     }
-    void BulletCreate(int BulletNum, int BulletCountM)
+    void BulletCreate(int BulletNum)
     {
-        BulletCount++;
-        if (BulletCount > BulletCountM)
+        //BulletRecol=Bullet[BulletNum].GetComponent<BulletMother>.
+        if (BulletCount > BulletRecol)
         {
             Bullet[BulletNum].transform.position = gameObject.transform.position;
             Bullet[BulletNum].transform.rotation = gameObject.transform.rotation;

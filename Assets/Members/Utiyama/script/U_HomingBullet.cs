@@ -2,15 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HomingBullet : Bullet
+public class U_HomingBullet : U_Bullet
 {
     public GameObject player;
     // Use this for initialization
     void Start()
     {
-        base.Start();
         LookAt2D(player);
         transform.position = gameObject.transform.position;
+        base.Start();
+        
         
     }
 

@@ -157,6 +157,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 074ba992dad157342948dcc7f67b68c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Speed: 0
+  Relod: 15
   Mother: []
 --- !u!114 &114911012050703860
 MonoBehaviour:
