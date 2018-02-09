@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PauseScript : MonoBehaviour
+public class T_PauseScript : MonoBehaviour
 {
 
     [SerializeField]

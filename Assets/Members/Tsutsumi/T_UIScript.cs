@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class UIScript : MonoBehaviour {
+public class T_UIScript : MonoBehaviour {
 
     public Character CharactorScript;
 

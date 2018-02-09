@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WaveScript : MonoBehaviour {
+public class T_WaveScript : MonoBehaviour {
 
-    public EmmiterScript Emmiter;
+    public T_EmmiterScript Emmiter;
 
     int Wavecount = 1;
     public Text Wave;
