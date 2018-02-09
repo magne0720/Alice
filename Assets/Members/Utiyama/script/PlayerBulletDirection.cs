@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletTrans : MonoBehaviour {
+public class PlayerBulletDirection : MonoBehaviour {
     int BulletNumber;
     public List<GameObject> Bullet;
     private int BulletCount;
@@ -33,11 +33,11 @@ public class BulletTrans : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            gameObject.transform.Rotate(0, 0, 3);
+            gameObject.transform.Rotate(0, 0, -3);
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            gameObject.transform.Rotate(0, 0, -3);
+            gameObject.transform.Rotate(0, 0, 3);
         }
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
@@ -56,7 +56,6 @@ public class BulletTrans : MonoBehaviour {
     void BulletCreate(int BulletNum, int BulletCountM)
     {
         BulletCount++;
-        Debug.Log(BulletCount);
         if (BulletCount > BulletCountM)
         {
             Bullet[BulletNum].transform.position = gameObject.transform.position;

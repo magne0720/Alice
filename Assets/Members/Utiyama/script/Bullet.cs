@@ -5,18 +5,15 @@ using UnityEngine;
 public class Bullet : MonoBehaviour {
     // Use this for initialization
     public float Speed;
-    public float Des;
-	void Start () {
+    public int Relod;
+	protected void Start () {
         Speed = 0.2f;
+        Destroy(gameObject, 2.0f);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-        Des += Time.deltaTime;
+
+    // Update is called once per frame
+    protected void Update () {
         gameObject.transform.position +=transform.up*Speed;
-        if (Des > 2)
-        {
-            Destroy(gameObject);
-        } 
+        
 	}
 }
