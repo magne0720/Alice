@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EmmiterScript : MonoBehaviour {
+public class T_EmmiterScript : MonoBehaviour {
 
     public GameObject[] waves;
     public int currentWave;
