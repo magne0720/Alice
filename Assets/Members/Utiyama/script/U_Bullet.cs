@@ -5,7 +5,7 @@ using UnityEngine;
 public class U_Bullet : MonoBehaviour {
     // Use this for initialization
     public float Speed;
-    public static int Relod;
+    public int Relod;
 	protected void Start () {
         Speed = 10f;
         Destroy(gameObject, 2.0f);
@@ -16,4 +16,13 @@ public class U_Bullet : MonoBehaviour {
         gameObject.transform.position +=transform.up*Speed*Time.deltaTime;
         
 	}
+    void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.tag == "Enemy")
+        {
+            c.gameObject.GetComponent<N_Character>().HP -= 5;
+        }
+
+        Destroy(gameObject);
+    }
 }
