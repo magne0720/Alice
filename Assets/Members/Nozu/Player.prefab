@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 50996599112303328}
   - component: {fileID: 61046267940232992}
   - component: {fileID: 114882812840941044}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,13 +99,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26994a7b073ae304f9d1aca188a78a9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 100
+  HP: 5000
   speed: 4
   target: {x: 0, y: 0, z: 0}
   delay: 0
   canShot: 0
   bullet: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
-  deathObj: {fileID: 1388709719471680}
+  deathObj: {fileID: 1710432703754508, guid: 4a9bcc2c681b431449050b7a345bc6c1, type: 2}
+  shotTarget: {x: 0, y: 0, z: 0}
 --- !u!212 &212240269257980244
 SpriteRenderer:
   m_ObjectHideFlags: 1

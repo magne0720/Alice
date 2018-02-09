@@ -27,22 +27,9 @@ namespace nozu
             base.Update();
 
             target = Vector3.zero;
-            if (Input.GetKey(KeyCode.D))//→
-            {
-                target.x += 1;
-            }
-            if (Input.GetKey(KeyCode.W))//↑
-            {
-                target.y += 1;
-            }
-            if (Input.GetKey(KeyCode.A))//←
-            {
-                target.x -= 1;
-            }
-            if (Input.GetKey(KeyCode.S))//↓
-            {
-                target.y -= 1;
-            }
+            //キーボード移動
+            InputButton();
+
             //移動中かどうか
             if (target.magnitude!= 0)
             {
@@ -60,8 +47,7 @@ namespace nozu
             //最初のタッチ位置
             if (Input.GetMouseButtonDown(0))
             {
-                mouseStartPosition = Input.mousePosition;
-                Debug.Log("start="+mouseStartPosition);
+                mouseStartPosition =mouseDragPosition= Input.mousePosition;
                 isTouch = true;
             }
             if (Input.GetMouseButtonUp(0))
@@ -72,11 +58,9 @@ namespace nozu
             //ドラッグしてる間
             if (isTouch)
             {
-                Debug.Log("Drag," + mouseDragPosition);
                 mouseDragPosition = Input.mousePosition;
             }
             Vector3 shotPos = mouseDragPosition - mouseStartPosition;
-            Debug.Log("shot=" + shotPos);
 
             // 移動方向を取得する
             Rigidbody2D rd = GetComponent<Rigidbody2D>();
@@ -87,7 +71,40 @@ namespace nozu
             if (timer>=delay&&canShot)
             {
                 timer = 0;
-                Instantiate(bullet,transform.position,transform.rotation);
+                GameObject g = Instantiate(bullet, transform.position, transform.rotation);
+                g.gameObject.layer = 10;
+                delay = g.GetComponent<_Bullet>().recoil;
+            }
+        }
+        void InputButton()
+        {
+            if (Input.GetKey(KeyCode.D))//→
+            {
+                target.x += 1;
+            }
+            if (Input.GetKey(KeyCode.W))//↑
+            {
+                target.y += 1;
+            }
+            if (Input.GetKey(KeyCode.A))//←
+            {
+                target.x -= 1;
+            }
+            if (Input.GetKey(KeyCode.S))//↓
+            {
+                target.y -= 1;
+            }
+        }
+
+        void OnTriggerEnter2D(Collider2D c)
+        {
+            if (c.gameObject.layer ==  9 )//Enemy
+            {
+                HP = (int)(HP * 0.9f);
+            }
+            if(c.gameObject.layer==11)//EnemyBullet
+            {
+                HP -= c.gameObject.GetComponent<_Bullet>().pow;
             }
         }
     }

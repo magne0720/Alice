@@ -22,7 +22,7 @@ GameObject:
   - component: {fileID: 212609371370671288}
   - component: {fileID: 61704731247121808}
   - component: {fileID: 114753644045745910}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -81,10 +81,10 @@ MonoBehaviour:
   HP: 100
   speed: 4
   target: {x: 0, y: 0, z: 0}
-  delay: 0
+  delay: 5
   canShot: 0
-  bullet: {fileID: 1388709719471680, guid: f3157c562073a934985ef8266330f60d, type: 2}
-  deathObj: {fileID: 1388709719471680, guid: f3157c562073a934985ef8266330f60d, type: 2}
+  bullet: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
+  deathObj: {fileID: 1710432703754508, guid: 4a9bcc2c681b431449050b7a345bc6c1, type: 2}
 --- !u!212 &212609371370671288
 SpriteRenderer:
   m_ObjectHideFlags: 1

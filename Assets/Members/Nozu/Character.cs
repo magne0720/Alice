@@ -28,12 +28,12 @@ public class Character : MonoBehaviour {
     {
         if (HP <= 0)
         {
-            Instantiate(deathObj);
+            Instantiate(deathObj,transform.position,new Quaternion());
             Destroy(gameObject);
         }
     }
 
-    void OnTriggerEnter2D(Collider2D c)
+    public virtual void OnTriggerEnter2D(Collider2D c)
     {
         HP--;
     }

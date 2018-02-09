@@ -6,10 +6,11 @@ public class _Bullet : MonoBehaviour {
 
     float speed;
     float timer;
-    int pow;
+    public int pow;
+    public float recoil;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         speed = 12.0f;
         pow = 5;
 	}
@@ -28,7 +29,7 @@ public class _Bullet : MonoBehaviour {
     {
         if (c.tag == "Enemy")
         {
-            GetComponent<Character>().HP -= pow;
+            c.gameObject.GetComponent<Character>().HP -= pow;
         }
 
         Destroy(gameObject);
