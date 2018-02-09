@@ -29,7 +29,7 @@ public class N_Bullet : MonoBehaviour {
     {
         if (c.tag == "Enemy")
         {
-            c.gameObject.GetComponent<Character>().HP -= pow;
+            c.gameObject.GetComponent<N_Character>().HP -= pow;
         }
 
         Destroy(gameObject);

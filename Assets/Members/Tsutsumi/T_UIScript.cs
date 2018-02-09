@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class T_UIScript : MonoBehaviour {
 
-    public Character CharactorScript;
+    public N_Character CharactorScript;
 
     public Slider slider;
     public Text HPnum;
