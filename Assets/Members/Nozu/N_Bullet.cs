@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class _Bullet : MonoBehaviour {
+public class N_Bullet : MonoBehaviour {
 
     float speed;
     float timer;

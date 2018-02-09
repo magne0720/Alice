@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Spawn : MonoBehaviour {
+public class N_Spawn : MonoBehaviour {
 
     private float timer;
     public float spawnTimer;

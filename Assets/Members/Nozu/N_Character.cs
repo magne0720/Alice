@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour {
+public class N_Character : MonoBehaviour {
 
     public int HP;
     public float speed;

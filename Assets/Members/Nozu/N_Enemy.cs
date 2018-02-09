@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character {    
+public class N_Enemy : N_Character {    
 
 	// Use this for initialization
 	void Start () {
