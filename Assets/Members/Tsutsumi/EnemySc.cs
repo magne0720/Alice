@@ -23,7 +23,7 @@ public class EnemySc : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        Debug.Log(EnemyHP);
+        //Debug.Log(EnemyHP);
     }
     void Damage()
     {
