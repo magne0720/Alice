@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulletMother : MonoBehaviour {
+public class U_BulletMother : U_Bullet {
     public List<GameObject> Mother = new List<GameObject>();
     // Use this for initialization
     
