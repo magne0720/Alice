@@ -169,8 +169,8 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   delay: 0
   canShot: 0
-  bullet: {fileID: 1388709719471680, guid: f3157c562073a934985ef8266330f60d, type: 2}
-  deathObj: {fileID: 1388709719471680, guid: f3157c562073a934985ef8266330f60d, type: 2}
+  bullet: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
+  deathObj: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
 --- !u!114 &114409652625034768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -187,8 +187,8 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   delay: 0
   canShot: 0
-  bullet: {fileID: 1388709719471680, guid: f3157c562073a934985ef8266330f60d, type: 2}
-  deathObj: {fileID: 1388709719471680, guid: f3157c562073a934985ef8266330f60d, type: 2}
+  bullet: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
+  deathObj: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
 --- !u!212 &212193956892332520
 SpriteRenderer:
   m_ObjectHideFlags: 1
