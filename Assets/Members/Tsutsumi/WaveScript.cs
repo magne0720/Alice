@@ -5,16 +5,30 @@ using UnityEngine.UI;
 
 public class WaveScript : MonoBehaviour {
 
-    public Text Wave;
-    int WaveCount = 1;
+    public EmmiterScript Emmiter;
 
-	// Use this for initialization
-	void Start () {
-        Wave.text = ("WAVE  ") + WaveCount.ToString();
-	}
+    int Wavecount = 1;
+    public Text Wave;
+
+    // Use this for initialization
+    void Start()
+    {
+
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Emmiter.wave.transform.childCount != 0)
+        {
+            Wavecount = Emmiter.currentWave + 1;
+
+            Wave.text = ("WAVE  ") + Wavecount.ToString();
+        }
+        Debug.Log(Wavecount);
 	}
+    void test()
+    {
+
+    }
 }

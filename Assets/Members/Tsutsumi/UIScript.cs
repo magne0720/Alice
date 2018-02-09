@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class UIScript : MonoBehaviour {
 
-    public EnemySc EnemyScript;
+    public Character CharactorScript;
 
     public Slider slider;
     public Text HPnum;
@@ -14,8 +14,8 @@ public class UIScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        slider.maxValue = EnemyScript.EnemyHP;
-        HPnum.text = EnemyScript.EnemyHP.ToString();
+        slider.maxValue = CharactorScript.HP;
+        HPnum.text = CharactorScript.HP.ToString();
     }
 	
 	// Update is called once per frame
@@ -29,7 +29,7 @@ public class UIScript : MonoBehaviour {
     void HPbar()
     {
 
-            slider.value = EnemyScript.EnemyHP;
-            HPnum.text = EnemyScript.EnemyHP.ToString();
+            slider.value = CharactorScript.HP;
+            HPnum.text = CharactorScript.HP.ToString();
     }
 }
