@@ -69,7 +69,6 @@ public static class GetAllChildren
         {
 
             allChildren.Add(ob.gameObject);
-
             GetChildren(ob.gameObject, ref allChildren);
 
         }

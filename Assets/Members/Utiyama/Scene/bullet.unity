@@ -112,6 +112,56 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &32953205 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1530536191787618, guid: a92d201241ece7e478babf7cde824016,
+    type: 2}
+  m_PrefabInternal: {fileID: 993077452}
+--- !u!61 &32953209
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 32953205}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.5, y: 0.5}
+    newSize: {x: 0.5, y: 0.5}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
+--- !u!50 &32953210
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 32953205}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &640035150
 GameObject:
   m_ObjectHideFlags: 0
@@ -255,7 +305,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4557330503054020, guid: a92d201241ece7e478babf7cde824016, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 1.241
+      value: 1.79
       objectReference: {fileID: 0}
     - target: {fileID: 4557330503054020, guid: a92d201241ece7e478babf7cde824016, type: 2}
       propertyPath: m_LocalPosition.y
@@ -291,6 +341,10 @@ Prefab:
       value: 
       objectReference: {fileID: 1081080489519050, guid: 6440d2bf45f7f494b846ac6419b58653,
         type: 2}
+    - target: {fileID: 1530536191787618, guid: a92d201241ece7e478babf7cde824016, type: 2}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a92d201241ece7e478babf7cde824016, type: 2}
   m_IsPrefabParent: 0
