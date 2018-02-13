@@ -10,27 +10,46 @@ public class WaveManager : MonoBehaviour {
 
     int Wavecount = 1;
     public Text Wave;
+    public bool isWaving;
+    public bool isNextWave;
 
     // Use this for initialization
     void Start()
     {
-
-
+        isWaving = false;
+        emiter.isPlay = false;
+        isNextWave = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (emiter.wave.transform.childCount != 0)
+        if (isWaving)
         {
-            Wavecount = emiter.currentWave + 1;
+            if (emiter.wave.transform.childCount != 0)
+            {
+                Wavecount = emiter.currentWave + 1;
 
-            Wave.text = ("WAVE  ") + Wavecount.ToString();
+                Wave.text = ("WAVE  ") + Wavecount.ToString();
+
+                isNextWave = true;
+            }
+            Debug.Log(Wavecount);
         }
-        Debug.Log(Wavecount);
     }
-    void test()
-    {
 
+    public void WaveStart()
+    {
+        isWaving = true;
+        emiter.isPlay = true;
+    }
+    public void WaveStop()
+    {
+        isWaving = false;
+        emiter.isPlay = false;
+    }
+    public void WaveResset()
+    {
+        emiter.currentWave = -1;
     }
 }
