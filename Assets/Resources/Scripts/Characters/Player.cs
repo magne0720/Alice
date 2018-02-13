@@ -12,17 +12,28 @@ public class Player : Character {
     Vector3 mouseStartPosition = new Vector3();
     Vector3 mouseDragPosition = new Vector3();
 
-    // Use this for initialization
-    void Start()
+    public void Initialize()
     {
         base.Start();
         timer = 0;
+        gameObject.layer = 8;//Player
+        gameObject.tag = "Player";
+    }
+
+    // Use this for initialization
+    void Start()
+    {
+        Initialize();
     }
 
     // Update is called once per frame
     void Update()
     {
-        base.Update();
+        //if (HP <= 0)
+        //{
+        //    // Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
+        //    FindObjectOfType<N_GameManager>().GameOver();
+        //}
 
         target = Vector3.zero;
         //キーボード移動
@@ -65,14 +76,11 @@ public class Player : Character {
         Vector2 v = rd.velocity;
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(-shotPos.x, shotPos.y) * Mathf.Rad2Deg);
 
-        timer += Time.deltaTime;
-        if (timer >= delay && canShot)
-        {
-            timer = 0;
-            GameObject g = Instantiate(bullet, transform.position, transform.rotation);
-            g.gameObject.layer = 10;
-            delay = g.GetComponent<N_Bullet>().recoil;
-        }
+        Shot(1);
+
+        Clamp();
+
+        base.Update();
     }
     void InputButton()
     {
@@ -94,15 +102,15 @@ public class Player : Character {
         }
     }
 
-    void OnTriggerEnter2D(Collider2D c)
-    {
-        if (c.gameObject.layer == 9)//Enemy
-        {
-            HP = (int)(HP * 0.9f);
-        }
-        if (c.gameObject.layer == 11)//EnemyBullet
-        {
-            HP -= c.gameObject.GetComponent<N_Bullet>().pow;
-        }
-    }
+    //void OnTriggerEnter2D(Collider2D c)
+    //{
+    //    if (c.gameObject.layer == 9)//Enemy
+    //    {
+    //        HP = (int)(HP * 0.9f);
+    //    }
+    //    if (c.gameObject.layer == 11)//EnemyBullet
+    //    {
+    //        HP -= c.gameObject.GetComponent<Bullet>().pow;
+    //    }
+    //}
 }

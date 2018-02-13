@@ -310,7 +310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bbb7469500c0e4bacb30d83c64f83c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyScript: {fileID: 114443085888103258}
+  CharactorScript: {fileID: 0}
   slider: {fileID: 114898306827022416}
   HPnum: {fileID: 114441155122465388}
 --- !u!114 &114649031671675344
@@ -422,7 +422,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bf0a9e079b18d7e45bbe2a2fd4cfe3a6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

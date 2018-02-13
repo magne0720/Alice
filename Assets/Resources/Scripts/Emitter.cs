@@ -7,6 +7,7 @@ public class Emitter : MonoBehaviour {
     public GameObject[] waves;
     public int currentWave;
     public GameObject wave;
+    public bool isPlay;
 
     // Use this for initialization
     IEnumerator Start()
@@ -18,6 +19,10 @@ public class Emitter : MonoBehaviour {
 
         while (true)
         {
+            while (!isPlay)
+            {
+                yield return new WaitForEndOfFrame();
+            }
 
             // Waveを作成する
             wave = (GameObject)Instantiate(waves[currentWave], waves[currentWave].transform.position, Quaternion.identity);

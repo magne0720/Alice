@@ -5,16 +5,15 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    float speed;
     float timer;
-    public int pow;
+    public float speed;
+    public float pow;
     public float recoil;
 
     // Use this for initialization
     void Start()
     {
         speed = 12.0f;
-        pow = 5;
     }
 
     // Update is called once per frame
@@ -30,14 +29,29 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D c)
     {
-        if (c.tag == "Enemy")
+        if (gameObject.layer == 10)//PlayerBullet
         {
-            c.gameObject.GetComponent<Character>().HP -= pow;
-            Destroy(gameObject);
+            if (c.gameObject.layer == 9)//Enemy
+            {
+                c.gameObject.GetComponent<Character>().HP -= (int)pow;
+                Destroy(gameObject);
+            }
+            else if(c.gameObject.layer==11)
+            {
+                Destroy(gameObject);
+            }
         }
-        else
+        else if (gameObject.layer==11)//EnemyBullet
         {
-
+            if (c.gameObject.layer== 8 )//Player
+            {
+                c.gameObject.GetComponent<Character>().HP -= (int)pow;
+                Destroy(gameObject);
+            }
+            else if (c.gameObject.layer == 10)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }
