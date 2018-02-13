@@ -12,10 +12,12 @@ public class N_MaskSlide : MonoBehaviour
     //public float waitTime;//完全表示時間
     public bool reverse;//逆再生
     private float timer;//タイマー
+    private bool isPlay;//再生中か
 
     // Use this for initialization
     void Start()
     {
+        isPlay = true;
         timer = 0;
         SpriteRenderer Sr= GetComponent<SpriteRenderer>();
         if (Sr.sprite == null)
@@ -27,6 +29,11 @@ public class N_MaskSlide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!isPlay)
+        {
+            return;
+        }
+
         if (roopTime <= 0)
         {
             //0割り算を回避
@@ -40,9 +47,7 @@ public class N_MaskSlide : MonoBehaviour
         if (reverse)
         {
             SM_IN.alphaCutoff = 2.0f - 2.0f * timer / roopTime;
-            //SM_IN.alphaCutoff = Mathf.Sin(2 * Mathf.PI * (timer + range));
             SM_OUT.alphaCutoff = 2.0f * timer / roopTime;
-            //SM_OUT.alphaCutoff = Mathf.Sin(2 * Mathf.PI * (1-timer + range));
         }
         else
         {
@@ -53,4 +58,20 @@ public class N_MaskSlide : MonoBehaviour
         if (timer > roopTime)
             timer = 0;
     }
+
+    public void StartMask()
+    {
+
+    }
+
+    public void PauseMask()
+    {
+
+    }
+
+    public void StopMask()
+    {
+
+    }
+    
 }

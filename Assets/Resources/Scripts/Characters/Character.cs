@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Character : MonoBehaviour {
 
+    public int MAX_HP;
     public int HP;//体力
     public float speed;//速度
     public int score;//スコア
@@ -28,16 +29,22 @@ public class Character : MonoBehaviour {
             g.name = transform.name + "HPver";
             g.GetComponent<HPVer>().SetCharacter(this);
         }
+        MAX_HP = HP;
     }
 
     // Update is called once per frame
     protected void Update()
     {
-        DeathCheck();
+        HealthCheck();
     }
 
-    void DeathCheck()
+    void HealthCheck()
     {
+        if (HP > MAX_HP)
+        {
+            HP = MAX_HP;
+        }
+
         if (HP <= 0)
         {
             for (int i = 0; i < score*0.1+1; i++)
@@ -103,7 +110,7 @@ public class Character : MonoBehaviour {
             g.GetComponent<Bullet>().pow *= powRate;
 
             //反動を設定(軽減率も計算)
-                delay = g.GetComponent<Bullet>().recoil*delayRate;
+                delay = g.GetComponent<Bullet>().recoil-delayRate;
         }
     }
 }

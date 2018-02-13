@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-
     public GameObject player;
     private Character playerStatus;
     public GameObject title;
@@ -29,10 +28,6 @@ public class GameManager : MonoBehaviour
         if (isPlay && playerStatus.HP <= 0)
         {
             GameOver();
-        }
-        if (wave.isNextWave)
-        {
-
         }
     }
     public void GameStart()

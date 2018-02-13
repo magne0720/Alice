@@ -10,46 +10,65 @@ public class WaveManager : MonoBehaviour {
 
     int Wavecount = 1;
     public Text Wave;
-    public bool isWaving;
-    public bool isNextWave;
+    //private bool isWaving;
+
+    public float WaitTime;
+    private float timer;
+    public bool isPlay;
 
     // Use this for initialization
     void Start()
     {
-        isWaving = false;
-        emiter.isPlay = false;
-        isNextWave = false;
+        //isWaving = false;
+
+        timer = 0;
+        WaitTime = 60.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isWaving)
+        if (!isPlay)
         {
+            return;
+        }
+        //ウェーブ中
+        if (emiter.isWaving)
+        {
+            //敵がまだいるなら
             if (emiter.wave.transform.childCount != 0)
             {
                 Wavecount = emiter.currentWave + 1;
 
                 Wave.text = ("WAVE  ") + Wavecount.ToString();
-
-                isNextWave = true;
             }
             Debug.Log(Wavecount);
+        }
+        else
+        {
+            timer += Time.deltaTime;
+            if (timer > WaitTime)
+            {
+                timer = 0;
+                emiter.WaveInstance();
+                //isWaving = true;
+            }
+            int time = (int)(WaitTime - timer);
+            Wave.text = ("次のWAVEまで  ") + time.ToString()+("秒");
         }
     }
 
     public void WaveStart()
     {
-        isWaving = true;
-        emiter.isPlay = true;
+        //isWaving = true;
+        emiter.WaveInstance();
     }
     public void WaveStop()
     {
-        isWaving = false;
-        emiter.isPlay = false;
+        //isWaving = false;
     }
     public void WaveResset()
     {
-        emiter.currentWave = -1;
+        emiter.currentWave = 0;
     }
 }

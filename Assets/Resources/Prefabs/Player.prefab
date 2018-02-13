@@ -104,9 +104,9 @@ MonoBehaviour:
   score: 0
   delay: 0.01
   canShot: 0
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  powRate: 2
-  delayRate: 0.4
+  bullet: {fileID: 1100814207447620, guid: 49e5541d4367eaf48bc35273a53bdbc2, type: 2}
+  powRate: 12
+  delayRate: 1
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   shotTarget: {x: 0, y: 0, z: 0}
