@@ -101,11 +101,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   HP: 5000
   speed: 4
-  target: {x: 0, y: 0, z: 0}
+  score: 0
   delay: 0.01
   canShot: 0
-  bullet: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
-  deathObj: {fileID: 1081080489519050, guid: 6440d2bf45f7f494b846ac6419b58653, type: 2}
+  bullet: {fileID: 1100814207447620, guid: 49e5541d4367eaf48bc35273a53bdbc2, type: 2}
+  powRate: 12
+  delayRate: 1
+  deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   shotTarget: {x: 0, y: 0, z: 0}
 --- !u!212 &212187474165432334

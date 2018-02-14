@@ -4,30 +4,39 @@ using UnityEngine;
 
 public class Enemy : Character {
 
+    public void Initialize()
+    {
+        base.Start();
+
+        gameObject.layer = 9;//Player
+
+        canShot = true;
+
+        if (target == Vector3.zero)
+        {
+            target = new Vector3(0, -1, 0);
+        }
+    }
+
     // Use this for initialization
     void Start()
     {
-        base.Start();
-        
-        canShot = true;
-
-
+        Initialize();
     }
 
     // Update is called once per frame
     void Update()
     {
-        base.Update();
-        transform.position += new Vector3(0, -1 * speed * Time.deltaTime, 0);
-        transform.Rotate(0, 0, 180 * speed * Time.deltaTime);
-        target = new Vector3(0, -1, 0);
+        transform.position += target * speed * Time.deltaTime;
 
-        timer += Time.deltaTime;
-        if (timer >= delay && canShot)
-        {
-            timer = 0;
-            GameObject g = Instantiate(bullet, transform.position, transform.rotation);
-            g.gameObject.layer = 11;
-        }
+        SetTarget(target);
+
+        Shot(2);
+
+        base.Update();
+    }
+    public void SetTarget(Vector3 t)
+    {
+        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(-t.x, t.y) * Mathf.Rad2Deg);
     }
 }

@@ -101,8 +101,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba5fcab4247957d4cb3f29758b02d6e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pow: 4
-  recoil: 0
+  speed: 0.5
+  pow: 1
+  recoil: 0.7
 --- !u!212 &212481326099923668
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -13,7 +13,7 @@ public class T_HomeBase : N_Character {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown("Q"))
+		if(Input.GetKeyDown(KeyCode.K))
         {
             HP--;
 

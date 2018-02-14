@@ -35,6 +35,6 @@ public class N_Character : MonoBehaviour {
 
     public virtual void OnTriggerEnter2D(Collider2D c)
     {
-        HP--;
+        //HP--;
     }
 }
