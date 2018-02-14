@@ -8,6 +8,7 @@ public class Emitter : MonoBehaviour {
     public int currentWave;
     public GameObject wave;
     public bool isWaving;
+    public bool isGameClear;
 
     // Use this for initialization
     void Start()
@@ -49,7 +50,7 @@ public class Emitter : MonoBehaviour {
             }
         }
         */
-
+        isGameClear = false;
         currentWave = 0;
     }
 
@@ -82,6 +83,7 @@ public class Emitter : MonoBehaviour {
         if (currentWave >= waves.Length)
         {
             Debug.Log("wave end");
+            isGameClear = true;
             return;
         }
 

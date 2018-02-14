@@ -10,19 +10,27 @@ public class Character : MonoBehaviour {
     public int score;//スコア
     public float delay;//反動(次の弾が出るまでの時間)
     public bool canShot;//弾を撃つかどうか
-    public GameObject bullet;//射出する弾
     public float powRate;//攻撃倍率
     public float delayRate;//反動軽減率
 
-    public GameObject deathObj;
-    public GameObject hpVerObj;  
+    public GameObject bullet;//射出する弾
+    public GameObject deathObj;//死んだときに出す弾
+    public GameObject hpVerObj;  //HPバー
 
     protected Vector3 target;
     protected float timer;
+    protected Rigidbody2D rigidbody2D = null;
 
-        // Use this for initialization
+    /// 移動角度
+    public float Direction
+    {
+        get { return Mathf.Atan2(rigidbody2D.velocity.y, rigidbody2D.velocity.x) * Mathf.Rad2Deg; }
+    }
+    // Use this for initialization
     protected void Start()
     {
+        GetComponent<Rigidbody2D>().gravityScale = 0;
+
         if (hpVerObj != null)
         {
             GameObject g = Instantiate(hpVerObj)as GameObject;
@@ -47,6 +55,7 @@ public class Character : MonoBehaviour {
 
         if (HP <= 0)
         {
+            gameObject.layer = 13;
             for (int i = 0; i < score*0.1+1; i++)
             {
                 Instantiate(deathObj, transform.position, new Quaternion());
@@ -112,5 +121,13 @@ public class Character : MonoBehaviour {
             //反動を設定(軽減率も計算)
                 delay = g.GetComponent<Bullet>().recoil-delayRate;
         }
+    }
+    public void SetDirection()
+    {
+
+        // 画像の角度を移動方向に向ける
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, Direction));
+
     }
 }
