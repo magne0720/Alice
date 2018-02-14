@@ -6,9 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public GameObject player;
     private Character playerStatus;
-    public GameObject title;
     public GameObject waveObj;
     private WaveManager wave;
+    public GameObject title;
+    public GameObject clear;
 
     public bool isPlay;
 
@@ -16,6 +17,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         isPlay = false;
+        clear.SetActive(false);
+
+        //ウェーブ情報を扱えるようにする
+        wave = waveObj.GetComponent<WaveManager>();
     }
 
     // Update is called once per frame
@@ -29,6 +34,10 @@ public class GameManager : MonoBehaviour
         {
             GameOver();
         }
+        if (wave.isGameClear)
+        {
+            GameClear();
+        }
     }
     public void GameStart()
     {
@@ -37,16 +46,22 @@ public class GameManager : MonoBehaviour
         //プレイヤーとしてみるオブジェクトを登録
         playerStatus = g.GetComponent<Character>();
 
-        //ウェーブ情報を扱えるようにする
-        wave = waveObj.GetComponent<WaveManager>();
         wave.WaveStart();
 
         title.SetActive(false);
+        clear.SetActive(false);
     }
     public void GameOver()
     {
         isPlay = false;
         title.SetActive(true);
+        wave.WaveStop();
+        wave.WaveResset();
+    }
+    public void GameClear()
+    {
+        isPlay = false;
+        clear.SetActive(true);
         wave.WaveStop();
         wave.WaveResset();
     }

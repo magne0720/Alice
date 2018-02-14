@@ -13,6 +13,7 @@ public class N_EnemyBoss : Enemy {
         Initialize();
         moveTimer = 0;
 
+        gameObject.tag = "Enemy";
 	}
 	
 	// Update is called once per frame

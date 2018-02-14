@@ -16,6 +16,8 @@ public class Enemy : Character {
         {
             target = new Vector3(0, -1, 0);
         }
+
+        rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
     // Use this for initialization
@@ -32,6 +34,8 @@ public class Enemy : Character {
         SetTarget(target);
 
         Shot(2);
+
+        SetDirection();
 
         base.Update();
     }
