@@ -14,6 +14,7 @@ public class Character : MonoBehaviour {
     public float delayRate;//反動軽減率
     public int currentBullet;//選択中の弾番号
     public GameObject[] Bullets;//射出する弾
+    public GameObject OptionBullet;//option
     public GameObject deathObj;//死んだときに出す弾
     public GameObject hpVerObj;  //HPバー
 
@@ -38,6 +39,8 @@ public class Character : MonoBehaviour {
             g.GetComponent<HPVer>().SetCharacter(this);
         }
         MAX_HP = HP;
+
+        Option();
     }
 
     // Update is called once per frame
@@ -124,18 +127,38 @@ public class Character : MonoBehaviour {
             else if (gameObject.layer == 9)
                 obj.gameObject.layer = 11;
 
+            Bullet b = obj.GetComponent<Bullet>();
+
+            //打ち出し元を登録
+            b.SetTarget(gameObject);
+
             //攻撃倍率を弾に加算
-            obj.GetComponent<Bullet>().pow *= powRate;
+            b.pow *= powRate;
 
             //反動を設定(軽減率も計算)
-            delay = obj.GetComponent<Bullet>().recoil - delayRate;
+            delay = b.recoil - delayRate;
         }
     }
     public void SetDirection()
     {
-
         // 画像の角度を移動方向に向ける
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, Direction));
+    }
+    public void ChangeEquip(int num)
+    {
+        currentBullet = num;
+    }
+    public void Option()
+    {
+        if (OptionBullet != null)
+        {
+            GameObject obj = Instantiate(OptionBullet, transform.position, Quaternion.identity);
+            obj.GetComponent<Bullet>().SetTarget(gameObject);
+            if (gameObject.layer == 8)
+                obj.gameObject.layer = 10;
+            else if (gameObject.layer == 9)
+                obj.gameObject.layer = 11;
+        }
     }
 }

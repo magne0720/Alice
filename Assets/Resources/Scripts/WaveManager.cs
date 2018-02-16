@@ -25,7 +25,7 @@ public class WaveManager : MonoBehaviour {
 
         isGameClear = false;
         timer = 0;
-        WaitTime = 60.0f;
+        //WaitTime = 60.0f;
         isWaving = false;
     }
 

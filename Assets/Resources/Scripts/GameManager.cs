@@ -6,9 +6,11 @@ public class GameManager : MonoBehaviour
 {
     //プレイヤー
     public GameObject player;
+    private GameObject playerObj;
     private Character playerStatus;
     //拠点
     public GameObject homebase;
+    private GameObject homebaseObj;
     private HomeBase homeStatus;
     //ウェーブ
     public GameObject waveObj;
@@ -24,6 +26,8 @@ public class GameManager : MonoBehaviour
     //タイトルやクリア
     public GameObject title;
     public GameObject clear;
+    //スコア
+    public ScoreDisplay Score;
 
     //プレイ中かどうか
     public bool isPlay;
@@ -84,17 +88,26 @@ public class GameManager : MonoBehaviour
     public void GameStart()
     {
         isPlay = true;
-        GameObject playerObj = Instantiate(player, new Vector3(0, -4, 0), new Quaternion());
+        if (player != null)
+        {
+            Destroy(playerObj);
+            Destroy(homebaseObj);
+        }
+        playerObj = Instantiate(player, new Vector3(0, -1, 0), new Quaternion());
         //プレイヤーとしてみるオブジェクトを登録
         playerStatus = playerObj.GetComponent<Character>();
 
-        GameObject homeObj = Instantiate(homebase, new Vector3(0, 0, 0), new Quaternion());
-        homeStatus = homeObj.GetComponent<HomeBase>();
+        homebaseObj = Instantiate(homebase, new Vector3(0, -5, 0), new Quaternion());
+        homeStatus = homebaseObj.GetComponent<HomeBase>();
+
+        //スコアを反映
+        Score.SetPlayer(playerStatus);
 
         wave.WaveStart();
 
         title.SetActive(false);
         clear.SetActive(false);
+        wave.isGameClear = false;
     }
     public void GameOver()
     {

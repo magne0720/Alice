@@ -34,7 +34,7 @@ public class N_Score : MonoBehaviour {
     {
         if (c.tag == "Player")
         {
-            c.GetComponent<Character>().score += 10;
+            c.GetComponent<Character>().score += (int)speed*25;
             Destroy(gameObject);
         }
     }

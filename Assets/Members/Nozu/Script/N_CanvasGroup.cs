@@ -16,6 +16,7 @@ public class N_CanvasGroup : MonoBehaviour {
     void Start()
     {
         group = GetComponent<CanvasGroup>();
+        group.alpha = 0;
         isPlay = true;
         timer = 0;
     }
@@ -44,7 +45,7 @@ public class N_CanvasGroup : MonoBehaviour {
         if (timer > roopTime)
         {
             timer = 1.0f;
-            isPlay = false;
+            StopMask();
         }
         //途中まで
         // 現在の表示アルファレベル=分割数 * 時間経過 / 全体の時間

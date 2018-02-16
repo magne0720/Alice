@@ -2,23 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class N_EnemyBoss : Enemy {
+public class EnemyBoss : Enemy {
 
     int currentCount;
     public List<Vector2> moves;//パターンのリスト
     float moveTimer;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         Initialize();
         moveTimer = 0;
 
         gameObject.tag = "Enemy";
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
         moveTimer += Time.deltaTime;
         if (moveTimer >= 1.0f)
         {
@@ -29,13 +31,13 @@ public class N_EnemyBoss : Enemy {
         {
             currentCount = 0;
         }
-        Vector2 pos = moveTimer*moves[currentCount] + (1-moveTimer)*(Vector2)transform.position;
+        Vector2 pos = moveTimer * moves[currentCount] + (1 - moveTimer) * (Vector2)transform.position;
 
         transform.position = (Vector3)pos;
 
         SetTarget(target);
 
-        Shot(2);
+        Shot(0);
 
         base.Update();
     }

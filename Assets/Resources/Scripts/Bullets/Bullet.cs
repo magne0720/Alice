@@ -61,4 +61,8 @@ public class Bullet : MonoBehaviour
             }
         }
     }
+    public virtual void SetTarget(GameObject g)
+    {
+
+    }
 }
