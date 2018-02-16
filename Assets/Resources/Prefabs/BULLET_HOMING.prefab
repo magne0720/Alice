@@ -114,6 +114,9 @@ MonoBehaviour:
   speed: 2
   pow: 3
   recoil: 1
+  targetObject: {fileID: 0}
+  MovePosition: {x: 0, y: 0, z: 0}
+  rot: 4
 --- !u!212 &212402411695439454
 SpriteRenderer:
   m_ObjectHideFlags: 1
