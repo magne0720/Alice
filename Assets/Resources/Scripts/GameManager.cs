@@ -14,10 +14,10 @@ public class GameManager : MonoBehaviour
     private HomeBase homeStatus;
     //ウェーブ
     public GameObject waveObj;
-    private WaveManager wave;
+    public WaveManager wave;
     //強化画面
     public GameObject IntervalUI;
-    private FadeMask grad;
+    private CanvasMask grad;
     private bool isIntervalStart;
     private bool isIntervalEnd;
     //強化画面の後ろで時間を視覚的に見せる
@@ -39,8 +39,9 @@ public class GameManager : MonoBehaviour
         isPlay = false;
         clear.SetActive(false);
 
-        grad = IntervalUI.GetComponent<FadeMask>();
-        IntervalUI.SetActive(false);
+        grad = IntervalUI.GetComponent<CanvasMask>();
+        //grad.StartMask(true);
+        //IntervalUI.SetActive(false);
 
         //ウェーブ情報を扱えるようにする
         wave = waveObj.GetComponent<WaveManager>();
@@ -108,6 +109,7 @@ public class GameManager : MonoBehaviour
         title.SetActive(false);
         clear.SetActive(false);
         wave.isGameClear = false;
+        isIntervalEnd = true;
     }
     public void GameOver()
     {
@@ -126,7 +128,7 @@ public class GameManager : MonoBehaviour
 
     void WaveIntervalStart()
     {
-        IntervalUI.SetActive(true);
+        //IntervalUI.SetActive(true);
         grad.StartMask(false);
         Debug.Log("intervalStart");
     }
@@ -136,7 +138,7 @@ public class GameManager : MonoBehaviour
     }
     void WaveIntervalEnd()
     {
-        IntervalUI.SetActive(false);
+        //IntervalUI.SetActive(false);
         grad.StartMask(true);
         Debug.Log("intervalEnd");
     }

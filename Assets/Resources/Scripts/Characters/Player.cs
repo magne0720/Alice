@@ -48,7 +48,7 @@ public class Player : Character {
         }
         else
         {
-            canShot = false;
+           // canShot = false;
         }
         //位置の更新
         transform.position += target * speed * Time.deltaTime;
@@ -100,6 +100,10 @@ public class Player : Character {
         if (Input.GetKey(KeyCode.S))//↓
         {
             target.y -= 1;
+        }
+        if (Input.GetMouseButtonDown(1))
+        {
+            ChangeEquip(currentBullet+1);
         }
     }
 

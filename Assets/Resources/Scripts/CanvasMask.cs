@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class N_CanvasGroup : MonoBehaviour {
+[RequireComponent(typeof(CanvasGroup))]
+public class CanvasMask : MonoBehaviour {
 
     CanvasGroup group;
 
@@ -17,20 +18,20 @@ public class N_CanvasGroup : MonoBehaviour {
     {
         group = GetComponent<CanvasGroup>();
         group.alpha = 0;
-        isPlay = true;
+        isPlay = false;
         timer = 0;
     }
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Y))
-        {
-            StartMask(true);
-        }
-        if (Input.GetKey(KeyCode.H))
-        {
-            StartMask(false);
-        }
+        //if (Input.GetKey(KeyCode.Y))
+        //{
+        //    StartMask(true);
+        //}
+        //if (Input.GetKey(KeyCode.H))
+        //{
+        //    StartMask(false);
+        //}
         if (!isPlay)
         {
             return;

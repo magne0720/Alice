@@ -17,21 +17,6 @@ public class N_EnemyHoming : Enemy {
 
         targetObject = GameObject.FindGameObjectWithTag("Player");
 
-        //複数の場合
-        float distance = float.MaxValue;
-        float temp_dis = 0;
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
-        foreach (GameObject g in objs)
-        {
-            //距離を見る
-            temp_dis = Math.Length(g.transform.position - transform.position);
-            if (temp_dis <= distance)
-            {
-                //一番近いものを取得
-                distance = temp_dis;
-                targetObject = g;
-            }
-        }
     }
     /// 角度と速度から移動速度を設定する
     void SetVelocity(float direction, float speed)
@@ -48,6 +33,7 @@ public class N_EnemyHoming : Enemy {
 
         if (targetObject == null)
         {
+            SearchObject();
             return;
         }
         Homing();
@@ -85,5 +71,24 @@ public class N_EnemyHoming : Enemy {
         // 新しい速度を設定する
         SetVelocity(newAngle, speed);
 
+    }
+    void SearchObject()
+    {
+
+        //複数の場合
+        float distance = float.MaxValue;
+        float temp_dis = 0;
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
+        foreach (GameObject g in objs)
+        {
+            //距離を見る
+            temp_dis = Math.Length(g.transform.position - transform.position);
+            if (temp_dis <= distance)
+            {
+                //一番近いものを取得
+                distance = temp_dis;
+                targetObject = g;
+            }
+        }
     }
 }

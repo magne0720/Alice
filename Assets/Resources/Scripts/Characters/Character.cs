@@ -147,6 +147,10 @@ public class Character : MonoBehaviour {
     }
     public void ChangeEquip(int num)
     {
+        if (num >= Bullets.Length)
+        {
+            num = 0;
+        }
         currentBullet = num;
     }
     public void Option()
