@@ -5,9 +5,10 @@ using UnityEngine;
 public class U_BombBullet : Bullet {
     public GameObject BombDestroy;
     public float Area;
+    public float DestroyTime;
 	// Use this for initialization
 	void Start () {
-        Destroy(gameObject,2);
+        Destroy(gameObject,DestroyTime);
     }
 	
 	// Update is called once per frame

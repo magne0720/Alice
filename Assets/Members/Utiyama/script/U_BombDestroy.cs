@@ -6,7 +6,7 @@ public class U_BombDestroy : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Destroy(gameObject, 0.05f);
+        Destroy(gameObject, 0.2f);
 	}
 	
 	// Update is called once per frame

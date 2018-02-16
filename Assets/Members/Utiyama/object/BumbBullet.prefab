@@ -107,12 +107,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ac5aa6538c796b4a9f8ba12a393d64c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  pow: 30
-  recoil: 1.5
+  speed: 3
+  pow: 40
+  recoil: 1
   BombDestroy: {fileID: 1297319248099656, guid: fc90078034effa4469b55f170e0ac181,
     type: 2}
-  Area: 100
+  Area: 3
+  DestroyTime: 2
 --- !u!212 &212666274214175706
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -147,7 +148,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7b67a1ea6fdb76741bc69bf5ed0070b3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc78748a11e3af44391f39c58127bb14, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

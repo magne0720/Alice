@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class U_EnemyHomingBullet : U_Bullet
+public class U_EnemyHomingBullet : Bullet
 {
     public GameObject player;
     // Use this for initialization
@@ -10,15 +10,14 @@ public class U_EnemyHomingBullet : U_Bullet
     {
         LookAt2D(player);
         transform.position = gameObject.transform.position;
-        base.Start();
-        
+        speed = 12;        
         
     }
 
     // Update is called once per frame
     void Update()
     {
-        base.Update();
+        transform.position += transform.up * speed * Time.deltaTime;
     }
     void LookAt2D(GameObject target)
     {
