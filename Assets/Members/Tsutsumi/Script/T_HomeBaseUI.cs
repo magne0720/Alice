@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class T_HomeBaseUI : MonoBehaviour {
-
-    public N_Character CharactorScript;
+    public T_HomeBase HB;
 
     public Slider slider;
     //public Text HPnum;
 
     // Use this for initialization
     void Start () {
-        slider.maxValue = CharactorScript.HP;
+        slider.maxValue = HB.HP;
         //HPnum.text = CharactorScript.HP.ToString();
+
     }
 	
 	// Update is called once per frame
@@ -27,7 +27,7 @@ public class T_HomeBaseUI : MonoBehaviour {
     void HPbar()
     {
 
-        slider.value = CharactorScript.HP;
+        slider.value = HB.HP;
         //HPnum.text = CharactorScript.HP.ToString();
     }
 }

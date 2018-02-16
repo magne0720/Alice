@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class T_HomeBase : Character {
-
-
+public class T_HPUPScript : T_VirtualStatusScript{
 
 	// Use this for initialization
 	void Start () {
@@ -13,11 +11,6 @@ public class T_HomeBase : Character {
 	
 	// Update is called once per frame
 	void Update () {
-		if(Input.GetKeyDown(KeyCode.K))
-        {
-            HP--;
-
-           // Debug.Log(HP);
-        }
+		
 	}
 }

@@ -3,17 +3,17 @@ using System.Collections;
 
 public class T_PauseScript : MonoBehaviour
 {
+    public T_TouchScript Ray;
 
     [SerializeField]
     //　ポーズした時に表示するUI
     private GameObject pauseUI;
     //　ポーズUIのインスタンス
     private GameObject instancePauseUI;
-
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("q"))
+            if (Input.GetMouseButtonDown(0) && Ray.hit.collider.gameObject.name == "Pause")
         {
             if (instancePauseUI == null)
             {

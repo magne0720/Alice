@@ -5,18 +5,21 @@ using UnityEngine.UI;
 public class T_ScrollScript : MonoBehaviour
 {
 
-    [SerializeField]
-    RectTransform prefab = null;
+    public RectTransform HPprefab = null;
+    public RectTransform Speedprefab = null;
+
 
     void Start()
     {
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 3; i++)
         {
-            var item = GameObject.Instantiate(prefab) as RectTransform;
-            item.SetParent(transform, false);
-
-            //var text = item.GetComponentInChildren<Text>();
-            //text.text = "item:" + i.ToString();
+            var hpitem = GameObject.Instantiate(HPprefab) as RectTransform;
+            hpitem.SetParent(transform, false);
+        }
+        for (int i = 0; i < 3; i++)
+        {
+            var speeditem = GameObject.Instantiate(Speedprefab) as RectTransform;
+            speeditem.SetParent(transform, false);
         }
     }
 }
