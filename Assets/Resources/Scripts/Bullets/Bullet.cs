@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
     }
     public void Initialize()
     {
-        GetComponent<RigidBody2D>().GravityScale = 0;
+        GetComponent<Rigidbody2D>().gravityScale = 0;
     }
 
     public void OnTriggerEnter2D(Collider2D c)
