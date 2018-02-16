@@ -57,7 +57,7 @@ public class U_PlayerBulletDirection : MonoBehaviour {
     }
     void BulletCreate(int BulletNum)
     {
-        BulletRecol = Bullet[BulletNum].GetComponent<U_BulletMother>().Relod;
+       /* BulletRecol = Bullet[BulletNum].GetComponent<U_BulletMother>().recoil;
         if (BulletCount > BulletRecol)
         {
             Bullet[BulletNum].transform.position = gameObject.transform.position;
@@ -65,5 +65,6 @@ public class U_PlayerBulletDirection : MonoBehaviour {
             Instantiate(Bullet[BulletNum]);
             BulletCount = 0;
         }
+        */
     }
 }
