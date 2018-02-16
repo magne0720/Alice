@@ -47,11 +47,11 @@ public class Math : MonoBehaviour {
     }
     public static float Cross2D(Vector2 a, Vector2 b)
     {
-        return ((b.x * a.y) - (a.y * b.x));
+        return ((a.x * b.y) - (a.y * b.x));
     }
 
     //内積(単位はラジアン)
-    public static float dot(Vector2 from, Vector2 to)
+    public static float Dot2D(Vector2 from, Vector2 to)
     {
         return ((from.x * to.x) + (from.y * to.y));
     }
@@ -76,7 +76,7 @@ public class Math : MonoBehaviour {
         return rag * 180 / PI;
     }
 
-    //方向ベクトルから右方向に固有角度で自身の視認範囲のベクトルを取得する
+    //方向ベクトルから時計回りに固有角度で自身の視認範囲のベクトルを取得する
     public static Vector3 getDirectionDegree(Vector3 target, float deg, float range = 1.0f)
     {
         Vector3 vector = target.normalized;

@@ -2,25 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class N_EnemyHoming : Enemy {
+public class N_Start : Bullet
+{
 
     GameObject targetObject = null;
-
+    Vector3 target;
     /// 旋回速度
     float rot = 1.0f;
 
-
+    protected Rigidbody2D rigidbody2D = null;
+    /// 移動角度
+    public float Direction
+    {
+        get { return Mathf.Atan2(rigidbody2D.velocity.y, rigidbody2D.velocity.x) * Mathf.Rad2Deg; }
+    }
     // Use this for initialization
-    void Start() {
-        Initialize();
+    void Start()
+    {
+        rigidbody2D = GetComponent<Rigidbody2D>();
 
+        if (target == Vector3.zero)
+        {
+            target = new Vector3(0, 1, 0);
+        }
+        // Initialize();
+        speed = 3.0f;
 
-        targetObject = GameObject.FindGameObjectWithTag("Player");
+        targetObject = GameObject.FindGameObjectWithTag("Enemy");
 
         //複数の場合
         float distance = float.MaxValue;
         float temp_dis = 0;
-        GameObject[] objs = GameObject.FindGameObjectsWithTag("Player");
+        GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
         foreach (GameObject g in objs)
         {
             //距離を見る
@@ -53,8 +66,9 @@ public class N_EnemyHoming : Enemy {
         Homing();
 
         SetDirection();
-        
-        base.Update();
+
+
+        transform.position += target * speed * Time.deltaTime;
     }
     void Homing()
     {
@@ -86,4 +100,14 @@ public class N_EnemyHoming : Enemy {
         SetVelocity(newAngle, speed);
 
     }
+    public void SetDirection()
+    {
+
+        // 画像の角度を移動方向に向ける
+        SpriteRenderer renderer = GetComponent<SpriteRenderer>();
+        renderer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, Direction));
+
+    }
+
+    void OnTriggerEnter2D(Collider2D c) { }
 }

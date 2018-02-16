@@ -12,6 +12,7 @@ public class N_Score : MonoBehaviour {
         GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-100, 100), Random.Range(-100, 100)));
         speed = 0;
         targetObj = GameObject.FindGameObjectWithTag("Player");
+        gameObject.layer = 0;
 	}
 	
 	// Update is called once per frame

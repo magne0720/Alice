@@ -15,6 +15,7 @@ public class WaveManager : MonoBehaviour {
     public float WaitTime;
     private float timer;
     public bool isPlay;
+    public bool isWaving;
     public bool isGameClear;
 
     // Use this for initialization
@@ -25,14 +26,17 @@ public class WaveManager : MonoBehaviour {
         isGameClear = false;
         timer = 0;
         WaitTime = 60.0f;
+        isWaving = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (emiter.isGameClear)
+
+        if (emiter.currentWave >= emiter.waves.Length)
         {
             isGameClear = true;
+            return;
         }
         if (!isPlay)
         {
@@ -47,6 +51,11 @@ public class WaveManager : MonoBehaviour {
                 Wavecount = emiter.currentWave + 1;
 
                 Wave.text = ("WAVE  ") + Wavecount.ToString();
+
+            }
+            else
+            {
+                isWaving = false;
             }
             Debug.Log(Wavecount);
         }
@@ -55,9 +64,9 @@ public class WaveManager : MonoBehaviour {
             timer += Time.deltaTime;
             if (timer > WaitTime)
             {
+                isWaving = true;
                 timer = 0;
                 emiter.WaveInstance();
-                //isWaving = true;
             }
             int time = (int)(WaitTime - timer);
             Wave.text = ("次のWAVEまで  ") + time.ToString()+("秒");
@@ -67,6 +76,7 @@ public class WaveManager : MonoBehaviour {
     public void WaveStart()
     {
         isPlay = true;
+        isWaving = true;
         emiter.WaveInstance();
     }
     public void WaveStop()

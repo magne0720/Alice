@@ -12,8 +12,8 @@ public class Character : MonoBehaviour {
     public bool canShot;//弾を撃つかどうか
     public float powRate;//攻撃倍率
     public float delayRate;//反動軽減率
-
-    public GameObject bullet;//射出する弾
+    public int currentBullet;//選択中の弾番号
+    public GameObject[] Bullets;//射出する弾
     public GameObject deathObj;//死んだときに出す弾
     public GameObject hpVerObj;  //HPバー
 
@@ -68,7 +68,11 @@ public class Character : MonoBehaviour {
     {
         if (c.gameObject.layer == 8|| c.gameObject.layer == 9)//機体
         {
-            HP = 0;
+            HP -= MAX_HP/10;
+            if (gameObject.layer == 9)
+            {
+                HP = 0;
+            }
         }
         if (c.gameObject.layer == 10|| c.gameObject.layer == 11)//弾
         {
@@ -95,31 +99,36 @@ public class Character : MonoBehaviour {
     }
 
     /// <summary>
-    /// type＝Playerなら1,Enemyなら2と入力
+    /// Bulletsの番号を入れて発射する
     /// どちらでもない場合は引数はいらない
     /// </summary>
     /// <param name="type"></param>
-    public void Shot(int type=0)
+    public void Shot(int num = 0, Vector3 dir = new Vector3())
     {
-        if (bullet == null)
+        if (Bullets == null)
             return;
 
+        if (num >= Bullets.Length)
+        {
+            Debug.Log("Shot-OverNumver");
+            return;
+        }
 
         timer += Time.deltaTime;
         if (timer >= delay && canShot)
         {
             timer = 0;
-            GameObject g = Instantiate(bullet, transform.position, transform.rotation);
-            if (type == 1)
-                g.gameObject.layer = 10;
-            else if (type == 2)
-                g.gameObject.layer = 11;
+            GameObject obj = Instantiate(Bullets[num], transform.position, Quaternion.Euler(0, 0, Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg));
+            if (gameObject.layer == 8)
+                obj.gameObject.layer = 10;
+            else if (gameObject.layer == 9)
+                obj.gameObject.layer = 11;
 
             //攻撃倍率を弾に加算
-            g.GetComponent<Bullet>().pow *= powRate;
+            obj.GetComponent<Bullet>().pow *= powRate;
 
             //反動を設定(軽減率も計算)
-                delay = g.GetComponent<Bullet>().recoil-delayRate;
+            delay = obj.GetComponent<Bullet>().recoil - delayRate;
         }
     }
     public void SetDirection()
@@ -128,6 +137,5 @@ public class Character : MonoBehaviour {
         // 画像の角度を移動方向に向ける
         SpriteRenderer renderer = GetComponent<SpriteRenderer>();
         renderer.transform.localRotation = Quaternion.Euler(new Vector3(0, 0, Direction));
-
     }
 }
