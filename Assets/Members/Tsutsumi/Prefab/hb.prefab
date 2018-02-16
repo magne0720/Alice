@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4749248855956522}
   - component: {fileID: 212661048304624086}
+  - component: {fileID: 114588628234032388}
   m_Layer: 0
   m_Name: hb
   m_TagString: Untagged
@@ -40,6 +41,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114588628234032388
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1906348631959812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f83840a28a3e948a883510f1f4263a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HP: 0
+  speed: 0
+  target: {x: 0, y: 0, z: 0}
+  delay: 0
+  canShot: 0
+  bullet: {fileID: 0}
+  deathObj: {fileID: 0}
 --- !u!212 &212661048304624086
 SpriteRenderer:
   m_ObjectHideFlags: 1

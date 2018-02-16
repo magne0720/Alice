@@ -579,7 +579,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bbb7469500c0e4bacb30d83c64f83c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyScript: {fileID: 114315908998253196}
+  CharactorScript: {fileID: 0}
   slider: {fileID: 114188005327136160}
   HPnum: {fileID: 114589373331490450}
 --- !u!114 &114589373331490450
@@ -628,7 +628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11bbb7469500c0e4bacb30d83c64f83c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnemyScript: {fileID: 114172740084552888}
+  CharactorScript: {fileID: 0}
   slider: {fileID: 114159612108378422}
   HPnum: {fileID: 114696039507944162}
 --- !u!114 &114651977360625296

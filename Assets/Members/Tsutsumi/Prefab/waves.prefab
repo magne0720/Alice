@@ -167,10 +167,10 @@ MonoBehaviour:
   HP: 100
   speed: 4
   target: {x: 0, y: 0, z: 0}
-  delay: 0
+  delay: 128.1
   canShot: 0
-  bullet: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
-  deathObj: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
+  bullet: {fileID: 1279092094442760, guid: 6cef522676effcd45953466579bd7c92, type: 2}
+  deathObj: {fileID: 1279092094442760, guid: 6cef522676effcd45953466579bd7c92, type: 2}
 --- !u!114 &114409652625034768
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -185,10 +185,10 @@ MonoBehaviour:
   HP: 100
   speed: 4
   target: {x: 0, y: 0, z: 0}
-  delay: 0
+  delay: 128.1
   canShot: 0
-  bullet: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
-  deathObj: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
+  bullet: {fileID: 1279092094442760, guid: 6cef522676effcd45953466579bd7c92, type: 2}
+  deathObj: {fileID: 1279092094442760, guid: 6cef522676effcd45953466579bd7c92, type: 2}
 --- !u!212 &212193956892332520
 SpriteRenderer:
   m_ObjectHideFlags: 1
