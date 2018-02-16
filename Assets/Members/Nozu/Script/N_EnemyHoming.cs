@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class N_EnemyHoming : Enemy {
 
-    GameObject target = null;
+    GameObject targetObject = null;
 
     /// 旋回速度
     float rot = 1.0f;
@@ -15,7 +15,7 @@ public class N_EnemyHoming : Enemy {
         Initialize();
 
 
-        target = GameObject.FindGameObjectWithTag("Player");
+        targetObject = GameObject.FindGameObjectWithTag("Player");
 
         //複数の場合
         float distance = float.MaxValue;
@@ -29,7 +29,7 @@ public class N_EnemyHoming : Enemy {
             {
                 //一番近いものを取得
                 distance = temp_dis;
-                target = g;
+                targetObject = g;
             }
         }
     }
@@ -46,7 +46,7 @@ public class N_EnemyHoming : Enemy {
     void Update()
     {
 
-        if (target == null)
+        if (targetObject == null)
         {
             return;
         }
@@ -59,7 +59,7 @@ public class N_EnemyHoming : Enemy {
     void Homing()
     {
         // ターゲット座標を取得
-        Vector3 next = target.transform.position;
+        Vector3 next = targetObject.transform.position;
         Vector3 now = transform.position;
         // 目的となる角度を取得する
         Vector3 d = next - now;

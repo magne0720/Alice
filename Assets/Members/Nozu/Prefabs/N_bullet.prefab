@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   pow: 1
-  recoil: 0.7
+  recoil: 1
 --- !u!212 &212481326099923668
 SpriteRenderer:
   m_ObjectHideFlags: 1

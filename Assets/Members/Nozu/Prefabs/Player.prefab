@@ -104,7 +104,7 @@ MonoBehaviour:
   target: {x: 0, y: 0, z: 0}
   delay: 0
   canShot: 0
-  bullet: {fileID: 1726006938414598, guid: dc5b23c5a29f0a34aad5d3c0e7ebe037, type: 2}
+  bullet: {fileID: 1521578697082254, guid: 1c90ef1956b1e634f8ed9712c3b35ed9, type: 2}
   deathObj: {fileID: 1710432703754508, guid: 4a9bcc2c681b431449050b7a345bc6c1, type: 2}
   shotTarget: {x: 0, y: 0, z: 0}
 --- !u!212 &212240269257980244

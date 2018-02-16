@@ -16,6 +16,7 @@ public class Player : Character {
     {
         base.Start();
         timer = 0;
+        currentBullet = 0;
         gameObject.layer = 8;//Player
         gameObject.tag = "Player";
     }
@@ -76,7 +77,7 @@ public class Player : Character {
         Vector2 v = rd.velocity;
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(-shotPos.x, shotPos.y) * Mathf.Rad2Deg);
 
-        Shot(1);
+        Shot(currentBullet,shotPos);
 
         Clamp();
 

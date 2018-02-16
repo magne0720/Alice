@@ -8,7 +8,7 @@ public class Enemy : Character {
     {
         base.Start();
 
-        gameObject.layer = 9;//Player
+        gameObject.layer = 9;//Enemy
 
         canShot = true;
 
@@ -16,7 +16,7 @@ public class Enemy : Character {
         {
             target = new Vector3(0, -1, 0);
         }
-
+        currentBullet = 0;
         rigidbody2D = GetComponent<Rigidbody2D>();
     }
 
@@ -33,7 +33,7 @@ public class Enemy : Character {
 
         SetTarget(target);
 
-        Shot(2);
+        Shot(currentBullet);
 
         SetDirection();
 

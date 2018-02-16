@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+// Rigidbody2Dコンポーネントを必須にする
+[RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
 {
 
@@ -25,6 +28,10 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    public void Initialize()
+    {
+
     }
 
     public void OnTriggerEnter2D(Collider2D c)
@@ -58,5 +65,12 @@ public class Bullet : MonoBehaviour
             }
         }
     }
+<<<<<<< HEAD
     
+=======
+    public virtual void SetTarget(GameObject g)
+    {
+
+    }
+>>>>>>> 174a83dc4f0a7606fd214d526d3c43171275626f
 }
