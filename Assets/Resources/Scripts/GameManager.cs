@@ -18,6 +18,9 @@ public class GameManager : MonoBehaviour
     private FadeMask grad;
     private bool isIntervalStart;
     private bool isIntervalEnd;
+    //強化画面の後ろで時間を視覚的に見せる
+    public GameObject InterbalBack;
+    private FadeMask back;
     //タイトルやクリア
     public GameObject title;
     public GameObject clear;
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
                     isIntervalEnd = false;
                     WaveIntervalStart();
                 }
+
             }
             else
             {
