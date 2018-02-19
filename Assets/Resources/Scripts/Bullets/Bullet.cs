@@ -7,12 +7,12 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
 {
-
-    float timer;
     public float speed;
     public float pow;
     public float recoil;
     protected bool isHit;
+    public GameObject ExplosionObj;
+
     // Use this for initialization
     void Start()
     {
@@ -22,12 +22,7 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
         transform.position += transform.up * speed * Time.deltaTime;
-        if (timer >= 5.0f)
-        {
-            Destroy(gameObject);
-        }
     }
     public void Initialize()
     {
@@ -68,5 +63,9 @@ public class Bullet : MonoBehaviour
     public virtual void SetTarget(GameObject g)
     {
 
+    }
+    public void Explosion()
+    {
+        Instantiate(ExplosionObj, transform.position, Quaternion.identity);
     }
 }
