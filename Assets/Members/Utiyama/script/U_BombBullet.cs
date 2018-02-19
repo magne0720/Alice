@@ -20,7 +20,6 @@ public class U_BombBullet : Bullet {
     void searchArea(GameObject nowObj, string tagName, float Area)
     {
         float tmpDis = 0;           //距離用一時変数
-        Debug.Log("aaaaa");
         foreach (GameObject obj in GameObject.FindGameObjectsWithTag(tagName))
         {
             tmpDis = Vector3.Distance(obj.transform.position, nowObj.transform.position);
