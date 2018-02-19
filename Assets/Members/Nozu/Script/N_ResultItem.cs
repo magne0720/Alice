@@ -4,20 +4,26 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class N_ResultItem : MonoBehaviour {
-    
-    private GameObject Obj;
-    private Text label;
+
+    public GameObject ScriptObj;
+    public Text label;
     private int value;
     public float speed;
     public float startDelay;
     private float timer;
     private bool isPlay;
     private Vector3 start, end;
+
+    public enum RESULT_TYPE
+    {
+        NONE,   SCORE,TIME,HOME
+    }
+    public RESULT_TYPE type;
     // Use this for initialization
     void Start ()
     {
         isPlay = false;
-        start = transform.position + new Vector3(500, 0, 0);
+        start = transform.position + new Vector3(20, 0, 0);
         end = transform.position;
         transform.position = timer * end + (1 - timer) * start;
     }
@@ -56,6 +62,7 @@ public class N_ResultItem : MonoBehaviour {
     public void StartAnimation()
     {
         isPlay = true;
+        SetStatusTarget();
     }
     public void StopAnimation()
     {
@@ -65,5 +72,29 @@ public class N_ResultItem : MonoBehaviour {
     public void Setvalue(int val)
     {
         value = val;
+    }
+    public void Reset()
+    {
+        isPlay = false;
+        transform.position = start;
+    }
+    void SetStatusTarget()
+    {
+        switch (type)
+        {
+            case RESULT_TYPE.NONE:
+                break;
+            case RESULT_TYPE.SCORE:
+                value = GameManager.playerStatus.score;
+                break;
+            case RESULT_TYPE.TIME:
+                value = 99;
+                break;
+            case RESULT_TYPE.HOME:
+                break;
+            default:
+                break;
+        }
+        label.text = value.ToString();
     }
 }

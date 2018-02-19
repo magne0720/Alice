@@ -110,8 +110,8 @@ MonoBehaviour:
   currentBullet: 2
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  - {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a, type: 2}
-  - {fileID: 1145009253822792, guid: 1d0e080f329d1c74b9b6c25edb122e7d, type: 2}
+  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  - {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db, type: 2}
   OptionBullet: {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a,
     type: 2}
   deathObj: {fileID: 0}

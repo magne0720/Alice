@@ -31,7 +31,28 @@ public class N_Result : MonoBehaviour
             {
                 timer = 0;
                 objs[count++].GetComponent<N_ResultItem>().StartAnimation();
+
+                if (count >= objs.Length)
+                {
+                    isPlay = false;
+                }
             }
         }
+    }
+    public void StartDisp()
+    {
+        isPlay = true;
+    }
+    public void StopDisp()
+    {
+        isPlay = false;
+    }
+    public void Reset()
+    {
+        foreach(GameObject g in objs)
+        {
+            g.GetComponent<N_ResultItem>().Reset();
+        }
+        timer = 0;
     }
 }

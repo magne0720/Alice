@@ -546,6 +546,7 @@ MonoBehaviour:
   speed: 0
   pow: 5
   recoil: 0
+  ExplosionObj: {fileID: 0}
   RootSpeed: 100
   _Adjust: 30
   LowSpeed: 1
@@ -565,8 +566,9 @@ MonoBehaviour:
   speed: 0
   pow: 5
   recoil: 0
+  ExplosionObj: {fileID: 0}
   RootSpeed: 100
-  _Adjust: 30
+  _Adjust: 15.37
   LowSpeed: 1
   MaxSpeed: 12
   PulssSpeed: 0.2
@@ -584,8 +586,9 @@ MonoBehaviour:
   speed: 0
   pow: 5
   recoil: 0
+  ExplosionObj: {fileID: 0}
   RootSpeed: 100
-  _Adjust: 30
+  _Adjust: 15.37
   LowSpeed: 1
   MaxSpeed: 12
   PulssSpeed: 0.2
@@ -603,6 +606,7 @@ MonoBehaviour:
   speed: 0
   pow: 5
   recoil: 0
+  ExplosionObj: {fileID: 0}
   RootSpeed: 100
   _Adjust: 30
   LowSpeed: 1
@@ -622,10 +626,11 @@ MonoBehaviour:
   speed: 0
   pow: 5
   recoil: 0
-  RootSpeed: 100
-  _Adjust: 30
-  LowSpeed: 1
-  MaxSpeed: 12
+  ExplosionObj: {fileID: 0}
+  RootSpeed: 215.68
+  _Adjust: 82.5
+  LowSpeed: -6.1
+  MaxSpeed: 5.68
   PulssSpeed: 0.2
 --- !u!114 &114694471667976302
 MonoBehaviour:
@@ -641,10 +646,11 @@ MonoBehaviour:
   speed: 0
   pow: 5
   recoil: 0
-  RootSpeed: 100
-  _Adjust: 30
-  LowSpeed: 1
-  MaxSpeed: 12
+  ExplosionObj: {fileID: 0}
+  RootSpeed: 215.68
+  _Adjust: 82.5
+  LowSpeed: -6.1
+  MaxSpeed: 5.68
   PulssSpeed: 0.2
 --- !u!114 &114717520407631050
 MonoBehaviour:
@@ -660,6 +666,7 @@ MonoBehaviour:
   speed: 0
   pow: 0
   recoil: 2
+  ExplosionObj: {fileID: 0}
   Mother: []
 --- !u!212 &212337691184118266
 SpriteRenderer:

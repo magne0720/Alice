@@ -4,25 +4,59 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreDisplay : MonoBehaviour {
+    // スコアを表示するGUIText
+    public Text scoreText;
 
-    Text score;
-    public Character player;
+    // スコア
+    private int score;
 
-	// Use this for initialization
-	void Start () {
-        score = GetComponent<Text>();
-	}
+    // ハイスコア
+    private int highScore;
 
-    // Update is called once per frame
+    // PlayerPrefsで保存するためのキー
+    private string highScoreKey = "highScore";
+
+    void Start()
+    {
+        Initialize();
+    }
+
     void Update()
     {
-        if (player != null)
+        // スコアがハイスコアより大きければ
+        if (highScore < score)
         {
-            score.text = player.score.ToString();
+            highScore = score;
         }
+
+        // スコア・ハイスコアを表示する
+        scoreText.text = score.ToString();
     }
-    public void SetPlayer(Character p)
+
+    // ゲーム開始前の状態に戻す
+    private void Initialize()
     {
-        player = p;
+        // スコアを0に戻す
+        score = 0;
+
+        // ハイスコアを取得する。保存されてなければ0を取得する。
+        highScore = PlayerPrefs.GetInt(highScoreKey, 0);
+    }
+
+    // ポイントの追加
+    public void AddPoint(int point)
+    {
+        score = score + point;
+    }
+
+    // ハイスコアの保存
+    public void Save()
+    {
+        // ハイスコアを保存する
+        PlayerPrefs.SetInt(highScoreKey, highScore);
+        PlayerPrefs.Save();
+
+        // ゲーム開始前の状態に戻す
+        Initialize();
     }
 }

@@ -362,14 +362,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 0.2
   score: 1
   delay: 0.2
   canShot: 0
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 0
   delayRate: 0
+  currentBullet: 0
+  Bullets: []
+  OptionBullet: {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db,
+    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   moves:
@@ -389,14 +393,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 0.2
   score: 1
   delay: 0.2
   canShot: 0
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 0
   delayRate: 0
+  currentBullet: 0
+  Bullets: []
+  OptionBullet: {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db,
+    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   moves:
@@ -416,14 +424,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 6
   score: 14
   delay: 0
   canShot: 0
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 20
   delayRate: 1
+  currentBullet: 0
+  Bullets: []
+  OptionBullet: {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db,
+    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   moves:
@@ -441,14 +453,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 6
   score: 14
   delay: 0
   canShot: 0
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 20
   delayRate: 1
+  currentBullet: 0
+  Bullets: []
+  OptionBullet: {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db,
+    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   moves:

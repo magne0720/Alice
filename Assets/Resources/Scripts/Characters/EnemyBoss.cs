@@ -33,6 +33,7 @@ public class EnemyBoss : Enemy {
         }
         Vector2 pos = moveTimer * moves[currentCount] + (1 - moveTimer) * (Vector2)transform.position;
 
+        transform.rotation = Quaternion.Euler(0, 0, moveTimer);
         transform.position = (Vector3)pos;
 
         SetTarget(target);

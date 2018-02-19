@@ -6,22 +6,23 @@ public class GameManager : MonoBehaviour
 {
     //プレイヤー
     public GameObject player;
-    private GameObject playerObj;
-    private Character playerStatus;
+    public GameObject playerObj;
+    public  static Character playerStatus;
     //拠点
     public GameObject homebase;
     private GameObject homebaseObj;
     private HomeBase homeStatus;
     //ウェーブ
-    public GameObject waveObj;
     public WaveManager wave;
     //強化画面
     public GameObject IntervalUI;
     private CanvasMask grad;
     private bool isIntervalStart;
     private bool isIntervalEnd;
+
+    public N_Result result;
     //強化画面の後ろで時間を視覚的に見せる
-    public GameObject InterbalBack;
+    public GameObject IntervalBack;
     private FadeMask back;
     //タイトルやクリア
     public GameObject title;
@@ -44,7 +45,7 @@ public class GameManager : MonoBehaviour
         //IntervalUI.SetActive(false);
 
         //ウェーブ情報を扱えるようにする
-        wave = waveObj.GetComponent<WaveManager>();
+        //wave = waveObj.GetComponent<WaveManager>();
     }
 
     // Update is called once per frame
@@ -100,11 +101,11 @@ public class GameManager : MonoBehaviour
 
         homebaseObj = Instantiate(homebase, new Vector3(0, -5, 0), new Quaternion());
         homeStatus = homebaseObj.GetComponent<HomeBase>();
-
-        //スコアを反映
-        Score.SetPlayer(playerStatus);
+        
 
         wave.WaveStart();
+        result.StopDisp();
+        result.Reset();
 
         title.SetActive(false);
         clear.SetActive(false);
@@ -117,6 +118,7 @@ public class GameManager : MonoBehaviour
         title.SetActive(true);
         wave.WaveStop();
         wave.WaveResset();
+        result.StartDisp();
     }
     public void GameClear()
     {

@@ -128,14 +128,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 20000
   speed: 30
   score: 200
   delay: 2
   canShot: 1
-  bullet: {fileID: 1890607325855160, guid: 0ea3c49e1faa73346a3610fcfa2890da, type: 2}
   powRate: 30
   delayRate: 0
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  - {fileID: 0}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1970735319846110, guid: 1645ed0e17124284d862d63b496866cf, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   moves:
