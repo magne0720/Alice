@@ -15,7 +15,13 @@ public class U_HomingBullet : Bullet {
     void Start () {
         speed = LowSpeed;
         Destroy(gameObject,10.0f);
-        Enemy = searchTag(gameObject,"Enemy");
+        if (gameObject.tag == "PlayerBullet")
+        {
+            Enemy = searchTag(gameObject, "Enemy");
+        }else if (gameObject.tag == "EnemyBullet")
+        {
+            Enemy = searchTag(gameObject, "Player");
+        }
         //Enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
@@ -25,7 +31,14 @@ public class U_HomingBullet : Bullet {
         if (Enemy == null)
         {
             transform.position += transform.up * speed * Time.deltaTime;
-            Enemy = searchTag(gameObject, "Enemy");
+            if (gameObject.tag == "PlayerBullet")
+            {
+                Enemy = searchTag(gameObject, "Enemy");
+            }
+            else if (gameObject.tag == "EnemyBullet")
+            {
+                Enemy = searchTag(gameObject, "Player");
+            }
 
             //Enemy = GameObject.FindGameObjectWithTag("Enemy");
         }
@@ -38,18 +51,7 @@ public class U_HomingBullet : Bullet {
 
             // 自身の向きに移動
             transform.position += transform.TransformDirection(Vector3.up*Time.deltaTime*speed);
-            /*float vx, vy,l,vxs,vys;
-            vx = gameObject.transform.position.x - Enemy.transform.position.x;
-            vy = gameObject.transform.position.y - Enemy.transform.position.y;
-            l = (float)(System.Math.Sqrt(System.Math.Pow(vx,2)+ System.Math.Pow(vy, 2)));
-            vxs = (vx / l);
-            vys = (vy / l);
-            */
-            /*
-            speed += Time.deltaTime;
-            Vector3 move = (Enemy.transform.position - transform.position).normalized;
-            transform.position += move * speed * Time.deltaTime/3;
-            */
+           
         }
 
         //transform.position += transform.up * speed * Time.deltaTime;
@@ -67,7 +69,6 @@ public class U_HomingBullet : Bullet {
             //自身と取得したオブジェクトの距離を取得
             tmpDis = Vector3.Distance(obs.transform.position, nowObj.transform.position);
 
-            //オブジェクトの距離が近いか、距離0であればオブジェクト名を取得
             //一時変数に距離を格納
             if (nearDis == 0 || nearDis > tmpDis)
             {
