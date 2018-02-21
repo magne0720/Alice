@@ -107,10 +107,14 @@ MonoBehaviour:
   canShot: 0
   powRate: 12
   delayRate: 0.5
-  currentBullet: 0
+  currentBullet: 2
   Bullets:
-  - {fileID: 1815548566182736, guid: c7976942cc0f7ba4c91b7d670e401c83, type: 2}
-  deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
+  - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
+  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  - {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db, type: 2}
+  OptionBullet: {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a,
+    type: 2}
+  deathObj: {fileID: 0}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   shotTarget: {x: 0, y: 0, z: 0}
 --- !u!212 &212187474165432334

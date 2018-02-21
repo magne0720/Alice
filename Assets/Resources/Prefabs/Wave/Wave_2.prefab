@@ -674,14 +674,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf9c4cf79d47b942914e05f021d9eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 2.4
   score: 10
   delay: 0.1
   canShot: 1
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 10
   delayRate: 0.5
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a, type: 2}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
 --- !u!114 &114220382102952964
@@ -695,14 +699,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 10
   score: 300
   delay: 0
   canShot: 0
-  bullet: {fileID: 0}
   powRate: 0
   delayRate: 0
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1145009253822792, guid: 1d0e080f329d1c74b9b6c25edb122e7d, type: 2}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   moves:
@@ -721,14 +729,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf9c4cf79d47b942914e05f021d9eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 3
   score: 10
   delay: 0.1
   canShot: 1
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 10
   delayRate: 0.5
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
 --- !u!114 &114377886529741366
@@ -742,14 +754,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 10
   score: 300
   delay: 0
   canShot: 0
-  bullet: {fileID: 0}
   powRate: 0
   delayRate: 0
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1145009253822792, guid: 1d0e080f329d1c74b9b6c25edb122e7d, type: 2}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   moves:
@@ -768,14 +784,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf9c4cf79d47b942914e05f021d9eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 3
   score: 10
   delay: 0.1
   canShot: 1
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 10
   delayRate: 0.5
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
 --- !u!114 &114561667188403704
@@ -789,14 +809,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 6
   score: 14
   delay: 0
   canShot: 0
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 20
   delayRate: 1
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1145009253822792, guid: 1d0e080f329d1c74b9b6c25edb122e7d, type: 2}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   moves:
@@ -814,14 +838,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 6
   score: 14
   delay: 0
   canShot: 0
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 20
   delayRate: 1
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1145009253822792, guid: 1d0e080f329d1c74b9b6c25edb122e7d, type: 2}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   moves:
@@ -839,14 +867,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaf9c4cf79d47b942914e05f021d9eaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 2.4
   score: 10
   delay: 0.1
   canShot: 1
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   powRate: 10
   delayRate: 0.5
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a, type: 2}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
 --- !u!212 &212159659556199802

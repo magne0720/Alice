@@ -7,11 +7,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class Bullet : MonoBehaviour
 {
-
-    float timer;
     public float speed;
     public float pow;
     public float recoil;
+    protected bool isHit;
+    public GameObject ExplosionObj;
 
     // Use this for initialization
     void Start()
@@ -22,29 +22,26 @@ public class Bullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
         transform.position += transform.up * speed * Time.deltaTime;
-        if (timer >= 5.0f)
-        {
-            Destroy(gameObject);
-        }
     }
     public void Initialize()
     {
-
+        GetComponent<Rigidbody2D>().gravityScale = 0;
     }
 
-    void OnTriggerEnter2D(Collider2D c)
+    public void OnTriggerEnter2D(Collider2D c)
     {
         if (gameObject.layer == 10)//PlayerBullet
         {
             if (c.gameObject.layer == 9)//Enemy
             {
-                c.gameObject.GetComponent<Character>().HP -= (int)pow;
+                isHit = true;
+                //c.gameObject.GetComponent<Character>().HP -= (int)pow;
                 Destroy(gameObject);
             }
             else if(c.gameObject.layer==11)
             {
+                isHit = true;
                 Destroy(gameObject);
             }
         }
@@ -52,13 +49,23 @@ public class Bullet : MonoBehaviour
         {
             if (c.gameObject.layer== 8 )//Player
             {
-                c.gameObject.GetComponent<Character>().HP -= (int)pow;
+                isHit = true;
+                //c.gameObject.GetComponent<Character>().HP -= (int)pow;
                 Destroy(gameObject);
             }
             else if (c.gameObject.layer == 10)
             {
+                isHit = true;
                 Destroy(gameObject);
             }
         }
+    }
+    public virtual void SetTarget(GameObject g)
+    {
+
+    }
+    public void Explosion()
+    {
+        Instantiate(ExplosionObj, transform.position, Quaternion.identity);
     }
 }

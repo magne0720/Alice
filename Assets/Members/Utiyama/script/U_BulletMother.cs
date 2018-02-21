@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class U_BulletMother : U_Bullet {
+public class U_BulletMother : Bullet {
     public List<GameObject> Mother = new List<GameObject>();
     // Use this for initialization
     
