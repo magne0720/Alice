@@ -13,17 +13,20 @@ public class T_PauseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            if (Input.GetMouseButtonDown(0) && Ray.hit.collider.gameObject.name == "Pause")
+        if (Input.GetMouseButtonUp(0))
         {
-            if (instancePauseUI == null)
+            if (Ray.hit.collider.gameObject.name == "Pause")
             {
-                instancePauseUI = GameObject.Instantiate(pauseUI) as GameObject;
-                Time.timeScale = 0f;
-            }
-            else
-            {
-                Destroy(instancePauseUI);
-                Time.timeScale = 1f;
+                if (instancePauseUI == null)
+                {
+                    instancePauseUI = GameObject.Instantiate(pauseUI) as GameObject;
+                    Time.timeScale = 0f;
+                }
+                else
+                {
+                    Destroy(instancePauseUI);
+                    Time.timeScale = 1f;
+                }
             }
         }
     }
