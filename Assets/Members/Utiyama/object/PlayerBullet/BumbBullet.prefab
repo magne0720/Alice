@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  pow: 40
+  pow: 1
   recoil: 1
   ExplosionObj: {fileID: 1297319248099656, guid: fc90078034effa4469b55f170e0ac181,
     type: 2}

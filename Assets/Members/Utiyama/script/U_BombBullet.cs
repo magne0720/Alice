@@ -16,6 +16,7 @@ public class U_BombBullet : Bullet {
         time += Time.deltaTime;
         if (time > DestroyTime)
         {
+            Destroy(gameObject);
             ExplosionObj.transform.localScale = new Vector3(Area, Area, 0);
             Explosion();
         }
@@ -43,7 +44,6 @@ public class U_BombBullet : Bullet {
     {
         if (c.gameObject.layer == 9||c.gameObject.layer==11)
         {
-            searchArea(gameObject, "Enemy", Area);
             ExplosionObj.transform.localScale = new Vector3(Area,Area,0);
             Explosion();
         }

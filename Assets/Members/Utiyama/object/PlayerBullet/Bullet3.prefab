@@ -57,7 +57,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4099449310943150}
-  - component: {fileID: 114037813053973284}
+  - component: {fileID: 50371208097043654}
+  - component: {fileID: 114889891749245770}
   m_Layer: 0
   m_Name: Bullet3
   m_TagString: PlayerBullet
@@ -285,6 +286,26 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!50 &50371208097043654
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145009253822792}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!50 &50482169048488372
 Rigidbody2D:
   serializedVersion: 4
@@ -380,21 +401,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.000000059604645}
   serializedVersion: 2
   m_Radius: 0.24999999
---- !u!114 &114037813053973284
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1145009253822792}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074ba992dad157342948dcc7f67b68c5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  pow: 0
-  recoil: 1
-  Mother: []
 --- !u!114 &114127939900963132
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -409,6 +415,7 @@ MonoBehaviour:
   speed: 4
   pow: 5
   recoil: 0
+  ExplosionObj: {fileID: 0}
 --- !u!114 &114676254571897998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -423,6 +430,7 @@ MonoBehaviour:
   speed: 4
   pow: 5
   recoil: 0
+  ExplosionObj: {fileID: 0}
 --- !u!114 &114857419249906788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -437,6 +445,7 @@ MonoBehaviour:
   speed: 4
   pow: 5
   recoil: 0
+  ExplosionObj: {fileID: 0}
 --- !u!114 &114884570996127124
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -451,6 +460,23 @@ MonoBehaviour:
   speed: 4
   pow: 5
   recoil: 0
+  ExplosionObj: {fileID: 0}
+--- !u!114 &114889891749245770
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1145009253822792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2eb870ad879f1c469b56677be6d87e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  pow: 0
+  recoil: 1
+  ExplosionObj: {fileID: 0}
+  Mother: []
 --- !u!114 &114963092605085316
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -465,6 +491,7 @@ MonoBehaviour:
   speed: 4
   pow: 5
   recoil: 0
+  ExplosionObj: {fileID: 0}
 --- !u!212 &212210726709755118
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -32,6 +32,9 @@ public class U_HexagonBullet : MonoBehaviour {
         
         Bullets.transform.position = gameObject.transform.position;
         Bullets.transform.rotation = Quaternion.AngleAxis(rotate+gameObject.transform.rotation.z, -Vector3.forward);
+
+        Bullets.gameObject.layer = gameObject.layer;
+        Bullets.gameObject.tag = gameObject.tag;
         Instantiate(Bullets);
     }
 }

@@ -35,6 +35,8 @@ public class U_SubBullet : Bullet {
         {
             ExplosionObj.transform.localScale = new Vector3(Scale, Scale, 1);
             ExplosionObj.transform.position = gameObject.transform.position;
+            ExplosionObj.gameObject.layer = gameObject.layer;
+            ExplosionObj.gameObject.tag = gameObject.tag;
             Instantiate(ExplosionObj);
         }
         base.OnTriggerEnter2D(c);

@@ -76,7 +76,8 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4509222408799216}
-  - component: {fileID: 114717520407631050}
+  - component: {fileID: 50948026577386474}
+  - component: {fileID: 114953934956931972}
   m_Layer: 10
   m_Name: homihomi
   m_TagString: PlayerBullet
@@ -333,6 +334,26 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!50 &50948026577386474
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1476261230980904}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -652,7 +673,7 @@ MonoBehaviour:
   LowSpeed: -6.1
   MaxSpeed: 5.68
   PulssSpeed: 0.2
---- !u!114 &114717520407631050
+--- !u!114 &114953934956931972
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -660,7 +681,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1476261230980904}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 074ba992dad157342948dcc7f67b68c5, type: 3}
+  m_Script: {fileID: 11500000, guid: a2eb870ad879f1c469b56677be6d87e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0

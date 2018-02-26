@@ -13,7 +13,6 @@ public class U_SickleBullet : Bullet {
 	// Update is called once per frame
 	void Update () {
         timer += Time.deltaTime;
-        Debug.Log(Time.time);
         int _IOO = transform.rotation.y==0 ? 1 : -1;
         Radius -= 0.02f;
         speed += 0.2f;
