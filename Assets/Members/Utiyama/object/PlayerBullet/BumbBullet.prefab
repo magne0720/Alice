@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 60720430530774964}
   - component: {fileID: 50908962402649500}
   - component: {fileID: 114540293581344196}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: BumbBullet
   m_TagString: PlayerBullet
   m_Icon: {fileID: 0}
@@ -110,7 +110,7 @@ MonoBehaviour:
   speed: 3
   pow: 40
   recoil: 1
-  BombDestroy: {fileID: 1297319248099656, guid: fc90078034effa4469b55f170e0ac181,
+  ExplosionObj: {fileID: 1297319248099656, guid: fc90078034effa4469b55f170e0ac181,
     type: 2}
   Area: 3
   DestroyTime: 2

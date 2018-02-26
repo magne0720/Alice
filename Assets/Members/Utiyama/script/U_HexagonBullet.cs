@@ -5,17 +5,17 @@ using UnityEngine;
 public class U_HexagonBullet : MonoBehaviour {
     public GameObject Bullets;
     float time;
+    public float DesTime;
 	// Use this for initialization
 	void Start () {
         time = 0;
-        Destroy(gameObject, 3);
+        Destroy(gameObject,DesTime);
 	}
 	
 	// Update is called once per frame
 	void Update () {
       //  gameObject.transform.Rotate(0, 0,50*Time.deltaTime);
         time += Time.deltaTime;
-        Debug.Log(time);
         if (time > 0.2)
         {
             CreateBulet(0f);
@@ -25,14 +25,13 @@ public class U_HexagonBullet : MonoBehaviour {
             CreateBulet(240f);
             CreateBulet(300f);
             time = 0;
-            Debug.Log("aaa");
         }
     }
     void CreateBulet(float rotate)
     {
         
         Bullets.transform.position = gameObject.transform.position;
-        Bullets.transform.rotation = Quaternion.AngleAxis(rotate, -Vector3.forward);
+        Bullets.transform.rotation = Quaternion.AngleAxis(rotate+gameObject.transform.rotation.z, -Vector3.forward);
         Instantiate(Bullets);
     }
 }
