@@ -190,12 +190,12 @@ Transform:
   m_Children:
   - {fileID: 4639693895874968}
   - {fileID: 4057592387903716}
-  - {fileID: 4377739706263598}
-  - {fileID: 4562531249073512}
   - {fileID: 4233159327288592}
   - {fileID: 4262855409158970}
   - {fileID: 4816721881561844}
   - {fileID: 4305824818632546}
+  - {fileID: 4377739706263598}
+  - {fileID: 4562531249073512}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -223,7 +223,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4027173985841232}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4262855409158970
 Transform:
@@ -236,7 +236,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4027173985841232}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4305824818632546
 Transform:
@@ -249,7 +249,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4027173985841232}
-  m_RootOrder: 7
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4377739706263598
 Transform:
@@ -262,7 +262,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4027173985841232}
-  m_RootOrder: 2
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4562531249073512
 Transform:
@@ -275,7 +275,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4027173985841232}
-  m_RootOrder: 3
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4639693895874968
 Transform:
@@ -301,7 +301,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4027173985841232}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50105685069516812
 Rigidbody2D:
@@ -684,7 +684,7 @@ MonoBehaviour:
   delayRate: 0.5
   currentBullet: 0
   Bullets:
-  - {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a, type: 2}
+  - {fileID: 1363834695243562, guid: 60eb4141b76543c40a567086cb4441af, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
@@ -709,7 +709,7 @@ MonoBehaviour:
   delayRate: 0
   currentBullet: 0
   Bullets:
-  - {fileID: 1145009253822792, guid: 1d0e080f329d1c74b9b6c25edb122e7d, type: 2}
+  - {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
@@ -764,7 +764,7 @@ MonoBehaviour:
   delayRate: 0
   currentBullet: 0
   Bullets:
-  - {fileID: 1145009253822792, guid: 1d0e080f329d1c74b9b6c25edb122e7d, type: 2}
+  - {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
@@ -877,7 +877,7 @@ MonoBehaviour:
   delayRate: 0.5
   currentBullet: 0
   Bullets:
-  - {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a, type: 2}
+  - {fileID: 1758881321332062, guid: 4e7c7132dd54f3a4aaa9d610f062c80c, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}

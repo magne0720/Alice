@@ -6,15 +6,19 @@ public class EnemyBoss : Enemy {
 
     int currentCount;
     public List<Vector2> moves;//パターンのリスト
+    public List<Vector2> attacks;//パターンのリスト
     float moveTimer;
+    Vector2 afterPos;
 
     // Use this for initialization
     void Start()
     {
         Initialize();
         moveTimer = 0;
+        afterPos = transform.position;
 
         gameObject.tag = "Enemy";
+
     }
 
     // Update is called once per frame
@@ -24,21 +28,25 @@ public class EnemyBoss : Enemy {
         moveTimer += Time.deltaTime;
         if (moveTimer >= 1.0f)
         {
+            afterPos = transform.position;
             moveTimer = 0;
             currentCount++;
+            if (currentCount >= moves.Count)
+            {
+                currentCount = 0;
+            }
         }
-        if (currentCount >= moves.Count)
+        else
         {
-            currentCount = 0;
         }
-        Vector2 pos = moveTimer * moves[currentCount] + (1 - moveTimer) * (Vector2)transform.position;
+        Vector2 pos = moveTimer * moves[currentCount] + (1 - moveTimer) * afterPos;
+        //target =   (Vector3)pos- transform.position;
+        shotTarget = attacks[currentCount];
 
-        transform.rotation = Quaternion.Euler(0, 0, moveTimer);
-        transform.position = (Vector3)pos;
+        //SetTarget(attacks[currentCount]);
 
-        SetTarget(target);
-
-        Shot(0);
+        transform.position = pos;
+        
 
         base.Update();
     }

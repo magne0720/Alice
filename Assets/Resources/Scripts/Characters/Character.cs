@@ -19,8 +19,14 @@ public class Character : MonoBehaviour {
     public GameObject hpVerObj;  //HPバー
 
     protected Vector3 target;
+    protected Vector3 shotTarget;
     protected float timer;
     protected Rigidbody2D rigidbody2D = null;
+    protected enum STATUS
+    {
+        NORMAL, PARALYSIS,POISON
+    }
+    protected STATUS status;
 
     /// 移動角度
     public float Direction
@@ -44,7 +50,7 @@ public class Character : MonoBehaviour {
     }
 
     // Update is called once per frame
-    protected void Update()
+    protected virtual void Update()
     {
         HealthCheck();
     }
@@ -58,10 +64,14 @@ public class Character : MonoBehaviour {
 
         if (HP <= 0)
         {
+            HP = 0;
             gameObject.layer = 13;
-            for (int i = 0; i < score*0.1+1; i++)
+            if (deathObj != null)
             {
-                Instantiate(deathObj, transform.position, new Quaternion());
+                for (int i = 0; i < score * 0.1 + 1; i++)
+                {
+                    Instantiate(deathObj, transform.position, new Quaternion());
+                }
             }
             Destroy(gameObject);
         }
@@ -71,11 +81,13 @@ public class Character : MonoBehaviour {
     {
         if (c.gameObject.layer == 8|| c.gameObject.layer == 9)//機体
         {
-            HP -= MAX_HP/10;
-            if (gameObject.layer == 9)
-            {
-                HP = 0;
-            }
+            HP -= MAX_HP/10*(int)c.GetComponent<Character>().powRate;
+            //transform.localScale *= 0.9f;
+            //speed *= 1.2f;
+            //if (gameObject.layer == 9)
+            //{
+            //    HP = 0;
+            //}
         }
         if (c.gameObject.layer == 10|| c.gameObject.layer == 11)//弾
         {
@@ -123,9 +135,15 @@ public class Character : MonoBehaviour {
             timer = 0;
             GameObject obj = Instantiate(Bullets[num], transform.position, Quaternion.Euler(0, 0, Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg));
             if (gameObject.layer == 8)
+            {
                 obj.gameObject.layer = 10;
+                obj.tag = "PlayerBullet";
+            }
             else if (gameObject.layer == 9)
+            {
                 obj.gameObject.layer = 11;
+                obj.tag = "EnemyBullet";
+            }
 
             Bullet b = obj.GetComponent<Bullet>();
 
@@ -160,9 +178,19 @@ public class Character : MonoBehaviour {
             GameObject obj = Instantiate(OptionBullet, transform.position, Quaternion.identity);
             obj.GetComponent<Bullet>().SetTarget(gameObject);
             if (gameObject.layer == 8)
+            {
                 obj.gameObject.layer = 10;
+                obj.tag = "PlayerBullet";
+            }
             else if (gameObject.layer == 9)
+            {
                 obj.gameObject.layer = 11;
+                obj.tag = "EnemyBullet";
+            }
         }
+    }
+    public void Paralysis(float s)
+    {
+        status = STATUS.PARALYSIS;
     }
 }

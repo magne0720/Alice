@@ -58,7 +58,7 @@ public class GameManager : MonoBehaviour
         }
         if (isPlay)
         {
-            if (playerStatus.HP <= 0||homeStatus.HP<=0)
+            if (playerStatus.HP <= 0 || homeStatus.HP <= 0)
             {
                 GameOver();
             }
@@ -81,10 +81,10 @@ public class GameManager : MonoBehaviour
                     WaveIntervalEnd();
                 }
             }
-        }
-        if (wave.isGameClear)
-        {
-            GameClear();
+            if (wave.isGameClear)
+            {
+                GameClear();
+            }
         }
     }
     public void GameStart()
@@ -126,6 +126,7 @@ public class GameManager : MonoBehaviour
         clear.SetActive(true);
         wave.WaveStop();
         wave.WaveResset();
+        result.StartDisp();
     }
 
     void WaveIntervalStart()

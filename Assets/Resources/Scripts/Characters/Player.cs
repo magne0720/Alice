@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : Character {
 
     Vector3 lastTarget;
-    public Vector3 shotTarget;
     bool isTouch;
 
     //玉射出の方向

@@ -450,7 +450,7 @@ MonoBehaviour:
   delayRate: 0
   currentBullet: 0
   Bullets:
-  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  - {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
@@ -475,7 +475,7 @@ MonoBehaviour:
   delayRate: 0
   currentBullet: 0
   Bullets:
-  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  - {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
@@ -500,7 +500,7 @@ MonoBehaviour:
   delayRate: 0
   currentBullet: 0
   Bullets:
-  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  - {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
@@ -525,7 +525,7 @@ MonoBehaviour:
   delayRate: 0
   currentBullet: 0
   Bullets:
-  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  - {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
@@ -550,7 +550,7 @@ MonoBehaviour:
   delayRate: 0
   currentBullet: 0
   Bullets:
-  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  - {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}

@@ -27,15 +27,15 @@ public class Enemy : Character {
     }
 
     // Update is called once per frame
-    void Update()
+    protected override void Update()
     {
-        transform.position += target * speed * Time.deltaTime;
+        //transform.position += target * speed * Time.deltaTime;
 
-        SetTarget(target);
+        SetTarget(shotTarget);
 
-        Shot(currentBullet);
+        Shot(currentBullet,shotTarget);
 
-        SetDirection();
+        //SetDirection();
 
         base.Update();
     }

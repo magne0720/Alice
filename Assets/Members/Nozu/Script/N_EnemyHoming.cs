@@ -39,6 +39,8 @@ public class N_EnemyHoming : Enemy {
         Homing();
 
         SetDirection();
+
+        Shot();
         
         base.Update();
     }

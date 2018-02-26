@@ -17,6 +17,7 @@ public class HPVer : MonoBehaviour {
 
         slider.maxValue = character.HP;
         HPbar();
+        transform.position = character.transform.position + new Vector3(0, 1, 0);
     }
 
     // Update is called once per frame
