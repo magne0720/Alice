@@ -102,8 +102,10 @@ MonoBehaviour:
   speed: 5
   pow: 5
   recoil: 1
+  ExplosionObj: {fileID: 0}
   EndObject: {fileID: 0}
-  Timer: 1
+  Timer: 2
+  Scale: 0
 --- !u!212 &212625332001318338
 SpriteRenderer:
   m_ObjectHideFlags: 1

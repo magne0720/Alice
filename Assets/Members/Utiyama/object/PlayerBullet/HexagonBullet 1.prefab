@@ -102,8 +102,10 @@ MonoBehaviour:
   speed: 5
   pow: 5
   recoil: 2
-  EndObject: {fileID: 1779760576169364, guid: c3ae613afc560c04abe0ad94e5904809, type: 2}
+  ExplosionObj: {fileID: 1013456442300624, guid: c3ae613afc560c04abe0ad94e5904809,
+    type: 2}
   Timer: 1
+  Scale: 1
 --- !u!212 &212802140918162272
 SpriteRenderer:
   m_ObjectHideFlags: 1
