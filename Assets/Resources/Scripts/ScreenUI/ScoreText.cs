@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class T_ScoreScript : MonoBehaviour {
+public class ScoreText : MonoBehaviour {
 
-    public T_VirtualCharactorScript tc;
+    public VirtualCharactor tc;
     public Text Score;
 
 	// Use this for initialization

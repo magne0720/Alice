@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class T_StatusButtonScript : MonoBehaviour
+public class StatusBar : MonoBehaviour
 {
 
-    public T_VirtualCharactorScript Char;
-    public T_PowerUpButtonScript PowerUp;
+    public VirtualCharactor Char;
+    public StatusUp PowerUp;
     public Slider slider;
     //public T_TouchScript Ray;
 

@@ -14,7 +14,6 @@ public class T_WaveScript : MonoBehaviour {
     void Start()
     {
 
-
     }
 	
 	// Update is called once per frame
@@ -25,11 +24,5 @@ public class T_WaveScript : MonoBehaviour {
 
             Wave.text = ("WAVE  ") + Wavecount.ToString();
         }
-
-       // Debug.Log(Wavecount);
 	}
-    void test()
-    {
-
-    }
 }

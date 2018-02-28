@@ -2,22 +2,32 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class T_SelectButtonScript : MonoBehaviour {
+public class EnhanceButton : MonoBehaviour {
 
-    public T_VirtualCharactorScript Vc;
+    public VirtualCharactor Vc;
+    public WeaponButton Wb;
     public Character Char; 
+    public Select select;
 
 		public enum Select
     {
-        Enhance,Restore
+        Enhance,Restore,Buy,Buck
     }
 
-    public Select select;
+    GameObject vir;
+    GameObject WeaponButton;
+    GameObject Chara;
 
 	// Use this for initialization
 	void Start () {
-
-	}
+        //オブジェクト参照
+        vir = GameObject.Find("virtual");
+        Vc = vir.GetComponent<VirtualCharactor>();
+        WeaponButton = GameObject.Find("aaa(Clone)");
+        Wb = WeaponButton.GetComponent<WeaponButton>();
+        Chara = GameObject.Find("honke");
+        Char = Chara.GetComponent<Character>();
+    }
 	
 	// Update is called once per frame
 	void Update () {

@@ -3,19 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class T_PowerUpButtonScript : MonoBehaviour {
+public class StatusUp: MonoBehaviour {
 
-    public T_VirtualCharactorScript Vc;
-    public Button HPButton;
-    public Button DelayButton;
-    public Button PowerButton;
+    public VirtualCharactor Vc;
+    public Button Button;
 
     //public T_TouchScript Ray;
     public enum WhichButton
     {
         HP,DelayRate,PowerRate
     }
-    public WhichButton Button;
+    public WhichButton Type;
    
 	// Use this for initialization
 	void Start () {
@@ -25,18 +23,18 @@ public class T_PowerUpButtonScript : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Vc.Vscore < 1000) HPButton.interactable = false;
-        else HPButton.interactable = true;
+        if (Vc.Vscore < 1000) Button.interactable = false;
+        else Button.interactable = true;
 
-        if (Vc.Vscore < 3000) DelayButton.interactable = false;
-        else DelayButton.interactable = true;
+        if (Vc.Vscore < 3000) Button.interactable = false;
+        else Button.interactable = true;
 
-        if (Vc.Vscore < 10000) PowerButton.interactable = false;
-        else PowerButton.interactable = true;
+        if (Vc.Vscore < 10000) Button.interactable = false;
+        else Button.interactable = true;
     }
     public void OnClick ()
     {
-        switch (Button) {
+        switch (Type) {
             case WhichButton.HP:
                 Vc.Vhp += 10;
                 Vc.Vscore -= 1000;

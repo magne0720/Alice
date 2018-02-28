@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class T_PauseScript : MonoBehaviour
+public class Pause : MonoBehaviour
 {
     public T_TouchScript Ray;
 
