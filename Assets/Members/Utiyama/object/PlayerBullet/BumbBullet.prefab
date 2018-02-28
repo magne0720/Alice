@@ -112,7 +112,7 @@ MonoBehaviour:
   recoil: 1
   ExplosionObj: {fileID: 1297319248099656, guid: fc90078034effa4469b55f170e0ac181,
     type: 2}
-  Area: 3
+  Area: 10
   DestroyTime: 2
 --- !u!212 &212666274214175706
 SpriteRenderer:

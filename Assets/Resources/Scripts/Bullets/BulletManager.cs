@@ -15,6 +15,7 @@ public class BulletManager : Bullet
     // Update is called once per frame
     void Update()
     {
+        /*
         int count = 0;
         foreach (GameObject g in Mother)
         {
@@ -25,7 +26,14 @@ public class BulletManager : Bullet
             count++;
             continue;
         }
-
+        */
+        for (int i = 0; i < Mother.Count; i++)
+        {
+            if (Mother[i] == null)
+            {
+                Mother.RemoveAt(i);
+            }
+        }
         if (Mother.Count == 0)
         {
             Destroy(gameObject);

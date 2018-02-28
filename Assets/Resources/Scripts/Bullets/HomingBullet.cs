@@ -101,12 +101,19 @@ public class HomingBullet : Bullet {
         /// 内側か外側か（右か左か）
         int _IOO = cross > 0 ? 1 : -1;
         ///
+        
         gameObject.transform.Rotate(0, 0, _IOO * _addAngle);
+        gameObject.GetComponent<Animator>().SetFloat("_IOO",_IOO);
+        gameObject.GetComponent<Animator>().SetBool("rotate", true);
         if (_Angle >= _Adjust)
         {
+            
+
         }
         else
         {
+            gameObject.GetComponent<Animator>().SetBool("rotate",false);
+           
             if (speed < MaxSpeed)
             {
                 speed += PulssSpeed;

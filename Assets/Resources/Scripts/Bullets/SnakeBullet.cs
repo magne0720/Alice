@@ -2,15 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SnakeBullet : MonoBehaviour {
+public class SnakeBullet : Bullet {
+    float times;
+    // Use this for initialization
+    void Start()
+    {
+        times += Time.deltaTime;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        transform.position += transform.TransformDirection(Vector3.right * Mathf.Sin(Time.time * 20f) * 10 * Time.deltaTime);
+
+    }
 }
