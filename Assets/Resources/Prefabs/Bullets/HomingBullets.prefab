@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4278909507196980}
   - component: {fileID: 212690998844687254}
+  - component: {fileID: 114176094101662484}
   - component: {fileID: 114291995398613946}
   - component: {fileID: 50566271897415916}
   - component: {fileID: 60630969293044990}
@@ -56,6 +57,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4958830939869462}
   - component: {fileID: 212705835820328774}
+  - component: {fileID: 114900954291054488}
   - component: {fileID: 114965427440238754}
   - component: {fileID: 50057214089306166}
   - component: {fileID: 60441608907900302}
@@ -75,6 +77,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4691710780320176}
   - component: {fileID: 212203246041438426}
+  - component: {fileID: 114539165105356830}
   - component: {fileID: 114961953788268308}
   - component: {fileID: 50356788664387904}
   - component: {fileID: 60843136446386360}
@@ -94,6 +97,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4383841667392986}
   - component: {fileID: 212610103446045326}
+  - component: {fileID: 114996810542591506}
   - component: {fileID: 114836246332512326}
   - component: {fileID: 50993197193365246}
   - component: {fileID: 60892189381819694}
@@ -113,6 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4000649063909924}
   - component: {fileID: 212193008115634426}
+  - component: {fileID: 114733290724021738}
   - component: {fileID: 114092536789693786}
   - component: {fileID: 50177441611354524}
   - component: {fileID: 60871388348045542}
@@ -132,6 +137,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4761413083701138}
   - component: {fileID: 212155236734963344}
+  - component: {fileID: 114843958055605720}
   - component: {fileID: 114576903771774190}
   - component: {fileID: 50542312151247892}
   - component: {fileID: 60208527191424722}
@@ -573,6 +579,26 @@ MonoBehaviour:
   LowSpeed: 1
   MaxSpeed: 12
   PulssSpeed: 0.2
+--- !u!114 &114176094101662484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1102674552583398}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847ed5b568e11af468d4ab589d36e37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  pow: 0
+  recoil: 0
+  ExplosionObj: {fileID: 0}
+  RootSpeed: 0
+  _Adjust: 0
+  LowSpeed: 0
+  MaxSpeed: 0
+  PulssSpeed: 0
 --- !u!114 &114291995398613946
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -593,6 +619,26 @@ MonoBehaviour:
   LowSpeed: 1
   MaxSpeed: 12
   PulssSpeed: 0.2
+--- !u!114 &114539165105356830
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1640883491406964}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847ed5b568e11af468d4ab589d36e37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  pow: 0
+  recoil: 0
+  ExplosionObj: {fileID: 0}
+  RootSpeed: 0
+  _Adjust: 0
+  LowSpeed: 0
+  MaxSpeed: 0
+  PulssSpeed: 0
 --- !u!114 &114576903771774190
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -613,6 +659,26 @@ MonoBehaviour:
   LowSpeed: -6.1
   MaxSpeed: 5.68
   PulssSpeed: 0.2
+--- !u!114 &114733290724021738
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1843513912772128}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847ed5b568e11af468d4ab589d36e37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  pow: 0
+  recoil: 0
+  ExplosionObj: {fileID: 0}
+  RootSpeed: 0
+  _Adjust: 0
+  LowSpeed: 0
+  MaxSpeed: 0
+  PulssSpeed: 0
 --- !u!114 &114836246332512326
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -633,6 +699,26 @@ MonoBehaviour:
   LowSpeed: -6.1
   MaxSpeed: 5.68
   PulssSpeed: 0.2
+--- !u!114 &114843958055605720
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1999101708788380}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847ed5b568e11af468d4ab589d36e37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  pow: 0
+  recoil: 0
+  ExplosionObj: {fileID: 0}
+  RootSpeed: 0
+  _Adjust: 0
+  LowSpeed: 0
+  MaxSpeed: 0
+  PulssSpeed: 0
 --- !u!114 &114852932664396492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -649,6 +735,26 @@ MonoBehaviour:
   recoil: 2
   ExplosionObj: {fileID: 0}
   Mother: []
+--- !u!114 &114900954291054488
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1590579638477976}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847ed5b568e11af468d4ab589d36e37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  pow: 0
+  recoil: 0
+  ExplosionObj: {fileID: 0}
+  RootSpeed: 0
+  _Adjust: 0
+  LowSpeed: 0
+  MaxSpeed: 0
+  PulssSpeed: 0
 --- !u!114 &114961953788268308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -689,6 +795,26 @@ MonoBehaviour:
   LowSpeed: 1
   MaxSpeed: 12
   PulssSpeed: 0.2
+--- !u!114 &114996810542591506
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1751497257077510}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 847ed5b568e11af468d4ab589d36e37c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  pow: 0
+  recoil: 0
+  ExplosionObj: {fileID: 0}
+  RootSpeed: 0
+  _Adjust: 0
+  LowSpeed: 0
+  MaxSpeed: 0
+  PulssSpeed: 0
 --- !u!212 &212155236734963344
 SpriteRenderer:
   m_ObjectHideFlags: 1

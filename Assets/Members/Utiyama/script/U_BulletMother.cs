@@ -14,8 +14,8 @@ public class U_BulletMother : Bullet {
 
 	// Update is called once per frame
 	void Update () {
-        int count = 0;
-        /*foreach(GameObject g in Mother)
+        /*int count = 0;
+        foreach(GameObject g in Mother)
         {
             if (g == null)
             {

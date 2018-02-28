@@ -6,6 +6,7 @@ public class U_HexagonBullet : MonoBehaviour {
     public GameObject Bullets;
     float time;
     public float DesTime;
+
 	// Use this for initialization
 	void Start () {
         time = 0;
@@ -19,11 +20,13 @@ public class U_HexagonBullet : MonoBehaviour {
         if (time > 0.2)
         {
             CreateBulet(0f);
-            CreateBulet(60f);
-            CreateBulet(120f);
+            CreateBulet(45f);
+            CreateBulet(90f);
+            CreateBulet(135f);
             CreateBulet(180f);
-            CreateBulet(240f);
-            CreateBulet(300f);
+            CreateBulet(225f);
+            CreateBulet(270f);
+            CreateBulet(315f);
             time = 0;
         }
     }
