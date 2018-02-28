@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Enemy : Character {
 
+    public int enemtype;
+
     public void Initialize()
     {
+        LoadData(enemtype);
         base.Start();
 
         gameObject.layer = 9;//Enemy
@@ -18,10 +21,12 @@ public class Enemy : Character {
         }
         currentBullet = 0;
         rigidbody2D = GetComponent<Rigidbody2D>();
+
+        SetHPVer();
     }
 
     // Use this for initialization
-    void Start()
+    public virtual void Start()
     {
         Initialize();
     }
@@ -42,5 +47,36 @@ public class Enemy : Character {
     public void SetTarget(Vector3 t)
     {
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(-t.x, t.y) * Mathf.Rad2Deg);
+    }
+    protected void InitData(int num=0)
+    {
+        LoadData(num);
+    }
+    void SetData(int hp,float sp,int sc)
+    {
+        HP = hp;
+        speed = sp;
+        score = sc;
+    }
+    void LoadData(int num)
+    {
+        string temp = Resources.Load("EnemyData_"+num, typeof(TextAsset)).ToString();
+        int count = 0;
+        //行分け
+        string[] lineText = temp.Split('\n');
+        foreach (string line in lineText)
+            if (line.StartsWith("#"))
+            {
+                //コメントアウトの部分なので何もしない
+            }
+            else
+            {
+                //タブ区切り(.CSV) 
+                string[] dataText = line.Split(',');
+                HP = int.Parse(dataText[0]);
+                speed = float.Parse(dataText[1]);
+                score = int.Parse(dataText[2]);
+                count++;
+            }
     }
 }

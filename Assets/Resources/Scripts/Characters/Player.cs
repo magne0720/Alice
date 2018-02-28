@@ -56,7 +56,7 @@ public class Player : Character {
         //最初のタッチ位置
         if (Input.GetMouseButtonDown(0))
         {
-            mouseStartPosition = mouseDragPosition = Input.mousePosition;
+            mouseStartPosition = mouseDragPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             isTouch = true;
         }
         if (Input.GetMouseButtonUp(0))
@@ -67,7 +67,12 @@ public class Player : Character {
         //ドラッグしてる間
         if (isTouch)
         {
-            mouseDragPosition = Input.mousePosition;
+            mouseDragPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+
+        if (Math.Length(mouseDragPosition - mouseStartPosition) > 2.0f)
+        {
+            mouseStartPosition += (mouseDragPosition-mouseStartPosition).normalized * 0.6f;
         }
         Vector3 shotPos = mouseDragPosition - mouseStartPosition;
 
@@ -103,6 +108,7 @@ public class Player : Character {
         if (Input.GetMouseButtonDown(1))
         {
             ChangeEquip(currentBullet+1);
+            timer = 100;
         }
     }
 

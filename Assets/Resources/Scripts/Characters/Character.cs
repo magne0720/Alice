@@ -8,11 +8,11 @@ public class Character : MonoBehaviour {
     public int HP;//体力
     public float speed;//速度
     public int score;//スコア
-    public float delay;//反動(次の弾が出るまでの時間)
-    public bool canShot;//弾を撃つかどうか
+    protected float delay;//反動(次の弾が出るまでの時間)
+    protected bool canShot;//弾を撃つかどうか
     public float powRate;//攻撃倍率
     public float delayRate;//反動軽減率
-    public int currentBullet;//選択中の弾番号
+    protected int currentBullet;//選択中の弾番号
     public GameObject[] Bullets;//射出する弾
     public GameObject OptionBullet;//option
     public GameObject deathObj;//死んだときに出す弾
@@ -38,11 +38,9 @@ public class Character : MonoBehaviour {
     {
         GetComponent<Rigidbody2D>().gravityScale = 0;
 
-        if (hpVerObj != null)
+        if (HP <= 0)
         {
-            GameObject g = Instantiate(hpVerObj)as GameObject;
-            g.name = transform.name + "HPver";
-            g.GetComponent<HPVer>().SetCharacter(this);
+            HP = 1;
         }
         MAX_HP = HP;
 
@@ -81,7 +79,7 @@ public class Character : MonoBehaviour {
     {
         if (c.gameObject.layer == 8|| c.gameObject.layer == 9)//機体
         {
-            HP -= MAX_HP/10*(int)c.GetComponent<Character>().powRate;
+            HP -= MAX_HP/10;
             //transform.localScale *= 0.9f;
             //speed *= 1.2f;
             //if (gameObject.layer == 9)
@@ -126,6 +124,11 @@ public class Character : MonoBehaviour {
         if (num >= Bullets.Length)
         {
             Debug.Log("Shot-OverNumver");
+            return;
+        }
+        if (Bullets[num] == null)
+        {
+            Debug.Log("notSettingBullet!!");
             return;
         }
 
@@ -192,5 +195,15 @@ public class Character : MonoBehaviour {
     public void Paralysis(float s)
     {
         status = STATUS.PARALYSIS;
+    }
+    protected void SetHPVer()
+    {
+        if (hpVerObj != null)
+        {
+            GameObject g = Instantiate(Resources.Load("Prefabs/HPVer") as GameObject);
+            // GameObject g = Instantiate(hpVerObj)as GameObject;
+            g.gameObject.name = transform.name + "HPver";
+            g.GetComponent<HPVer>().SetCharacter(this);
+        }
     }
 }
