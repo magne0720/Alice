@@ -36,8 +36,6 @@ public class Enemy : Character {
     {
         //transform.position += target * speed * Time.deltaTime;
 
-        SetTarget(shotTarget);
-
         Shot(currentBullet,shotTarget);
 
         //SetDirection();
@@ -46,6 +44,7 @@ public class Enemy : Character {
     }
     public void SetTarget(Vector3 t)
     {
+        shotTarget = t;
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(-t.x, t.y) * Mathf.Rad2Deg);
     }
     protected void InitData(int num=0)

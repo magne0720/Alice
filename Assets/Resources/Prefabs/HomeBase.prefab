@@ -106,7 +106,7 @@ MonoBehaviour:
   powRate: 2
   delayRate: 0.5
   Bullets:
-  - {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db, type: 2}
+  - {fileID: 1848022471498706, guid: 3fea88137e63f4c4fb25d512112dfc39, type: 2}
   - {fileID: 1815548566182736, guid: c7976942cc0f7ba4c91b7d670e401c83, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 0}
