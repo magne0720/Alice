@@ -5,18 +5,15 @@ using UnityEngine.UI;
 public class ContentDispacher : MonoBehaviour
 {
 
-    public GameObject objs;
     public int TypeNum;
     public enum ShotType
     { 
-        Straight, Homing,Special
+        Straight, Homing, Special
     }
     public ShotType shotType;
 
     void Start()
     {
-
-
         LoadData(GetName(shotType) + "BulletData");
     }
     void LoadData(string path)
@@ -36,11 +33,11 @@ public class ContentDispacher : MonoBehaviour
                 //カンマ区切り(.CSV) 
                 string[] dataText = line.Split(',');
                 GameObject item = Instantiate(Resources.Load("Prefabs/MenuItem") as GameObject);
-                T_test tt = item.GetComponent<T_test>();
+                WeaponButton Wb = item.GetComponent<WeaponButton>();
 
-                tt.obj = Resources.Load("Prefabs/" + dataText[0]) as GameObject;
-                tt.BulletMoney = int.Parse(dataText[1]);
-                tt.SelectNum = (int)shotType;
+                Wb.obj = Resources.Load("Prefabs/" + dataText[0]) as GameObject;
+                Wb.BulletMoney = int.Parse(dataText[1]);
+                Wb.SelectNum = (int)shotType;
                 item.transform.SetParent(content, false);
             }
     }

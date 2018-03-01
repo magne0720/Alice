@@ -53,7 +53,7 @@ public class T_test : MonoBehaviour {
             {
                 instanceUI = GameObject.Instantiate(enhanceUI) as GameObject;
                 SelectButton Ts = instanceUI.GetComponent<SelectButton>();
-                Ts.Vc = Vc;
+                //Ts.Vc = Vc;
                 //Ts = this;
             }
         }
