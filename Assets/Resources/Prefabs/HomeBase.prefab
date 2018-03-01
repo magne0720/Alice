@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 61974241373938038}
   m_Layer: 0
   m_Name: HomeBase
-  m_TagString: Untagged
+  m_TagString: HomeBase
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -103,15 +103,13 @@ MonoBehaviour:
   HP: 20000
   speed: 0
   score: 0
-  delay: 0
-  canShot: 0
   powRate: 2
   delayRate: 0.5
-  currentBullet: 0
   Bullets:
+  - {fileID: 1848022471498706, guid: 3fea88137e63f4c4fb25d512112dfc39, type: 2}
   - {fileID: 1815548566182736, guid: c7976942cc0f7ba4c91b7d670e401c83, type: 2}
-  - {fileID: 1815548566182736, guid: c7976942cc0f7ba4c91b7d670e401c83, type: 2}
-  deathObj: {fileID: 1970735319846110, guid: 1645ed0e17124284d862d63b496866cf, type: 2}
+  OptionBullet: {fileID: 0}
+  deathObj: {fileID: 0}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
 --- !u!212 &212479090267040608
 SpriteRenderer:

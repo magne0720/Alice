@@ -52,12 +52,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98969c2963d2bcd48ba2c328983b0982, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MAX_HP: 0
   HP: 100
   speed: 0
   score: 0
   delay: 0.2
   canShot: 1
-  bullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
+  powRate: 0
+  delayRate: 0
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa, type: 2}
+  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   moves:

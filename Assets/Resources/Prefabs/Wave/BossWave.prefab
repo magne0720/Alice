@@ -138,7 +138,7 @@ MonoBehaviour:
   delayRate: 0
   currentBullet: 0
   Bullets:
-  - {fileID: 1476261230980904, guid: e170668c666899949bbcbbcfca9044c6, type: 2}
+  - {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa, type: 2}
   - {fileID: 0}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 1970735319846110, guid: 1645ed0e17124284d862d63b496866cf, type: 2}

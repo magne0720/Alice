@@ -8,19 +8,25 @@ public class Character : MonoBehaviour {
     public int HP;//体力
     public float speed;//速度
     public int score;//スコア
-    public float delay;//反動(次の弾が出るまでの時間)
-    public bool canShot;//弾を撃つかどうか
+    protected float delay;//反動(次の弾が出るまでの時間)
+    protected bool canShot;//弾を撃つかどうか
     public float powRate;//攻撃倍率
     public float delayRate;//反動軽減率
-    public int currentBullet;//選択中の弾番号
+    protected int currentBullet;//選択中の弾番号
     public GameObject[] Bullets;//射出する弾
     public GameObject OptionBullet;//option
     public GameObject deathObj;//死んだときに出す弾
     public GameObject hpVerObj;  //HPバー
 
     protected Vector3 target;
+    protected Vector3 shotTarget;
     protected float timer;
     protected Rigidbody2D rigidbody2D = null;
+    protected enum STATUS
+    {
+        NORMAL, PARALYSIS,POISON
+    }
+    protected STATUS status;
 
     /// 移動角度
     public float Direction
@@ -32,11 +38,9 @@ public class Character : MonoBehaviour {
     {
         GetComponent<Rigidbody2D>().gravityScale = 0;
 
-        if (hpVerObj != null)
+        if (HP <= 0)
         {
-            GameObject g = Instantiate(hpVerObj)as GameObject;
-            g.name = transform.name + "HPver";
-            g.GetComponent<HPVer>().SetCharacter(this);
+            HP = 1;
         }
         MAX_HP = HP;
 
@@ -44,7 +48,7 @@ public class Character : MonoBehaviour {
     }
 
     // Update is called once per frame
-    protected void Update()
+    protected virtual void Update()
     {
         HealthCheck();
     }
@@ -58,10 +62,14 @@ public class Character : MonoBehaviour {
 
         if (HP <= 0)
         {
+            HP = 0;
             gameObject.layer = 13;
-            for (int i = 0; i < score*0.1+1; i++)
+            if (deathObj != null)
             {
-                Instantiate(deathObj, transform.position, new Quaternion());
+                for (int i = 0; i < score * 0.1 + 1; i++)
+                {
+                    Instantiate(deathObj, transform.position, new Quaternion());
+                }
             }
             Destroy(gameObject);
         }
@@ -72,10 +80,12 @@ public class Character : MonoBehaviour {
         if (c.gameObject.layer == 8|| c.gameObject.layer == 9)//機体
         {
             HP -= MAX_HP/10;
-            if (gameObject.layer == 9)
-            {
-                HP = 0;
-            }
+            //transform.localScale *= 0.9f;
+            //speed *= 1.2f;
+            //if (gameObject.layer == 9)
+            //{
+            //    HP = 0;
+            //}
         }
         if (c.gameObject.layer == 10|| c.gameObject.layer == 11)//弾
         {
@@ -116,6 +126,11 @@ public class Character : MonoBehaviour {
             Debug.Log("Shot-OverNumver");
             return;
         }
+        if (Bullets[num] == null)
+        {
+            Debug.Log("notSettingBullet!!");
+            return;
+        }
 
         timer += Time.deltaTime;
         if (timer >= delay && canShot)
@@ -123,9 +138,15 @@ public class Character : MonoBehaviour {
             timer = 0;
             GameObject obj = Instantiate(Bullets[num], transform.position, Quaternion.Euler(0, 0, Mathf.Atan2(-dir.x, dir.y) * Mathf.Rad2Deg));
             if (gameObject.layer == 8)
+            {
                 obj.gameObject.layer = 10;
+                obj.tag = "PlayerBullet";
+            }
             else if (gameObject.layer == 9)
+            {
                 obj.gameObject.layer = 11;
+                obj.tag = "EnemyBullet";
+            }
 
             Bullet b = obj.GetComponent<Bullet>();
 
@@ -160,9 +181,29 @@ public class Character : MonoBehaviour {
             GameObject obj = Instantiate(OptionBullet, transform.position, Quaternion.identity);
             obj.GetComponent<Bullet>().SetTarget(gameObject);
             if (gameObject.layer == 8)
+            {
                 obj.gameObject.layer = 10;
+                obj.tag = "PlayerBullet";
+            }
             else if (gameObject.layer == 9)
+            {
                 obj.gameObject.layer = 11;
+                obj.tag = "EnemyBullet";
+            }
+        }
+    }
+    public void Paralysis(float s)
+    {
+        status = STATUS.PARALYSIS;
+    }
+    protected void SetHPVer()
+    {
+        if (hpVerObj != null)
+        {
+            GameObject g = Instantiate(Resources.Load("Prefabs/HPVer") as GameObject);
+            // GameObject g = Instantiate(hpVerObj)as GameObject;
+            g.gameObject.name = transform.name + "HPver";
+            g.GetComponent<HPVer>().SetCharacter(this);
         }
     }
 }

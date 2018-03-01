@@ -3,17 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class U_BombBullet : Bullet {
-    public GameObject BombDestroy;
     public float Area;
     public float DestroyTime;
+    float time;
 	// Use this for initialization
 	void Start () {
-        Destroy(gameObject,DestroyTime);
+        
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        time += Time.deltaTime;
+        if (time > DestroyTime)
+        {
+            Destroy(gameObject);
+            ExplosionObj.transform.localScale = new Vector3(Area, Area, 0);
+            Explosion();
+        }
         transform.position += transform.up * speed * Time.deltaTime;
         
 	}
@@ -38,11 +44,10 @@ public class U_BombBullet : Bullet {
     {
         if (c.gameObject.layer == 9||c.gameObject.layer==11)
         {
-            searchArea(gameObject, "Enemy", Area);
-            BombDestroy.transform.localScale = new Vector3(Area,Area,0);
-            BombDestroy.transform.position = gameObject.transform.position;
-            Instantiate(BombDestroy);
+            ExplosionObj.transform.localScale = new Vector3(Area,Area,0);
+            Explosion();
         }
+        
         base.OnTriggerEnter2D(c);
     }
 }

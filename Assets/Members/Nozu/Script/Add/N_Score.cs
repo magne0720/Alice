@@ -23,7 +23,7 @@ public class N_Score : MonoBehaviour {
         }
         else
         {
-            speed += Time.deltaTime;
+            speed += Time.deltaTime*10.0f;
             Vector3 move = (targetObj.transform.position - transform.position).normalized;
             transform.position += move * speed * Time.deltaTime;
         }

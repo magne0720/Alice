@@ -289,11 +289,15 @@ MonoBehaviour:
   speed: 2
   score: 1
   delay: 0
-  canShot: 0
-  powRate: 0
+  canShot: 1
+  powRate: 3
   delayRate: 0
-  bullet: {fileID: 1970735319846110, guid: 1645ed0e17124284d862d63b496866cf, type: 2}
-  deathObj: {fileID: 1970735319846110, guid: 1645ed0e17124284d862d63b496866cf, type: 2}
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a, type: 2}
+  OptionBullet: {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa,
+    type: 2}
+  deathObj: {fileID: 1240498403806374, guid: c1c72f58643e39547a91fe57ef4cb2e1, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
 --- !u!114 &114211216932385292
 MonoBehaviour:
@@ -311,11 +315,15 @@ MonoBehaviour:
   speed: 2
   score: 1
   delay: 0
-  canShot: 0
-  powRate: 0
+  canShot: 1
+  powRate: 3
   delayRate: 0
-  bullet: {fileID: 1970735319846110, guid: 1645ed0e17124284d862d63b496866cf, type: 2}
-  deathObj: {fileID: 1970735319846110, guid: 1645ed0e17124284d862d63b496866cf, type: 2}
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a, type: 2}
+  OptionBullet: {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa,
+    type: 2}
+  deathObj: {fileID: 1240498403806374, guid: c1c72f58643e39547a91fe57ef4cb2e1, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
 --- !u!114 &114347427468856994
 MonoBehaviour:
@@ -333,11 +341,15 @@ MonoBehaviour:
   speed: 2
   score: 1
   delay: 0
-  canShot: 0
-  powRate: 0
+  canShot: 1
+  powRate: 3
   delayRate: 0
-  bullet: {fileID: 1970735319846110, guid: 1645ed0e17124284d862d63b496866cf, type: 2}
-  deathObj: {fileID: 1970735319846110, guid: 1645ed0e17124284d862d63b496866cf, type: 2}
+  currentBullet: 0
+  Bullets:
+  - {fileID: 1588381677731438, guid: 96a42ac36bfb87f4ba684015878c6e0a, type: 2}
+  OptionBullet: {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa,
+    type: 2}
+  deathObj: {fileID: 1240498403806374, guid: c1c72f58643e39547a91fe57ef4cb2e1, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
 --- !u!212 &212189842252927484
 SpriteRenderer:

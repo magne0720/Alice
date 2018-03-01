@@ -14,7 +14,7 @@ public class U_BulletMother : Bullet {
 
 	// Update is called once per frame
 	void Update () {
-        int count = 0;
+        /*int count = 0;
         foreach(GameObject g in Mother)
         {
             if (g == null)
@@ -23,7 +23,14 @@ public class U_BulletMother : Bullet {
             }
             count++;
         }
-
+        */
+        for(int i = 0; i < Mother.Count; i++)
+        {
+            if (Mother[i] == null)
+            {
+                Mother.RemoveAt(i);
+            }
+        }
         if (Mother.Count==0)
         {
             Destroy(gameObject);

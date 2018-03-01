@@ -30,12 +30,12 @@ public class N_Result : MonoBehaviour
             if (timer >= 0.4f)
             {
                 timer = 0;
-                objs[count++].GetComponent<N_ResultItem>().StartAnimation();
-
                 if (count >= objs.Length)
                 {
-                    isPlay = false;
+                    StopDisp();
+                    return;
                 }
+                objs[count++].GetComponent<N_ResultItem>().StartAnimation();
             }
         }
     }
