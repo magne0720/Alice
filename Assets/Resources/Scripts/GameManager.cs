@@ -33,6 +33,7 @@ public class GameManager : MonoBehaviour
     //プレイ中かどうか
     public bool isPlay;
 
+    public static int KilledValue;
 
     // Use this for initialization
     void Start()
@@ -101,7 +102,8 @@ public class GameManager : MonoBehaviour
 
         homebaseObj = Instantiate(homebase, new Vector3(0, -5, 0), new Quaternion());
         homeStatus = homebaseObj.GetComponent<HomeBase>();
-        
+
+        KilledValue = 0;
 
         wave.WaveStart();
         result.StopDisp();
@@ -116,6 +118,7 @@ public class GameManager : MonoBehaviour
     {
         isPlay = false;
         title.SetActive(true);
+        
         wave.WaveStop();
         wave.WaveResset();
         result.StartDisp();

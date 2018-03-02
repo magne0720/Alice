@@ -16,7 +16,7 @@ public class N_ResultItem : MonoBehaviour {
 
     public enum RESULT_TYPE
     {
-        NONE,   SCORE,TIME,HOME
+        NONE,   SCORE,KILL,HOME
     }
     public RESULT_TYPE type;
     // Use this for initialization
@@ -87,8 +87,8 @@ public class N_ResultItem : MonoBehaviour {
             case RESULT_TYPE.SCORE:
                 value = GameManager.playerStatus.score;
                 break;
-            case RESULT_TYPE.TIME:
-                value = 99;
+            case RESULT_TYPE.KILL:
+                value = GameManager.KilledValue;
                 break;
             case RESULT_TYPE.HOME:
                 break;

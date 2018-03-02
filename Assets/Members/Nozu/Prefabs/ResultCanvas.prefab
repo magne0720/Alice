@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 222812843435231618}
   - component: {fileID: 114231628779342646}
   m_Layer: 5
-  m_Name: TimeText
+  m_Name: KillText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,7 +164,7 @@ GameObject:
   - component: {fileID: 114222104938969464}
   - component: {fileID: 114344352715861034}
   m_Layer: 5
-  m_Name: TimeImage
+  m_Name: KillImage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 222671029023205358}
   - component: {fileID: 114540677437102602}
   m_Layer: 5
-  m_Name: TimeLabel
+  m_Name: KillLabel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -282,8 +282,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594ccd7f725d3c14bbd329d8ebb0f177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScriptObj: {fileID: 0}
+  label: {fileID: 0}
   speed: 2
   startDelay: 1.5
+  type: 1
 --- !u!114 &114222104938969464
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -404,8 +407,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594ccd7f725d3c14bbd329d8ebb0f177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScriptObj: {fileID: 0}
+  label: {fileID: 114231628779342646}
   speed: 1
   startDelay: 0
+  type: 2
 --- !u!114 &114386639868461664
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -564,8 +570,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594ccd7f725d3c14bbd329d8ebb0f177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScriptObj: {fileID: 0}
+  label: {fileID: 0}
   speed: 1
   startDelay: 0
+  type: 3
 --- !u!114 &114750014302722938
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -604,8 +613,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 594ccd7f725d3c14bbd329d8ebb0f177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ScriptObj: {fileID: 0}
+  label: {fileID: 114429129502557598}
   speed: 1
   startDelay: 0
+  type: 1
 --- !u!114 &114779433617887766
 MonoBehaviour:
   m_ObjectHideFlags: 1

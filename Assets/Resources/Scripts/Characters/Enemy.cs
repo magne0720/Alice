@@ -40,6 +40,11 @@ public class Enemy : Character {
 
         //SetDirection();
 
+        if (HP <= 0)
+        {
+            GameManager.KilledValue++;
+        }
+
         base.Update();
     }
     public void SetTarget(Vector3 t)

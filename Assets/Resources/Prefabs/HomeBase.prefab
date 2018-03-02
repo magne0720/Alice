@@ -104,9 +104,9 @@ MonoBehaviour:
   speed: 0
   score: 0
   powRate: 2
-  delayRate: 0.5
+  delayRate: 0
   Bullets:
-  - {fileID: 1848022471498706, guid: 3fea88137e63f4c4fb25d512112dfc39, type: 2}
+  - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   - {fileID: 1815548566182736, guid: c7976942cc0f7ba4c91b7d670e401c83, type: 2}
   OptionBullet: {fileID: 0}
   deathObj: {fileID: 0}
