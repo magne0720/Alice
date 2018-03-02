@@ -9,7 +9,6 @@ public class T_TouchScript : MonoBehaviour {
     public Ray ray;
     public RaycastHit2D hit;
     public int layerMask;
-    public GameObject firstobj;
 
     // Use this for initialization
     void Start () {
@@ -21,8 +20,6 @@ public class T_TouchScript : MonoBehaviour {
 
 
         hit = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction, distance, layerMask);
-
-        hit.collider.gameObject.name = firstobj.name;
 		
 	}
     void Update()
