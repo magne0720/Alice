@@ -39,9 +39,9 @@ GameObject:
   - component: {fileID: 222022122116119018}
   - component: {fileID: 114834479702335684}
   - component: {fileID: 114888000925559748}
-  - component: {fileID: 114859269505853412}
+  - component: {fileID: 114783765028619594}
   m_Layer: 14
-  m_Name: Button (1)
+  m_Name: CancelButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,9 +109,9 @@ GameObject:
   - component: {fileID: 222090196339290264}
   - component: {fileID: 114487952380570124}
   - component: {fileID: 114700009359426126}
-  - component: {fileID: 114142281772998078}
+  - component: {fileID: 114944290548472370}
   m_Layer: 14
-  m_Name: Button
+  m_Name: OKButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -145,6 +145,7 @@ GameObject:
   - component: {fileID: 223135446962126938}
   - component: {fileID: 114036951309125866}
   - component: {fileID: 114094902922262250}
+  - component: {fileID: 114772578845043266}
   m_Layer: 14
   m_Name: CheckScreen
   m_TagString: Untagged
@@ -249,21 +250,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "\u623B\u308B"
---- !u!114 &114142281772998078
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1729916122276478}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bda44928e709641992686884a5f3fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Vc: {fileID: 0}
-  Tt: {fileID: 0}
-  Char: {fileID: 0}
-  select: 2
 --- !u!114 &114277127226847978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -396,8 +382,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114142281772998078}
-        m_MethodName: Onclick
+      - m_Target: {fileID: 114944290548472370}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -409,6 +395,34 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114772578845043266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1934460360701386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb6fde4ccb6812643938efc239189d49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  obj: {fileID: 0}
+  OKButton: {fileID: 114944290548472370}
+  CancelButton: {fileID: 114783765028619594}
+  isAccept: 0
+--- !u!114 &114783765028619594
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1254459385606414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b126ceb318261bd45a3a262184b3e2b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  select: 1
+  flg: 0
 --- !u!114 &114834479702335684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -436,21 +450,6 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
---- !u!114 &114859269505853412
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1254459385606414}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00bda44928e709641992686884a5f3fa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Vc: {fileID: 0}
-  Tt: {fileID: 0}
-  Char: {fileID: 0}
-  select: 3
 --- !u!114 &114888000925559748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -490,8 +489,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 114859269505853412}
-        m_MethodName: Onclick
+      - m_Target: {fileID: 114783765028619594}
+        m_MethodName: OnClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -503,6 +502,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &114944290548472370
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1729916122276478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b126ceb318261bd45a3a262184b3e2b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  select: 0
+  flg: 0
 --- !u!114 &114950650349802908
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -637,7 +649,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1913125027562838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -41.9, z: 0}
+  m_LocalPosition: {x: 0, y: -30.8, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 224797102444158452}
@@ -645,8 +657,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -41.9}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 0, y: -30.8}
+  m_SizeDelta: {x: 160, y: 18.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &224310743278088500
 RectTransform:

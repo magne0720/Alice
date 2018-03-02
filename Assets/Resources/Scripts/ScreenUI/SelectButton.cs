@@ -3,21 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SelectButton : MonoBehaviour {
-
-    public VirtualCharactor Vc;
-
+    
     public enum Select
         {
             OK,
-            BACK
+            CANCEL
         }
-
+    
     public Select select;
+
+    public bool flg;
 
     // Use this for initialization
     void Start () {
-	        
-        
+
+        flg = false;
         	
 	}
 	
@@ -27,14 +27,6 @@ public class SelectButton : MonoBehaviour {
 	}
     public void OnClick()
     {
-        switch(select)
-        {
-            case Select.OK:
-
-                break;
-            case Select.BACK:
-
-                break;
-        }
+        flg = true;
     }
 }

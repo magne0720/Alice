@@ -5,7 +5,6 @@ using UnityEngine;
 public class EnhanceButton : MonoBehaviour {
 
     public VirtualCharactor Vc;
-    public WeaponButton Wb;
     public Character Char; 
     public Select select;
 
@@ -23,8 +22,6 @@ public class EnhanceButton : MonoBehaviour {
         //オブジェクト参照
         vir = GameObject.Find("virtual");
         Vc = vir.GetComponent<VirtualCharactor>();
-        WeaponButton = GameObject.Find("aaa(Clone)");
-        Wb = WeaponButton.GetComponent<WeaponButton>();
         Chara = GameObject.Find("honke");
         Char = Chara.GetComponent<Character>();
     }
@@ -50,6 +47,7 @@ public class EnhanceButton : MonoBehaviour {
                 Vc.Vpowrate = Char.powRate;
                 Vc.Vdelayrate = Char.delayRate;
                 Vc.Vscore = Char.score;
+                Vc.VBullets = Char.Bullets;
                 break;
         }
     }
