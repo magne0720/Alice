@@ -41,7 +41,7 @@ public class ShotTargetUI : MonoBehaviour {
             isTouch = true;
             mouseStartPosition =mouseMovePosition= Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            baseObj.transform.position = mouseStartPosition;
+            baseObj.transform.position =arrowObj.transform.position= mouseStartPosition;
             baseObj.SetActive(true);
             arrowObj.SetActive(true);
         }
@@ -57,10 +57,14 @@ public class ShotTargetUI : MonoBehaviour {
 
             arrowObj.transform.position = mouseMovePosition;
 
-            if (Math.Length(baseObj.transform.position - arrowObj.transform.position) > 2.0f)
+            Vector3 pos = baseObj.transform.position - arrowObj.transform.position;
+            Vector3 pos2 = arrowObj.transform.position - baseObj.transform.position;
+
+            if (Math.Length(pos) > 2.0f)
             {
-                baseObj.transform.position += (arrowObj.transform.position - baseObj.transform.position).normalized * 0.6f;
+                baseObj.transform.position -= pos.normalized * 0.6f;
             }
+            arrowObj.transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(-pos2.x, pos2.y) * Mathf.Rad2Deg);
         }
 	}
 }

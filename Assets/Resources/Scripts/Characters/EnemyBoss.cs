@@ -48,9 +48,8 @@ public class EnemyBoss : Enemy {
         }
         Vector2 pos = moveTimer/moveCounts[currentCount] * beforePos + (1 - moveTimer/moveCounts[currentCount]) * afterPos;
         //target =   (Vector3)pos- transform.position;
-        shotTarget = attacks[currentCount];
-
-        //SetTarget(attacks[currentCount]);
+        
+        SetTarget(attacks[currentCount]);
 
         transform.position = pos;
         

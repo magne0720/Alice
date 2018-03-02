@@ -79,7 +79,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 1.5, y: 1.5}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -103,11 +103,8 @@ MonoBehaviour:
   HP: 5000
   speed: 4
   score: 0
-  delay: 0.01
-  canShot: 0
   powRate: 12
   delayRate: 0.5
-  currentBullet: 2
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
   - {fileID: 1352619544224666, guid: 4b42bae0eb19016479c672adccf683aa, type: 2}
@@ -150,7 +147,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6977b54f0f757924da4aa4af13b9d4e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2eb6cef35f3fad04393f9d65a64c6986, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
