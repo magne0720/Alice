@@ -27,6 +27,7 @@ public class EnemyBoss : Enemy {
     // Update is called once per frame
     void Update()
     {
+        base.Update();
 
         if (moveTimer >=moveCounts[currentCount])
         {
@@ -55,6 +56,5 @@ public class EnemyBoss : Enemy {
         
         moveTimer += Time.deltaTime;
 
-        base.Update();
     }
 }

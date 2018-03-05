@@ -5,49 +5,70 @@ using UnityEngine.UI;
 
 public class StatusUp: MonoBehaviour {
 
+    const int HPValue = 1000;
+    const int POWValue = 3000;
+    const int DELAYValue = 10000;
+
     public VirtualCharactor Vc;
     public Button Button;
 
     //public T_TouchScript Ray;
-    public enum WhichButton
+    public enum STATUS_TYPE
     {
         HP,DelayRate,PowerRate
     }
-    public WhichButton Type;
+    public STATUS_TYPE Type;
    
 	// Use this for initialization
 	void Start () {
 
+        GameObject vir = GameObject.Find("virtual");
+        Vc = vir.GetComponent<VirtualCharactor>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vc.Vscore < 1000) Button.interactable = false;
-        else Button.interactable = true;
+        if (Vc == null)
+        {
+            GameObject vir = GameObject.Find("virtual");
+            Vc = vir.GetComponent<VirtualCharactor>();
+        }
 
-        if (Vc.Vscore < 3000) Button.interactable = false;
-        else Button.interactable = true;
+        switch (Type)
+        {
+            case STATUS_TYPE.HP:
+                if (Vc.Vscore < HPValue||Vc.Vhp>=Vc.Vmaxhp) Button.interactable = false;
+                else Button.interactable = true;
+                break;
+            case STATUS_TYPE.DelayRate:
+                if (Vc.Vscore < DELAYValue || Vc.Vdelayrate>=GameManager.GAMEPLAYER_MAXDELAY) Button.interactable = false;
+                else Button.interactable = true;
+                break;
+            case STATUS_TYPE.PowerRate:
+                if (Vc.Vscore < POWValue || Vc.Vpowrate >= GameManager.GAMEPLAYER_MAXPOW) Button.interactable = false;
+                else Button.interactable = true;
+                break;
+            default:
+                break;
+        }
 
-        if (Vc.Vscore < 10000) Button.interactable = false;
-        else Button.interactable = true;
     }
     public void OnClick ()
     {
         switch (Type) {
-            case WhichButton.HP:
+            case STATUS_TYPE.HP:
                 Vc.Vhp += 10;
-                Vc.Vscore -= 1000;
+                Vc.Vscore -= HPValue;
                 break;
-            case WhichButton.DelayRate:
+            case STATUS_TYPE.DelayRate:
                 Vc.Vdelayrate += 0.05f;
-                Vc.Vscore -= 3000;
+                Vc.Vscore -= DELAYValue;
                 break;
-            case WhichButton.PowerRate:
-                Vc.Vpowrate += 0.02f; 
-                Vc.Vscore -= 10000;
+            case STATUS_TYPE.PowerRate:
+                Vc.Vpowrate += 1.0f; 
+                Vc.Vscore -= POWValue;
                 break;
         }
-        
     }
 }

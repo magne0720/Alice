@@ -50,7 +50,7 @@ public class CanvasMask : MonoBehaviour {
         if (timer > roopTime)
         {
             timer = 1.0f;
-            StopMask();
+            StopMask(!reverse);
         }
         //途中まで
         // 現在の表示アルファレベル=分割数 * 時間経過 / 全体の時間
@@ -82,8 +82,9 @@ public class CanvasMask : MonoBehaviour {
 
     }
 
-    public void StopMask()
+    public void StopMask(bool active)
     {
         isPlay = false;
+        gameObject.SetActive(active);
     }
 }

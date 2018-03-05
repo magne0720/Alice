@@ -22,11 +22,14 @@ public class Character : MonoBehaviour {
     protected Vector3 shotTarget;
     protected float timer;
     protected Rigidbody2D rigidbody2D = null;
+    protected bool isLock;
     protected enum STATUS
     {
         NORMAL, PARALYSIS,POISON
     }
     protected STATUS status;
+
+    protected GameObject DamageObj;
 
     /// 移動角度
     public float Direction
@@ -36,6 +39,8 @@ public class Character : MonoBehaviour {
     // Use this for initialization
     protected void Start()
     {
+        isLock = false;
+
         GetComponent<Rigidbody2D>().gravityScale = 0;
 
         if (HP <= 0)
@@ -45,6 +50,8 @@ public class Character : MonoBehaviour {
         MAX_HP = HP;
 
         Option();
+
+        DamageObj = Resources.Load("Prefabs/DamageObj") as GameObject;        
     }
 
     // Update is called once per frame
@@ -75,23 +82,6 @@ public class Character : MonoBehaviour {
         }
     }
 
-    public virtual void OnTriggerEnter2D(Collider2D c)
-    {
-        if (c.gameObject.layer == 8|| c.gameObject.layer == 9)//機体
-        {
-            HP -= MAX_HP/10;
-            //transform.localScale *= 0.9f;
-            //speed *= 1.2f;
-            //if (gameObject.layer == 9)
-            //{
-            //    HP = 0;
-            //}
-        }
-        if (c.gameObject.layer == 10|| c.gameObject.layer == 11)//弾
-        {
-            HP -= (int)c.gameObject.GetComponent<Bullet>().pow;
-        }
-    }
     public void Clamp()
     {
         // 画面左下のワールド座標をビューポートから取得
@@ -204,6 +194,40 @@ public class Character : MonoBehaviour {
             // GameObject g = Instantiate(hpVerObj)as GameObject;
             g.gameObject.name = transform.name + "HPver";
             g.GetComponent<HPVer>().SetCharacter(this);
+        }
+    }
+    public void SetLock(bool isok)
+    {
+        isLock = isok;
+    }
+
+    protected void Damage(int point)
+    {
+
+    }
+
+    public virtual void OnTriggerEnter2D(Collider2D c)
+    {
+        if (c.gameObject.layer == 8 || c.gameObject.layer == 9)//機体
+        {
+            HP -= MAX_HP / 10;
+            //transform.localScale *= 0.9f;
+            //speed *= 1.2f;
+            //if (gameObject.layer == 9)
+            //{
+            //    HP = 0;
+            //}
+        }
+        if (c.gameObject.layer == 10 || c.gameObject.layer == 11)//弾
+        {
+            int damage= (int)c.gameObject.GetComponent<Bullet>().pow;
+            GameObject obj = Instantiate(DamageObj);
+            obj.transform.parent = transform;
+            DamageText dt = obj.GetComponent<DamageText>();
+
+            HP -= damage;
+            dt.SetPoint(damage);
+            dt.SetPosition(transform.position);
         }
     }
 }

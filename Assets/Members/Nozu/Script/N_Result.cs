@@ -20,10 +20,6 @@ public class N_Result : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            isPlay = true;
-        }
         if (isPlay)
         {
             timer += Time.deltaTime;

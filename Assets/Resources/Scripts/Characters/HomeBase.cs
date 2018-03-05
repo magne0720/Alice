@@ -12,6 +12,10 @@ public class HomeBase : Character {
 	
 	// Update is called once per frame
 	void Update () {
+        if (isLock)
+        {
+            return;
+        }
         base.Update();
         Shot(0, target-transform.position);
         SearchObject();
@@ -51,6 +55,9 @@ public class HomeBase : Character {
                 obj = g;
             }
         }
-        target = obj.transform.position;
+        if (obj != null)
+        {
+            target = obj.transform.position;
+        }
     }
 }

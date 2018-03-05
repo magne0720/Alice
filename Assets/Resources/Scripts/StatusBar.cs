@@ -28,27 +28,19 @@ public class StatusBar : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        switch (virtualstatus)
-        {
-            case VirtualStatus.NONE:
-                break;
-            case VirtualStatus.HPSTATUS:
-                slider.maxValue = Char.Vmaxhp;
-                break;
-            case VirtualStatus.POWERRATESTATUS:
-                slider.maxValue = 2.0f;
-                //slider.maxValue = 10;//Char.Max_Speed;
-                break;
-            case VirtualStatus.DELAYRATESTATUS:
-                slider.maxValue = 2.0f;
-                //slider.maxValue = 10;//Char.delay;
-                break;
-        }
+        SetStatus();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (Char == null)
+        {
+            GameObject vir = GameObject.Find("virtual");
+            Char = vir.GetComponent<VirtualCharactor>();
+        }
+
+        SetStatus();
         ChangeValue();
         switch (virtualstatus)
         {
@@ -68,5 +60,24 @@ public class StatusBar : MonoBehaviour
     void ChangeValue()
     {
                 slider.value = value;
+    }
+    void SetStatus()
+    {
+        switch (virtualstatus)
+        {
+            case VirtualStatus.NONE:
+                break;
+            case VirtualStatus.HPSTATUS:
+                slider.maxValue = GameManager.GAMEPLAYER_MAXHP;
+                break;
+            case VirtualStatus.POWERRATESTATUS:
+                slider.maxValue = GameManager.GAMEPLAYER_MAXPOW;
+                //slider.maxValue = 10;//Char.Max_Speed;
+                break;
+            case VirtualStatus.DELAYRATESTATUS:
+                slider.maxValue = GameManager.GAMEPLAYER_MAXDELAY;
+                //slider.maxValue = 10;//Char.delay;
+                break;
+        }
     }
 }

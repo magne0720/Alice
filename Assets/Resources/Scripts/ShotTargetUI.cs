@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ShotTargetUI : MonoBehaviour {
 
-    public Vector2 mouseStartPosition,mouseMovePosition;
+    private Vector2 mouseStartPosition,mouseMovePosition;
     public Sprite basetex;
     public Sprite arrowtex;
     bool isTouch;

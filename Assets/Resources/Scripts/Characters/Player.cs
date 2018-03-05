@@ -13,11 +13,15 @@ public class Player : Character {
 
     public void Initialize()
     {
+        HP = GameManager.GAMEPLAYER_MAXHP;
         base.Start();
         timer = 0;
         currentBullet = 0;
         gameObject.layer = 8;//Player
         gameObject.tag = "Player";
+        gameObject.name = "Player";
+
+        SetHPVer();
     }
 
     // Use this for initialization
@@ -34,6 +38,10 @@ public class Player : Character {
         //    // Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
         //    FindObjectOfType<N_GameManager>().GameOver();
         //}
+        if (isLock)
+        {
+            return;
+        }
 
         target = Vector3.zero;
         //キーボード移動
@@ -86,6 +94,15 @@ public class Player : Character {
         Clamp();
 
         base.Update();
+
+        //チートコード
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            powRate = 3000;
+            //delayRate = GameManager.GAMEPLAYER_MAXDELAY;
+            score = 9999999;
+        }
+
     }
     void InputButton()
     {

@@ -22,13 +22,20 @@ public class EnhanceButton : MonoBehaviour {
         //オブジェクト参照
         vir = GameObject.Find("virtual");
         Vc = vir.GetComponent<VirtualCharactor>();
-        Chara = GameObject.Find("honke");
-        Char = Chara.GetComponent<Character>();
     }
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (Vc == null)
+        {
+            vir = GameObject.Find("virtual");
+            Vc = vir.GetComponent<VirtualCharactor>();
+        }
+        if (Char == null)
+        {
+            Chara = GameObject.Find("Player");
+            Char = Chara.GetComponent<Character>();
+        }
 	}
     public void Onclick()
     {

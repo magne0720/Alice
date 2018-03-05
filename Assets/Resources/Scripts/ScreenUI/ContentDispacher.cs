@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.UI;
 
 public class ContentDispacher : MonoBehaviour
@@ -11,6 +12,7 @@ public class ContentDispacher : MonoBehaviour
         Straight, Homing, Special
     }
     public ShotType shotType;
+    public List<WeaponButton> Items;
 
     void Start()
     {
@@ -34,11 +36,16 @@ public class ContentDispacher : MonoBehaviour
                 string[] dataText = line.Split(',');
                 GameObject item = Instantiate(Resources.Load("Prefabs/MenuItem") as GameObject);
                 WeaponButton Wb = item.GetComponent<WeaponButton>();
-
-                Wb.obj = Resources.Load("Prefabs/" + dataText[0]) as GameObject;
+                
+                Wb.obj = Resources.Load("Prefabs/Bullets/" + dataText[0]) as GameObject;
                 Wb.BulletMoney = int.Parse(dataText[1]);
+                //改行(ここではSplitで置き換える'\r')を削除する必要がある                
+                //string str = "Textures/" + dataText[2].Replace('\r', '\0');
+                Wb.ImagePath = "Textures/" + dataText[2].Replace("\r","");
                 Wb.SelectNum = (int)shotType;
+
                 item.transform.SetParent(content, false);
+                Items.Add(Wb);
             }
     }
     string GetName(ShotType t)
@@ -59,5 +66,17 @@ public class ContentDispacher : MonoBehaviour
                 break;
         }
         return temp;
+    }
+    public void ItemResset()
+    {
+        foreach(WeaponButton w in Items)
+        {
+            if(w.BulletMoney!=0)
+            w.openFlg = false;
+        }
+    }
+    public void ResetPosition()
+    {
+        //transform.position = new Vector3(0, transform.position.y,0);
     }
 }

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class WeaponButton : MonoBehaviour
 {
     public VirtualCharactor Vc;
-    ContentDispacher Cd;
+    public Character Player;
     public SelectButtonManager Sb;
     public Button Button;
 
@@ -19,9 +19,11 @@ public class WeaponButton : MonoBehaviour
     private GameObject vir;
 
 
-    bool flg = false;
-    bool test = false;
+    public bool openFlg;
     public int SelectNum;
+    private Text price;
+    public Image BulletImage;
+    public string ImagePath;
 
     // Use this for initialization
     void Start()
@@ -31,19 +33,40 @@ public class WeaponButton : MonoBehaviour
         Vc = vir.GetComponent<VirtualCharactor>();
 
         Button = GetComponent<Button>();
+
+        price = GetComponentInChildren<Text>();
+        price.text = BulletMoney.ToString();
+
+        BulletImage.sprite = Resources.Load(ImagePath, typeof(Sprite)) as Sprite;
+
+        openFlg = (BulletMoney == 0);
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(!flg)
-        if (Vc.Vscore < BulletMoney) Button.interactable = false;
-        else Button.interactable = true;
-
+        if (!openFlg)
+        {
+            if (Vc.Vscore < BulletMoney)
+            {
+                Button.interactable = false;
+                BulletImage.color = new Color(0, 0, 0, 0.5f);
+            }
+            else
+            {
+                Button.interactable = true;
+                BulletImage.color = new Color(0, 0, 0, 1);
+            }
+        }
+        else
+        {
+            BulletImage.color = new Color(1, 1, 1, 1);
+        }
     }
     public void Onclick()
     {
-        if (flg == false)
+        if (openFlg == false)
         {
             if (instanceUI == null)
             {
@@ -61,12 +84,13 @@ public class WeaponButton : MonoBehaviour
     public void PutWeapon()
     {
         Destroy(instanceUI);
-        if (flg == false && Vc.Vscore >= BulletMoney)
+        if (openFlg == false && Vc.Vscore >= BulletMoney)
         {
             Vc.Vscore -= BulletMoney;
-            flg = true;
+            Player.score -= BulletMoney;
+            openFlg = true;
         }
-        if (flg == true)
+        if (openFlg == true)
         {
             //タブごとに入れる場所
             Vc.VBullets[SelectNum] = obj;
@@ -75,5 +99,9 @@ public class WeaponButton : MonoBehaviour
     public void Back()
     {
         Destroy(instanceUI);
+    }
+    public void SetSprite(string path)
+    {
+        BulletImage.sprite = Resources.Load(path, typeof(Sprite)) as Sprite;
     }
 }

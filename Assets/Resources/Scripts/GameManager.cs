@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    //ゲーム上の上限
+    public const int GAMEPLAYER_MAXHP = 500;
+    public const float GAMEPLAYER_MAXPOW = 10.0f;
+    public const float GAMEPLAYER_MAXDELAY = 2.0f;
+
     //プレイヤー
     public GameObject player;
-    public GameObject playerObj;
+    private GameObject playerObj;
     public  static Character playerStatus;
     //拠点
     public GameObject homebase;
@@ -16,9 +21,14 @@ public class GameManager : MonoBehaviour
     public WaveManager wave;
     //強化画面
     public GameObject IntervalUI;
+    List<ContentDispacher> CDItems;
     private CanvasMask grad;
     private bool isIntervalStart;
     private bool isIntervalEnd;
+
+    //矢印UI
+    private GameObject ShotTargetUIObj;
+
 
     public N_Result result;
     //強化画面の後ろで時間を視覚的に見せる
@@ -34,19 +44,33 @@ public class GameManager : MonoBehaviour
     public bool isPlay;
 
     public static int KilledValue;
+    private GameObject virtualPlayer;
+    private float timer = 0;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         isPlay = false;
         clear.SetActive(false);
 
         grad = IntervalUI.GetComponent<CanvasMask>();
+        CDItems = new List<ContentDispacher>();
+        foreach(ContentDispacher c in IntervalUI.GetComponentsInChildren<ContentDispacher>())
+        {
+            CDItems.Add(c);
+        }
         //grad.StartMask(true);
         //IntervalUI.SetActive(false);
 
         //ウェーブ情報を扱えるようにする
         //wave = waveObj.GetComponent<WaveManager>();
+
+        //仮想プレイヤーの生成
+        virtualPlayer = new GameObject();
+        virtualPlayer.transform.name = "virtual";
+        virtualPlayer.AddComponent<VirtualCharactor>();
+
+        ShotTargetUIObj = GameObject.Find("ShotUI");
     }
 
     // Update is called once per frame
@@ -67,9 +91,16 @@ public class GameManager : MonoBehaviour
             {
                 if (!isIntervalStart)
                 {
-                    isIntervalStart = true;
-                    isIntervalEnd = false;
-                    WaveIntervalStart();
+                    if (timer < 4.0f)
+                    {
+                        timer += Time.deltaTime;
+                    }
+                    else
+                    {
+                        isIntervalStart = true;
+                        isIntervalEnd = false;
+                        WaveIntervalStart();
+                    }
                 }
 
             }
@@ -77,6 +108,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!isIntervalEnd)
                 {
+                    timer = 0;
                     isIntervalStart = false;
                     isIntervalEnd = true;
                     WaveIntervalEnd();
@@ -109,6 +141,15 @@ public class GameManager : MonoBehaviour
         result.StopDisp();
         result.Reset();
 
+        Score.player = playerStatus;
+
+        //Bullet購入情報の初期化
+        foreach(ContentDispacher c in CDItems)
+        {
+            c.ItemResset();
+        }
+
+
         title.SetActive(false);
         clear.SetActive(false);
         wave.isGameClear = false;
@@ -134,9 +175,22 @@ public class GameManager : MonoBehaviour
 
     void WaveIntervalStart()
     {
-        //IntervalUI.SetActive(true);
+        virtualPlayer.GetComponent<VirtualCharactor>().SetPlayer(playerStatus);
+
+        foreach(WeaponButton w in IntervalUI.GetComponentsInChildren<WeaponButton>())
+        {
+            w.Player = playerStatus;
+        }
+        //foreach(ContentDispacher c in CDItems)
+        //{
+        //    c.ResetPosition();
+        //}
+
+        IntervalUI.SetActive(true);
         grad.StartMask(false);
         Debug.Log("intervalStart");
+        playerStatus.SetLock(true);
+       homeStatus.SetLock(true);
     }
     void WaveInterval()
     {
@@ -144,8 +198,10 @@ public class GameManager : MonoBehaviour
     }
     void WaveIntervalEnd()
     {
-        //IntervalUI.SetActive(false);
         grad.StartMask(true);
         Debug.Log("intervalEnd");
+
+        playerStatus.SetLock(false);
+        homeStatus.SetLock(false);
     }
 }

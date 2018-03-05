@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VirtualCharactor : MonoBehaviour {
 
-    public Player Char;
+    public Character Char;
     public int Vmaxhp;
     public int Vhp;
     public float Vpowrate;
@@ -15,11 +15,6 @@ public class VirtualCharactor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 
-        Vmaxhp = Char.MAX_HP;
-        Vpowrate = Char.powRate;
-        Vdelayrate = Char.delayRate;
-        Vscore = Char.score;
-        VBullets = Char.Bullets;
 	}
 	
 	// Update is called once per frame
@@ -29,5 +24,15 @@ public class VirtualCharactor : MonoBehaviour {
         {
             Char.HP--;
         };
+    }
+    public void SetPlayer(Character c)
+    {
+
+        Vmaxhp = c.MAX_HP;
+        Vhp = c.HP;
+        Vpowrate = c.powRate;
+        Vdelayrate = c.delayRate;
+        Vscore = c.score;
+        VBullets = c.Bullets;
     }
 }

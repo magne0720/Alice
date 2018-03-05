@@ -4,8 +4,11 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreDisplay : MonoBehaviour {
+
+    public Character player;
+
     // スコアを表示するGUIText
-    public Text scoreText;
+    Text scoreText;
 
     // スコア
     private int score;
@@ -28,6 +31,7 @@ public class ScoreDisplay : MonoBehaviour {
         {
             highScore = score;
         }
+        score = player.score;
 
         // スコア・ハイスコアを表示する
         scoreText.text = score.ToString();
@@ -36,6 +40,8 @@ public class ScoreDisplay : MonoBehaviour {
     // ゲーム開始前の状態に戻す
     private void Initialize()
     {
+        scoreText = GetComponent<Text>();
+
         // スコアを0に戻す
         score = 0;
 

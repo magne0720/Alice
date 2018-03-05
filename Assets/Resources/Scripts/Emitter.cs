@@ -64,6 +64,11 @@ public class Emitter : MonoBehaviour {
         {
             if (wave.transform.childCount == 0)
             {
+                foreach(GameObject g in GameObject.FindGameObjectsWithTag("EnemyBullet"))
+                {
+                    Instantiate(Resources.Load("Prefabs/Coin_Dummy")as GameObject,g.transform.position,Quaternion.identity);
+                    Destroy(g);
+                }
                 // Waveの削除
                 Destroy(wave);
 

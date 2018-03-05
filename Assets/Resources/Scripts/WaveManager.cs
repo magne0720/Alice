@@ -32,6 +32,11 @@ public class WaveManager : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        //デバッグコード
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            timer = 60;
+        }
 
         if (emiter.currentWave >= emiter.waves.Length)
         {
@@ -48,7 +53,7 @@ public class WaveManager : MonoBehaviour {
             //敵がまだいるなら
             if (emiter.wave.transform.childCount != 0)
             {
-                Wavecount = emiter.currentWave + 1;
+                Wavecount = emiter.currentWave;
 
                 Wave.text = ("WAVE  ") + Wavecount.ToString();
 
