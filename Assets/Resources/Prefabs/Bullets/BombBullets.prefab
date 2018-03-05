@@ -141,8 +141,8 @@ MonoBehaviour:
   recoil: 1
   ExplosionObj: {fileID: 1297319248099656, guid: fc90078034effa4469b55f170e0ac181,
     type: 2}
-  Timer: 2
-  Scale: 10
+  Timer: 1
+  Scale: 5
 --- !u!212 &212147616031339672
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -177,7 +177,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: dc78748a11e3af44391f39c58127bb14, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 685a15ffb509bd849a65d3f8bfb36469, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

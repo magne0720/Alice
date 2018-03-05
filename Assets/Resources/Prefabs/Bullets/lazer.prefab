@@ -107,10 +107,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1d279b42b5cfa44a69854f53876a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 0
   pow: 1
-  recoil: 0
+  recoil: 7
   ExplosionObj: {fileID: 0}
+  scale: 10
 --- !u!114 &114462986169891436
 MonoBehaviour:
   m_ObjectHideFlags: 1

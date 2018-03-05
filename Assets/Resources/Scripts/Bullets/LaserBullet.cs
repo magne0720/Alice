@@ -3,17 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class LaserBullet : Bullet {
-
+    GameObject Player;
+    public float scale;
     // Use this for initialization
     void Start()
     {
-        Destroy(gameObject, 3);
+        Player = GameObject.FindGameObjectWithTag("Player");
+        gameObject.transform.parent = Player.transform;
+        Destroy(gameObject, 4);
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.TransformDirection(Vector3.up * Time.deltaTime * speed);
+        transform.position += transform.up * speed * Time.deltaTime;
+        gameObject.transform.localScale += new Vector3(0, scale*Time.deltaTime, 0);
     }
     public void OnTriggerEnter2D(Collider2D c)
     {
