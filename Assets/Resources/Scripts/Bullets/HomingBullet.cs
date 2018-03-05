@@ -16,7 +16,13 @@ public class HomingBullet : Bullet {
     {
         speed = LowSpeed;
         Destroy(gameObject, 10.0f);
-        Enemy = searchTag(gameObject, "Enemy");
+        if (gameObject.tag == "PlayerBullet")
+        {
+            Enemy = searchTag(gameObject, "Enemy");
+        }else if (gameObject.tag == "EnemyBullet")
+        {
+            Enemy = searchTag(gameObject, "Player");
+        }
         //Enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
@@ -26,7 +32,14 @@ public class HomingBullet : Bullet {
         if (Enemy == null)
         {
             transform.position += transform.up * speed * Time.deltaTime;
-            Enemy = searchTag(gameObject, "Enemy");
+            if (gameObject.tag == "PlayerBullet")
+            {
+                Enemy = searchTag(gameObject, "Enemy");
+            }
+            else if (gameObject.tag == "EnemyBullet")
+            {
+                Enemy = searchTag(gameObject, "Player");
+            }
 
             //Enemy = GameObject.FindGameObjectWithTag("Enemy");
         }
