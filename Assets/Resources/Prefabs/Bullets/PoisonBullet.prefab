@@ -95,7 +95,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1242745123189742}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5f6378d5bbf0fe4ab516c65ec661ef1, type: 3}
   m_Name: 
@@ -104,7 +104,7 @@ MonoBehaviour:
   pow: 5
   recoil: 1
   ExplosionObj: {fileID: 0}
-  Timer: 2
+  Timer: 1
   Scale: 0
 --- !u!114 &114166604413426334
 MonoBehaviour:
@@ -118,7 +118,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  pow: 5
+  pow: 1
   recoil: 3
   ExplosionObj: {fileID: 1359716745294332, guid: afdbb8fb26abd9645aba4ccdab14acd9,
     type: 2}

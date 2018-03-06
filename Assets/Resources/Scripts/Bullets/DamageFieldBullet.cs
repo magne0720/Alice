@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DamageFieldBullet : MonoBehaviour {
+public class DamageFieldBullet : Bullet {
     public int damage;
     public float timer;
     float time;
@@ -40,7 +40,8 @@ public class DamageFieldBullet : MonoBehaviour {
         {
             for (int i = 0; i < Enemy.Count; i++)
             {
-                Enemy[i].gameObject.GetComponent<Character>().HP -= damage;
+                Enemy[i].gameObject.GetComponent<Character>().Damage((int)pow);
+               // Enemy[i].gameObject.GetComponent<Character>().HP -= damage;
             }
             time = 0;
         }

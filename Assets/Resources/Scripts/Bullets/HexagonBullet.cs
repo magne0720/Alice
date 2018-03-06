@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HexagonBullet : MonoBehaviour {
+public class HexagonBullet : Bullet {
     public GameObject Bullets;
     float time;
     public float DesTime;
@@ -40,6 +40,7 @@ public class HexagonBullet : MonoBehaviour {
 
         Bullets.gameObject.layer = gameObject.layer;
         Bullets.gameObject.tag = gameObject.tag;
+        Bullets.gameObject.GetComponent<Bullet>().pow = pow;
         Instantiate(Bullets);
     }
 }

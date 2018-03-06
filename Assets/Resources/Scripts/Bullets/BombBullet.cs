@@ -19,6 +19,7 @@ public class BombBullet : Bullet {
         time += Time.deltaTime;
         if (time > DestroyTime)
         {
+            searchArea(gameObject, "Enemy", Area);
             ExplosionObj.transform.localScale = new Vector3(Area, Area, 0);
             Explosion();
         }
@@ -35,7 +36,7 @@ public class BombBullet : Bullet {
             if (tmpDis < Area)
             {
                 //Destroy(obj);
-                obj.GetComponent<Character>().HP -= (int)pow;
+                obj.GetComponent<Character>().Damage((int)pow);
             }
         }
 
@@ -51,6 +52,6 @@ public class BombBullet : Bullet {
             Explosion();
         }
 
-        base.OnTriggerEnter2D(c);
+        //base.OnTriggerEnter2D(c);
     }
 }

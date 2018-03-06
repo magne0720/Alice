@@ -29,6 +29,7 @@ public class SubBullet : Bullet {
                 ExplosionObj.transform.position = gameObject.transform.position;
                 ExplosionObj.gameObject.layer = gameObject.layer;
                 ExplosionObj.gameObject.tag = gameObject.tag;
+                ExplosionObj.gameObject.GetComponent<Bullet>().pow = pow;
                 Instantiate(ExplosionObj);
             }
             Destroy(gameObject);
@@ -42,9 +43,12 @@ public class SubBullet : Bullet {
             ExplosionObj.transform.position = gameObject.transform.position;
             ExplosionObj.gameObject.layer = gameObject.layer;
             ExplosionObj.gameObject.tag = gameObject.tag;
+            //ExplosionObj.gameObject.GetComponent<Bullet>().pow = pow;
             Instantiate(ExplosionObj);
+            Destroy(gameObject);
         }
-        base.OnTriggerEnter2D(c);
+        
+        //base.OnTriggerEnter2D(c);
     }
 }
 
