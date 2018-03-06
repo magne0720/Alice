@@ -24,6 +24,7 @@ GameObject:
   - component: {fileID: 114678948036329196}
   - component: {fileID: 58724344221372614}
   - component: {fileID: 50752564760538260}
+  - component: {fileID: 95316974556793538}
   m_Layer: 10
   m_Name: sickle
   m_TagString: PlayerBullet
@@ -44,6 +45,7 @@ GameObject:
   - component: {fileID: 114205343890485138}
   - component: {fileID: 58068397928799430}
   - component: {fileID: 50472075687580908}
+  - component: {fileID: 95499740907301368}
   m_Layer: 10
   m_Name: sickle (1)
   m_TagString: PlayerBullet
@@ -178,6 +180,40 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!95 &95316974556793538
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1264184840060772}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29815db3a129cf34a85a25c62b19fbb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+--- !u!95 &95499740907301368
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1480613830356666}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 29815db3a129cf34a85a25c62b19fbb2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114205343890485138
 MonoBehaviour:
   m_ObjectHideFlags: 1

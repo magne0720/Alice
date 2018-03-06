@@ -116,8 +116,8 @@ public class HomingBullet : Bullet {
         ///
         
         gameObject.transform.Rotate(0, 0, _IOO * _addAngle);
-        gameObject.GetComponent<Animator>().SetFloat("_IOO",_IOO);
-        gameObject.GetComponent<Animator>().SetBool("rotate", true);
+        //gameObject.GetComponent<Animator>().SetFloat("_IOO",_IOO);
+        //gameObject.GetComponent<Animator>().SetBool("rotate", true);
         if (_Angle >= _Adjust)
         {
             
@@ -125,8 +125,8 @@ public class HomingBullet : Bullet {
         }
         else
         {
-            gameObject.GetComponent<Animator>().SetBool("rotate",false);
-           
+            //gameObject.GetComponent<Animator>().SetBool("rotate",false);
+            gameObject.GetComponent<Animator>().SetBool("look", true);
             if (speed < MaxSpeed)
             {
                 speed += PulssSpeed;
