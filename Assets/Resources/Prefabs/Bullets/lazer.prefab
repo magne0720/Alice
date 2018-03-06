@@ -20,10 +20,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4971491490493108}
   - component: {fileID: 212479740472371428}
-  - component: {fileID: 60977813063469532}
   - component: {fileID: 50425146373389838}
   - component: {fileID: 114337724610266114}
   - component: {fileID: 114462986169891436}
+  - component: {fileID: 61465998081794450}
   m_Layer: 0
   m_Name: lazer
   m_TagString: Untagged
@@ -64,8 +64,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &60977813063469532
-PolygonCollider2D:
+--- !u!61 &61465998081794450
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -86,16 +86,9 @@ PolygonCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: -0.0741806, y: 0.24412006}
-      - {x: -0.1847825, y: 0.1765171}
-      - {x: -0.2470603, y: 0.08710043}
-      - {x: -0.25, y: -0.25}
-      - {x: 0.25, y: -0.25}
-      - {x: 0.24117994, y: 0.08768037}
-      - {x: 0.17744493, y: 0.19191197}
-      - {x: 0.08358097, y: 0.24412009}
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5}
+  m_EdgeRadius: 0
 --- !u!114 &114337724610266114
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -107,11 +100,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e1d279b42b5cfa44a69854f53876a2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 5
   pow: 1
   recoil: 7
   ExplosionObj: {fileID: 0}
-  scale: 10
+  scale: 20
+  damage: 1
+  timer: 0
+  Enemy: []
 --- !u!114 &114462986169891436
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -161,7 +157,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d09c73c9c8fa01841bd4c89b72170231, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 3b5e34da745065a468f6cbb133a6276c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

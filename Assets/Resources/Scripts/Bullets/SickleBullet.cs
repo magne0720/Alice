@@ -9,17 +9,19 @@ public class SickleBullet :Bullet {
     void Start()
     {
         speed = 0;
+        timer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
+        
         int _IOO = transform.rotation.y == 0 ? 1 : -1;
-        Radius -= 0.02f;
+        Radius -= 0.01f;
         speed += 0.2f;
         Vector3 vec3 = new Vector3(Mathf.Sin(Radius * timer) * speed * Time.deltaTime, -1 * Mathf.Cos(Radius * timer) * speed * Time.deltaTime, 0);
         transform.position += transform.TransformDirection(vec3);
+        timer += Time.deltaTime;
     }
     public void OnTriggerEnter2D(Collider2D c)
     {
