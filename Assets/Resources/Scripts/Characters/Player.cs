@@ -8,8 +8,10 @@ public class Player : Character {
     bool isTouch;
 
     //玉射出の方向
-    Vector3 mouseStartPosition = new Vector3();
-    Vector3 mouseDragPosition = new Vector3();
+    Vector3 mouseStartShotPos = new Vector3();
+    Vector3 mouseDragShotPos = new Vector3();
+    Vector3 mouseStartMovePos = new Vector3();
+    Vector3 mouseDragMovePos = new Vector3();
 
     public void Initialize()
     {
@@ -28,6 +30,7 @@ public class Player : Character {
     void Start()
     {
         Initialize();
+        canShot = true;
     }
 
     // Update is called once per frame
@@ -57,37 +60,55 @@ public class Player : Character {
         {
            // canShot = false;
         }
-        //位置の更新
-        transform.position += target * speed * Time.deltaTime;
 
-
+        Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Debug.Log(mouse.x);
         //最初のタッチ位置
         if (Input.GetMouseButtonDown(0))
         {
-            mouseStartPosition = mouseDragPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            //if (mouse.x >=0)
+            //{
+                mouseStartShotPos = mouseDragShotPos = mouse;
+            //}
+            //else
+           // {
+                mouseStartMovePos = mouseDragMovePos = mouse;
+            //}
             isTouch = true;
         }
         if (Input.GetMouseButtonUp(0))
         {
-            //mouseStartPosition = Vector3.zero;
+            mouseStartMovePos = mouseDragMovePos = Vector2.zero;
+            //mouseStartShotPos = Vector3.zero;
             isTouch = false;
         }
         //ドラッグしてる間
         if (isTouch)
         {
-            mouseDragPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+         //   if (mouse.x >= 0)
+            //{
+                mouseDragShotPos = mouse;
+            //}
+            //else
+            //{
+                mouseDragMovePos = mouse;
+           // }
         }
 
-        if (Math.Length(mouseDragPosition - mouseStartPosition) > 2.0f)
+        if (Math.Length(mouseDragShotPos - mouseStartShotPos) > 2.0f)
         {
-            mouseStartPosition += (mouseDragPosition-mouseStartPosition).normalized * 0.6f;
+            mouseStartShotPos += (mouseDragShotPos-mouseStartShotPos).normalized * 0.6f;
         }
-        Vector3 shotPos = mouseDragPosition - mouseStartPosition;
+        Vector3 shotPos = mouseDragShotPos - mouseStartShotPos;
+        target = (mouseDragMovePos - mouseStartMovePos).normalized;
 
         // 移動方向を取得する
         Rigidbody2D rd = GetComponent<Rigidbody2D>();
         Vector2 v = rd.velocity;
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(-shotPos.x, shotPos.y) * Mathf.Rad2Deg);
+
+        //位置の更新
+        transform.position += target * speed * Time.deltaTime;
 
         Shot(currentBullet,shotPos);
 

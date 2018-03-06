@@ -9,6 +9,10 @@ public class Emitter : MonoBehaviour {
     public GameObject wave;
     public bool isWaving;
 
+    float SetTime;
+    float timer;
+    bool isSet;
+
     // Use this for initialization
     void Start()
     {
@@ -49,12 +53,26 @@ public class Emitter : MonoBehaviour {
             }
         }
         */
+
+        isSet = false;
+        timer = 0;
         currentWave = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (isSet)
+        {
+            timer += Time.deltaTime;
+            if (timer >= SetTime)
+            {
+                timer = 0;
+                isSet = false;
+                WaveInstance();
+            }
+        }
+
         //ウェーブ未設定
         if (waves.Length == 0)
         {
@@ -80,6 +98,11 @@ public class Emitter : MonoBehaviour {
         //{
         //    currentWave = 0;
         //}
+    }
+    public void SetInstanceTime(float time = 2)
+    {
+        SetTime = time;
+        isSet = true;
     }
     public void WaveInstance()
     {

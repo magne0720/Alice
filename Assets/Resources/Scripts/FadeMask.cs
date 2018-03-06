@@ -11,17 +11,20 @@ public class FadeMask : MonoBehaviour {
     public bool reverse;//逆再生
     private float timer;//タイマー
     private bool isPlay;//再生中か
+    public bool isRoop;//ループするか
+    public bool isRefrect;//リバースで折り返すか
 
     // Use this for initialization
     void Start()
     {
         timer = 0;
-        SpriteRenderer Sr =  gameObject.AddComponent<SpriteRenderer>();
+        SpriteRenderer Sr =  GetComponent<SpriteRenderer>();
         Sr.maskInteraction = SpriteMaskInteraction.VisibleOutsideMask;
         if (Sr.sprite == null)
         {
             Sr.sprite = BaseTexure;
         }
+        StartMask();
     }
 
     // Update is called once per frame
@@ -45,11 +48,15 @@ public class FadeMask : MonoBehaviour {
             //0割り算を回避
             roopTime = 1.0f;
         }
-        timer += Time.deltaTime;
-        if (timer > roopTime)
+        timer += Time.deltaTime/roopTime;
+        if (timer > 1.0f)
         {
-            timer = 1.0f;
-            isPlay = false;
+            timer = 0;
+            isPlay = isRoop;
+            if (isRefrect)
+            {
+                reverse^= true;
+            }
         }
         //途中まで
         // 現在の表示アルファレベル=分割数 * 時間経過 / 全体の時間
@@ -57,11 +64,11 @@ public class FadeMask : MonoBehaviour {
         // 現在の表示アルファレベル=時間ずれ - 分割数 * 時間経過 / 全体の時間
         if (reverse)
         {
-            Mask.alphaCutoff = 1.0f - timer / roopTime;
+            Mask.alphaCutoff = 1.0f - timer;
         }
         else
         {
-            Mask.alphaCutoff = timer / roopTime;
+            Mask.alphaCutoff = timer;
         }      
     }
 

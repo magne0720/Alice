@@ -7,14 +7,14 @@ public class Character : MonoBehaviour {
     public int MAX_HP;
     public int HP;//体力
     public float speed;//速度
+    public float powRate;//攻撃倍率
+    public float delayRate;//反動軽減率
     public int score;//スコア
     protected float delay;//反動(次の弾が出るまでの時間)
     protected bool canShot;//弾を撃つかどうか
-    public float powRate;//攻撃倍率
-    public float delayRate;//反動軽減率
     protected int currentBullet;//選択中の弾番号
     public GameObject[] Bullets;//射出する弾
-    public GameObject OptionBullet;//option
+    //public GameObject OptionBullet;//option
     public GameObject deathObj;//死んだときに出す弾
     public GameObject hpVerObj;  //HPバー
 
@@ -166,21 +166,21 @@ public class Character : MonoBehaviour {
     }
     public void Option()
     {
-        if (OptionBullet != null)
-        {
-            GameObject obj = Instantiate(OptionBullet, transform.position, Quaternion.identity);
-            obj.GetComponent<Bullet>().SetTarget(gameObject);
-            if (gameObject.layer == 8)
-            {
-                obj.gameObject.layer = 10;
-                obj.tag = "PlayerBullet";
-            }
-            else if (gameObject.layer == 9)
-            {
-                obj.gameObject.layer = 11;
-                obj.tag = "EnemyBullet";
-            }
-        }
+        //if (OptionBullet != null)
+        //{
+        //    GameObject obj = Instantiate(OptionBullet, transform.position, Quaternion.identity);
+        //    obj.GetComponent<Bullet>().SetTarget(gameObject);
+        //    if (gameObject.layer == 8)
+        //    {
+        //        obj.gameObject.layer = 10;
+        //        obj.tag = "PlayerBullet";
+        //    }
+        //    else if (gameObject.layer == 9)
+        //    {
+        //        obj.gameObject.layer = 11;
+        //        obj.tag = "EnemyBullet";
+        //    }
+        //}
     }
     public void Paralysis(float s)
     {
@@ -201,9 +201,16 @@ public class Character : MonoBehaviour {
         isLock = isok;
     }
 
-    protected void Damage(int point)
+    public void Damage(int point)
     {
+        GameObject obj = Instantiate(DamageObj);
+        obj.transform.parent = transform;
 
+        DamageText dt = obj.GetComponent<DamageText>();
+
+        HP -= point;
+        dt.SetPoint(point);
+        dt.SetPosition(transform.position);
     }
 
     public virtual void OnTriggerEnter2D(Collider2D c)
@@ -220,14 +227,8 @@ public class Character : MonoBehaviour {
         }
         if (c.gameObject.layer == 10 || c.gameObject.layer == 11)//弾
         {
-            int damage= (int)c.gameObject.GetComponent<Bullet>().pow;
-            GameObject obj = Instantiate(DamageObj);
-            obj.transform.parent = transform;
-            DamageText dt = obj.GetComponent<DamageText>();
-
-            HP -= damage;
-            dt.SetPoint(damage);
-            dt.SetPosition(transform.position);
+            int damage = (int)c.gameObject.GetComponent<Bullet>().pow;
+            Damage(damage);
         }
     }
 }

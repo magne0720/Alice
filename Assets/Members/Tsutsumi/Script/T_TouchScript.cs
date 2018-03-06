@@ -36,7 +36,7 @@ public class T_TouchScript : MonoBehaviour {
 
             hit = Physics2D.Raycast((Vector2)ray.origin, (Vector2)ray.direction, distance, layerMask);
 
-            Debug.Log(hit.collider.gameObject.name);
+            //Debug.Log(hit.collider.gameObject.name);
         }
     }
 }

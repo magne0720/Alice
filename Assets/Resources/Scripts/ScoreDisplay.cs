@@ -31,8 +31,10 @@ public class ScoreDisplay : MonoBehaviour {
         {
             highScore = score;
         }
-        score = player.score;
-
+        if (player != null)
+        {
+            score = player.score;
+        }
         // スコア・ハイスコアを表示する
         scoreText.text = score.ToString();
     }

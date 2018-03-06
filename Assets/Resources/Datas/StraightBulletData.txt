@@ -1,5 +1,7 @@
-﻿BULLET_001,0,BULLET_TEST
-Bullet1,12000,BULLET_TEST
-Bullet2,15000,BULLET_TEST
-Bullet3,30000,BULLET_TEST
-BULLET_001,60000,BULLET_TEST
+﻿NormalBullet,0,NormalBullet
+ultrasonic,15000,Ultrasonic
+NormalBullet,1,NormalBullet
+NormalBullet,1,NormalBullet
+NormalBullet,1,NormalBullet
+NormalBullet,1,NormalBullet
+NormalBullet,1,NormalBullet

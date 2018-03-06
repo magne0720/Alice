@@ -8,31 +8,27 @@ public class WeaponButton : MonoBehaviour
     public VirtualCharactor Vc;
     public Character Player;
     public SelectButtonManager Sb;
-    public Button Button;
-
-
-    public GameObject obj;
+    public Button button;
+    
+    public GameObject BulletObj;
     public int BulletMoney; //武器にかかる費用
     public GameObject enhanceUI;
-    public GameObject instanceUI;
-
-    private GameObject vir;
-
+    public GameObject instanceUI;    
 
     public bool openFlg;
-    public int SelectNum;
+    public int TypeNum;
     private Text price;
     public Image BulletImage;
     public string ImagePath;
+    public int ContentNum;
 
     // Use this for initialization
     void Start()
     {
-        //オブジェクト参照
-        vir = GameObject.Find("virtual");
+        GameObject vir = GameObject.Find("virtual");
         Vc = vir.GetComponent<VirtualCharactor>();
 
-        Button = GetComponent<Button>();
+        button = GetComponent<Button>();
 
         price = GetComponentInChildren<Text>();
         price.text = BulletMoney.ToString();
@@ -50,12 +46,12 @@ public class WeaponButton : MonoBehaviour
         {
             if (Vc.Vscore < BulletMoney)
             {
-                Button.interactable = false;
+                button.interactable = false;
                 BulletImage.color = new Color(0, 0, 0, 0.5f);
             }
             else
             {
-                Button.interactable = true;
+                button.interactable = true;
                 BulletImage.color = new Color(0, 0, 0, 1);
             }
         }
@@ -77,7 +73,8 @@ public class WeaponButton : MonoBehaviour
         }
         else
         {
-            Vc.VBullets[SelectNum] = obj;
+            Vc.VBullets[TypeNum] = BulletObj;
+            GetComponentInParent<ContentDispacher>().SetEquip(ContentNum);
         }
     }
     //武器を買う、武器を装備
@@ -93,7 +90,8 @@ public class WeaponButton : MonoBehaviour
         if (openFlg == true)
         {
             //タブごとに入れる場所
-            Vc.VBullets[SelectNum] = obj;
+            Vc.VBullets[TypeNum] = BulletObj;
+            GetComponentInParent<ContentDispacher>().SetEquip(ContentNum);
         }
     }
     public void Back()
@@ -103,5 +101,16 @@ public class WeaponButton : MonoBehaviour
     public void SetSprite(string path)
     {
         BulletImage.sprite = Resources.Load(path, typeof(Sprite)) as Sprite;
+    }
+    public void SetEquip(bool isEquip)
+    {
+        if (isEquip)
+        {
+            GetComponent<Image>().color = Color.red;
+        }
+        else
+        {
+            GetComponent<Image>().color = Color.green;
+        }
     }
 }

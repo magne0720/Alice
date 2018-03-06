@@ -29,11 +29,8 @@ public class GameManager : MonoBehaviour
     //矢印UI
     private GameObject ShotTargetUIObj;
 
-
+    //リザルト
     public N_Result result;
-    //強化画面の後ろで時間を視覚的に見せる
-    public GameObject IntervalBack;
-    private FadeMask back;
     //タイトルやクリア
     public GameObject title;
     public GameObject clear;
@@ -102,7 +99,6 @@ public class GameManager : MonoBehaviour
                         WaveIntervalStart();
                     }
                 }
-
             }
             else
             {

@@ -31,7 +31,7 @@ public class EnhanceButton : MonoBehaviour {
             vir = GameObject.Find("virtual");
             Vc = vir.GetComponent<VirtualCharactor>();
         }
-        if (Char == null)
+        if (GameManager.playerStatus != null&&Char==null)
         {
             Chara = GameObject.Find("Player");
             Char = Chara.GetComponent<Character>();

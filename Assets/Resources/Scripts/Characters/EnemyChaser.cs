@@ -10,7 +10,7 @@ public class EnemyChaser : Enemy {
 	void Start ()
     {
         Initialize();
-        target = GameObject.FindGameObjectWithTag("HomeBase");
+        //target = GameObject.FindGameObjectWithTag("HomeBase");
 	}
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class EnemyChaser : Enemy {
         {
             target = GameObject.FindGameObjectWithTag("HomeBase");
         }
-            if (Math.Length(target.transform.position - transform.position) > 4.0f)
+        if (Math.Length(target.transform.position - transform.position) > 4.0f)
         {
             Vector3 move = (target.transform.position - transform.position).normalized;
 

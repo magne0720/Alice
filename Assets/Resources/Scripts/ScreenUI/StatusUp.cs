@@ -58,7 +58,8 @@ public class StatusUp: MonoBehaviour {
     {
         switch (Type) {
             case STATUS_TYPE.HP:
-                Vc.Vhp += 10;
+                Vc.Vhp += Vc.Vmaxhp/10;
+                if (Vc.Vhp >= Vc.Vmaxhp) Vc.Vhp = Vc.Vmaxhp;
                 Vc.Vscore -= HPValue;
                 break;
             case STATUS_TYPE.DelayRate:

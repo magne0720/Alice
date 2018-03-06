@@ -5,11 +5,16 @@ using UnityEngine.UI;
 
 public class WaveManager : MonoBehaviour {
 
+    const float SET_WAVE_TIME = 3.0f;
 
     public Emitter emiter;
 
     int Wavecount = 1;
+    //現在のウェーブ表示
     public Text Wave;
+    //ウェーブ変更の表示
+    public AlertDisplay Alert;
+
     //private bool isWaving;
 
     public float WaitTime;
@@ -37,7 +42,6 @@ public class WaveManager : MonoBehaviour {
         {
             timer = 60;
         }
-
         if (emiter.currentWave >= emiter.waves.Length)
         {
             isGameClear = true;
@@ -56,7 +60,6 @@ public class WaveManager : MonoBehaviour {
                 Wavecount = emiter.currentWave;
 
                 Wave.text = ("WAVE  ") + Wavecount.ToString();
-
             }
             else
             {
@@ -71,10 +74,11 @@ public class WaveManager : MonoBehaviour {
             {
                 isWaving = true;
                 timer = 0;
-                emiter.WaveInstance();
+                Alert.Play(SET_WAVE_TIME-1);
+                emiter.SetInstanceTime(SET_WAVE_TIME);
             }
             int time = (int)(WaitTime - timer);
-            Wave.text = ("次のWAVEまで  ") + time.ToString()+("秒");
+            Wave.text = ("\t\t\t\t次のWAVEまで  ") + time.ToString()+("秒");
         }
     }
 
@@ -82,7 +86,8 @@ public class WaveManager : MonoBehaviour {
     {
         isPlay = true;
         isWaving = true;
-        emiter.WaveInstance();
+        Alert.Play(SET_WAVE_TIME-1);
+        emiter.SetInstanceTime(SET_WAVE_TIME);
     }
     public void WaveStop()
     {

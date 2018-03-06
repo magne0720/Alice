@@ -19,11 +19,6 @@ public class VirtualCharactor : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Vhp = Char.HP;
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Char.HP--;
-        };
     }
     public void SetPlayer(Character c)
     {
