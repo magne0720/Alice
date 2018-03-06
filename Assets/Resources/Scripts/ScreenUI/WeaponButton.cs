@@ -9,16 +9,17 @@ public class WeaponButton : MonoBehaviour
     public Character Player;
     public SelectButtonManager Sb;
     public Button button;
-    
+
     public GameObject BulletObj;
     public int BulletMoney; //武器にかかる費用
     public GameObject enhanceUI;
-    public GameObject instanceUI;    
+    public GameObject instanceUI;
 
     public bool openFlg;
     public int TypeNum;
     private Text price;
     public Image BulletImage;
+    public Image EquipButton;
     public string ImagePath;
     public int ContentNum;
 
@@ -37,6 +38,8 @@ public class WeaponButton : MonoBehaviour
 
         openFlg = (BulletMoney == 0);
 
+
+        EquipButton.color = Color.clear;
     }
 
     // Update is called once per frame
@@ -44,17 +47,20 @@ public class WeaponButton : MonoBehaviour
     {
         if (!openFlg)
         {
+            //買えないとき
             if (Vc.Vscore < BulletMoney)
             {
                 button.interactable = false;
                 BulletImage.color = new Color(0, 0, 0, 0.5f);
             }
+            //買えるとき
             else
             {
                 button.interactable = true;
                 BulletImage.color = new Color(0, 0, 0, 1);
             }
         }
+        //解放済み
         else
         {
             BulletImage.color = new Color(1, 1, 1, 1);
@@ -107,10 +113,19 @@ public class WeaponButton : MonoBehaviour
         if (isEquip)
         {
             GetComponent<Image>().color = Color.red;
+            EquipButton.color = Color.white;
         }
         else
         {
-            GetComponent<Image>().color = Color.green;
+            if (openFlg)
+            {
+                GetComponent<Image>().color = Color.yellow;
+            }
+            else
+            {
+                GetComponent<Image>().color = Color.white;
+            }
+            EquipButton.color = Color.clear;
         }
     }
 }
