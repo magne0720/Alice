@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212479740472371428}
   - component: {fileID: 50425146373389838}
   - component: {fileID: 114337724610266114}
-  - component: {fileID: 114462986169891436}
   - component: {fileID: 61465998081794450}
   m_Layer: 0
   m_Name: lazer
@@ -104,25 +103,11 @@ MonoBehaviour:
   pow: 1
   recoil: 7
   ExplosionObj: {fileID: 0}
+  clip: {fileID: 8300000, guid: 8037f274686f5cb4ead6d1cdd5d32967, type: 3}
   scale: 20
   damage: 1
   timer: 0
   Enemy: []
---- !u!114 &114462986169891436
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1912609973523140}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fedffe0a2f309c45b9579282a3d8529, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  pow: 1
-  recoil: 0
-  ExplosionObj: {fileID: 0}
 --- !u!212 &212479740472371428
 SpriteRenderer:
   m_ObjectHideFlags: 1

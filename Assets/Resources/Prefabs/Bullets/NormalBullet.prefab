@@ -93,7 +93,7 @@ MonoBehaviour:
   pow: 5
   recoil: 1
   ExplosionObj: {fileID: 0}
-  clip: {fileID: 8300000, guid: eabc61b50f7095445a0a1c0ca9c386d9, type: 3}
+  clip: {fileID: 8300000, guid: ebe6a33605a13754f8a607af12662dc4, type: 3}
 --- !u!212 &212989797598896086
 SpriteRenderer:
   m_ObjectHideFlags: 1

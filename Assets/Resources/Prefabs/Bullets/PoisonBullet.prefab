@@ -104,6 +104,7 @@ MonoBehaviour:
   pow: 5
   recoil: 1
   ExplosionObj: {fileID: 0}
+  clip: {fileID: 0}
   Timer: 1
   Scale: 0
 --- !u!114 &114166604413426334
@@ -122,6 +123,7 @@ MonoBehaviour:
   recoil: 3
   ExplosionObj: {fileID: 1359716745294332, guid: afdbb8fb26abd9645aba4ccdab14acd9,
     type: 2}
+  clip: {fileID: 8300000, guid: 107ed3ed2d0c13741b2545e7c47332ee, type: 3}
   Timer: 2
   Scale: 5
 --- !u!212 &212725589411118460
