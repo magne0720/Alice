@@ -109,11 +109,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  pow: 0
-  recoil: 0
-  ExplosionObj: {fileID: 0}
-  Timer: 0
-  Scale: 0
+  pow: 70
+  recoil: 5
+  ExplosionObj: {fileID: 1297319248099656, guid: fc90078034effa4469b55f170e0ac181,
+    type: 2}
+  Timer: 5
+  Scale: 5
 --- !u!114 &114708279054861576
 MonoBehaviour:
   m_ObjectHideFlags: 1

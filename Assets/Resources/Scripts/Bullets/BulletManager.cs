@@ -10,6 +10,13 @@ public class BulletManager : Bullet
     void Start()
     {
         Mother = GetAll(gameObject);
+        for (int i = 0; i < Mother.Count; i++)
+        {
+            if (Mother[i] != null)
+            {
+                Mother[i].gameObject.GetComponent<Bullet>().pow = pow;
+            }
+        }
     }
 
     // Update is called once per frame
