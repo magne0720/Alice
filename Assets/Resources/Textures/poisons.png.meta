@@ -1,15 +1,12 @@
 fileFormatVersion: 2
-guid: 36a90222918e31f4fb5d4f0c6dc0ede2
-timeCreated: 1520348392
+guid: adaff346cb5fe53449aac69b36ab97fe
+timeCreated: 1520297209
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: BlackHole 1_0
-    21300002: BlackHole 1_1
-    21300004: BlackHole 1_2
-    21300006: BlackHole_0
-    21300008: BlackHole_1
-    21300010: BlackHole_2
+    21300000: poison_0
+    21300002: poison_1
+    21300004: poison_2
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -86,7 +83,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BlackHole_0
+      name: poison_0
       rect:
         serializedVersion: 2
         x: 0
@@ -100,7 +97,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BlackHole_1
+      name: poison_1
       rect:
         serializedVersion: 2
         x: 50
@@ -114,7 +111,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: BlackHole_2
+      name: poison_2
       rect:
         serializedVersion: 2
         x: 100
