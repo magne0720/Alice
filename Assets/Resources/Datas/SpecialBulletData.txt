@@ -2,7 +2,3 @@
 MineBullet,12000,LOGO
 BombBullets,30000,BombBullets
 HexagonBullet,30000,HexsagonGun
-NormalBullet,1,NormalBullet
-NormalBullet,1,NormalBullet
-NormalBullet,1,NormalBullet
-NormalBullet,1,NormalBullet

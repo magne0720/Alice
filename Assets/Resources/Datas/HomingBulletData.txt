@@ -1,4 +1,3 @@
 ﻿HomingBullets_2,0,Misa0
-NormalBullet,1,NormalBullet
-NormalBullet,1,NormalBullet
-NormalBullet,1,NormalBullet
+BounsBullet,15000,BounsBullet
+PoisonBullet,30000,Missile

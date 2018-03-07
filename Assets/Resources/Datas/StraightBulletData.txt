@@ -1,7 +1,3 @@
 ﻿NormalBullet,0,NormalBullet
 ultrasonic,15000,Ultrasonic
-NormalBullet,1,NormalBullet
-NormalBullet,1,NormalBullet
-NormalBullet,1,NormalBullet
-NormalBullet,1,NormalBullet
-NormalBullet,1,NormalBullet
+lazer,30000,laser
