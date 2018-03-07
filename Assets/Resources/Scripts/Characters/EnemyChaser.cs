@@ -18,7 +18,7 @@ public class EnemyChaser : Enemy {
     {
         if (target == null)
         {
-            target = GameObject.FindGameObjectWithTag("HomeBase");
+            target = GameObject.FindGameObjectWithTag("Player");
         }
         if (Math.Length(target.transform.position - transform.position) > 4.0f)
         {

@@ -10,11 +10,16 @@ public class ShotTargetUI : MonoBehaviour {
     bool isTouch;
     private GameObject baseObj;//基点
     private GameObject arrowObj;//矢印
+    
+    public enum TOUCH_MODE
+    {
+        LEFT,RIGHT
+    };
+    public TOUCH_MODE mode;
 
     // Use this for initialization
     void Start ()
     {
-
 
         baseObj = new GameObject();
         baseObj.name = "BASE";
@@ -36,6 +41,14 @@ public class ShotTargetUI : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
+        if (mode == TOUCH_MODE.LEFT)
+        {
+            if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x >= 0) return;
+        }
+        else
+        {
+            if (Camera.main.ScreenToWorldPoint(Input.mousePosition).x <= 0) return;
+        }
         if (Input.GetMouseButtonDown(0))
         {
             isTouch = true;

@@ -86,6 +86,7 @@ public class WaveManager : MonoBehaviour {
     {
         isPlay = true;
         isWaving = true;
+        Alert.SetWave(emiter.currentWave);
         Alert.Play(SET_WAVE_TIME-1);
         emiter.SetInstanceTime(SET_WAVE_TIME);
     }

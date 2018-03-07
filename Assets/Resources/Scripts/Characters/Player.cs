@@ -6,6 +6,7 @@ public class Player : Character {
 
     Vector3 lastTarget;
     bool isTouch;
+    bool isRightTouch, isLeftTouch;
 
     //玉射出の方向
     Vector3 mouseStartShotPos = new Vector3();
@@ -61,47 +62,66 @@ public class Player : Character {
            // canShot = false;
         }
 
-        Vector2 mouse = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        Debug.Log(mouse.x);
-        //最初のタッチ位置
+        //タッチ情報
+        //Touch myTouch = Input.GetTouch(0);
+
+        Touch[] myTouches = Input.touches;
+        for (int i = 0; i < Input.touchCount; i++)
+        {
+            Debug.Log("Touch");
+
+            //右側
+            if (myTouches[i].position.x >= Screen.width / 2)
+            {
+                if (!isRightTouch)
+                {
+                    mouseStartShotPos = mouseDragShotPos = myTouches[i].position;
+                    isRightTouch = true;
+                }
+                else
+                {
+                    mouseDragShotPos = myTouches[i].position;
+                }
+            }
+            else
+            {
+                if (!isLeftTouch)
+                {
+                    mouseStartMovePos = mouseDragMovePos = myTouches[i].position;
+                    isLeftTouch = true;
+                }
+                else
+                {
+                    mouseDragMovePos = myTouches[i].position;
+                }
+            }
+            target = (mouseDragMovePos - mouseStartMovePos).normalized;
+        }
         if (Input.GetMouseButtonDown(0))
         {
-            //if (mouse.x >=0)
-            //{
-                mouseStartShotPos = mouseDragShotPos = mouse;
-            //}
-            //else
-           // {
-                mouseStartMovePos = mouseDragMovePos = mouse;
-            //}
             isTouch = true;
+            mouseStartShotPos = mouseDragShotPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         }
+        if (isTouch)
+        {
+            mouseDragShotPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        }
+        //最初のタッチ位置     
         if (Input.GetMouseButtonUp(0))
         {
             mouseStartMovePos = mouseDragMovePos = Vector2.zero;
             //mouseStartShotPos = Vector3.zero;
             isTouch = false;
+            isLeftTouch = false;
+            isRightTouch = false;
         }
-        //ドラッグしてる間
-        if (isTouch)
-        {
-         //   if (mouse.x >= 0)
-            //{
-                mouseDragShotPos = mouse;
-            //}
-            //else
-            //{
-                mouseDragMovePos = mouse;
-           // }
-        }
-
+    
         if (Math.Length(mouseDragShotPos - mouseStartShotPos) > 2.0f)
         {
             mouseStartShotPos += (mouseDragShotPos-mouseStartShotPos).normalized * 0.6f;
         }
         Vector3 shotPos = mouseDragShotPos - mouseStartShotPos;
-        target = (mouseDragMovePos - mouseStartMovePos).normalized;
-
+        
         // 移動方向を取得する
         Rigidbody2D rd = GetComponent<Rigidbody2D>();
         Vector2 v = rd.velocity;

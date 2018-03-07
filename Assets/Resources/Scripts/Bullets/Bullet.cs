@@ -12,10 +12,18 @@ public class Bullet : MonoBehaviour
     public float recoil;
     protected bool isHit;
     public GameObject ExplosionObj;
+    AudioSource Sound;
+    public AudioClip clip;
 
     // Use this for initialization
     void Start()
     {
+        if (gameObject.tag == "PlayerBullet")
+        {
+            Sound = gameObject.AddComponent<AudioSource>();
+            Sound.clip = clip;
+            Sound.Play();
+        }
     }
 
     // Update is called once per frame

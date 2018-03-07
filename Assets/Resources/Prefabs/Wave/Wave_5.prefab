@@ -444,7 +444,7 @@ MonoBehaviour:
   HP: 100
   speed: 2
   powRate: 2
-  delayRate: 0
+  delayRate: 2
   score: 10
   Bullets:
   - {fileID: 1468811913321116, guid: 092a45a2bac9e4d42bd0fcba66de9c50, type: 2}
@@ -466,7 +466,7 @@ MonoBehaviour:
   HP: 100
   speed: 2
   powRate: 2
-  delayRate: 0
+  delayRate: 2
   score: 10
   Bullets:
   - {fileID: 1468811913321116, guid: 092a45a2bac9e4d42bd0fcba66de9c50, type: 2}
@@ -488,7 +488,7 @@ MonoBehaviour:
   HP: 100
   speed: 2
   powRate: 2
-  delayRate: 0
+  delayRate: 2
   score: 10
   Bullets:
   - {fileID: 1468811913321116, guid: 092a45a2bac9e4d42bd0fcba66de9c50, type: 2}
@@ -510,7 +510,7 @@ MonoBehaviour:
   HP: 100
   speed: 2
   powRate: 2
-  delayRate: 0
+  delayRate: 2
   score: 10
   Bullets:
   - {fileID: 1468811913321116, guid: 092a45a2bac9e4d42bd0fcba66de9c50, type: 2}
@@ -532,7 +532,7 @@ MonoBehaviour:
   HP: 100
   speed: 2
   powRate: 2
-  delayRate: 0
+  delayRate: 2
   score: 10
   Bullets:
   - {fileID: 1468811913321116, guid: 092a45a2bac9e4d42bd0fcba66de9c50, type: 2}

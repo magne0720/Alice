@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         isPlay = false;
-        title.SetActive(true);
+       // title.SetActive(true);
         
         wave.WaveStop();
         wave.WaveResset();

@@ -8,6 +8,7 @@ public class HomeBase : Character {
 	// Use this for initialization
 	void Start () {
         Initialize();
+        SetHPVer();
 	}
 	
 	// Update is called once per frame

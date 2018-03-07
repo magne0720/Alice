@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AlertDisplay : MonoBehaviour {
     public Vector2 OffsetPos;
@@ -13,6 +14,8 @@ public class AlertDisplay : MonoBehaviour {
     Vector2 EndPos;
     bool isMid;
     bool isPlay;
+
+    public Text text;
     public enum SCREEN_POINT
     {
         LeftUpper,CenterUpper,RightUpper,LeftCenter,Center,RightCenter,LeftLower,CenterLower,RightLower
@@ -28,6 +31,8 @@ public class AlertDisplay : MonoBehaviour {
         isMid = false;
         isPlay = false;
         transform.position = OffsetPos+StartPos;
+
+        text = GetComponent<Text>();
     }
 
     // Update is called once per frame
@@ -116,5 +121,9 @@ public class AlertDisplay : MonoBehaviour {
     {
         isPlay = false;
         timer = 0;
+    }
+    public void SetWave(int wave)
+    {
+        text.text = "Wave " + (wave+1);
     }
 }
