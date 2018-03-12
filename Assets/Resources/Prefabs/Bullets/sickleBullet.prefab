@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 50955685450758598}
   - component: {fileID: 114899908829596546}
   m_Layer: 0
-  m_Name: SickleBullet
+  m_Name: sickleBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
