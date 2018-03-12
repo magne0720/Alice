@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4392481861333764}
   - component: {fileID: 212498555773449424}
   - component: {fileID: 114745687938821554}
-  - component: {fileID: 114455018314859472}
   - component: {fileID: 50481502570770860}
   - component: {fileID: 58244403716476644}
   - component: {fileID: 95393332233501836}
@@ -42,7 +41,6 @@ GameObject:
   - component: {fileID: 4157609002269644}
   - component: {fileID: 212647616091061248}
   - component: {fileID: 114210039937331940}
-  - component: {fileID: 114526817313473816}
   - component: {fileID: 50328780949073960}
   - component: {fileID: 58230305799148100}
   - component: {fileID: 95527225595979830}
@@ -63,7 +61,6 @@ GameObject:
   - component: {fileID: 4430603030631598}
   - component: {fileID: 50369309088550838}
   - component: {fileID: 114280571163349086}
-  - component: {fileID: 114967989104211188}
   m_Layer: 0
   m_Name: SnakeBullet
   m_TagString: PlayerBullet
@@ -251,6 +248,7 @@ MonoBehaviour:
   pow: 5
   recoil: 0
   ExplosionObj: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!114 &114280571163349086
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -266,38 +264,9 @@ MonoBehaviour:
   pow: 0
   recoil: 0.7
   ExplosionObj: {fileID: 0}
+  clip: {fileID: 0}
   Timer: 2
   Scale: 0
---- !u!114 &114455018314859472
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1155669969291896}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c059fc3b5ee2e24baed613fc61aa5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  pow: 5
-  recoil: 0
-  ExplosionObj: {fileID: 0}
---- !u!114 &114526817313473816
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1630869710227660}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6c059fc3b5ee2e24baed613fc61aa5ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0
-  pow: 5
-  recoil: 0
-  ExplosionObj: {fileID: 0}
 --- !u!114 &114745687938821554
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -313,23 +282,7 @@ MonoBehaviour:
   pow: 5
   recoil: 0
   ExplosionObj: {fileID: 0}
---- !u!114 &114967989104211188
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1680600966647202}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f6378d5bbf0fe4ab516c65ec661ef1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  pow: 0
-  recoil: 0.6
-  ExplosionObj: {fileID: 0}
-  Timer: 2
-  Scale: 0
+  clip: {fileID: 0}
 --- !u!212 &212498555773449424
 SpriteRenderer:
   m_ObjectHideFlags: 1

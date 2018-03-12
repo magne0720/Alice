@@ -280,6 +280,7 @@ MonoBehaviour:
   pow: 5
   recoil: 0
   ExplosionObj: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!114 &114509608891964832
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -295,6 +296,7 @@ MonoBehaviour:
   pow: 5
   recoil: 0.5
   ExplosionObj: {fileID: 0}
+  clip: {fileID: 0}
   Mother: []
 --- !u!114 &114563020935142590
 MonoBehaviour:
@@ -311,6 +313,7 @@ MonoBehaviour:
   pow: 5
   recoil: 0
   ExplosionObj: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!114 &114612621546838242
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -326,6 +329,7 @@ MonoBehaviour:
   pow: 5
   recoil: 0
   ExplosionObj: {fileID: 0}
+  clip: {fileID: 0}
 --- !u!212 &212226456064221356
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -360,7 +364,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 56d96aebe17e4ee4cb7c1ef210490f2e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b61c3fc3140193e4baa9ca1b03361926, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -404,7 +408,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 56d96aebe17e4ee4cb7c1ef210490f2e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b61c3fc3140193e4baa9ca1b03361926, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -448,7 +452,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 56d96aebe17e4ee4cb7c1ef210490f2e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b61c3fc3140193e4baa9ca1b03361926, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

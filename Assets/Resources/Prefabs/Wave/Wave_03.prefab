@@ -24,9 +24,9 @@ GameObject:
   - component: {fileID: 50584575553746102}
   - component: {fileID: 61339027161837446}
   - component: {fileID: 114825512668278344}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SawEnemy_B_1 (2)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,9 +44,9 @@ GameObject:
   - component: {fileID: 50318379363835950}
   - component: {fileID: 61057924500473020}
   - component: {fileID: 114274085454970620}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SawEnemy_B_1 (3)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,9 +79,9 @@ GameObject:
   - component: {fileID: 50346861861412902}
   - component: {fileID: 61864257817540182}
   - component: {fileID: 114343322746679642}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SawEnemy_B_1
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,9 +99,9 @@ GameObject:
   - component: {fileID: 50604380860209290}
   - component: {fileID: 61767620586381280}
   - component: {fileID: 114749577624455736}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SawEnemy_B_1 (1)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -119,9 +119,9 @@ GameObject:
   - component: {fileID: 50243004379694634}
   - component: {fileID: 61571283991855934}
   - component: {fileID: 114763294700788200}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: SawEnemy_B_1 (4)
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -535,9 +535,9 @@ MonoBehaviour:
   speed: 1
   powRate: 1
   delayRate: 0.5
-  score: 4
+  score: 20
   Bullets:
-  - {fileID: 1346584302783252, guid: 3fe1a4b535a771f4f993e06728b5515c, type: 2}
+  - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -572,9 +572,9 @@ MonoBehaviour:
   speed: 1
   powRate: 1
   delayRate: 0.5
-  score: 4
+  score: 20
   Bullets:
-  - {fileID: 1346584302783252, guid: 3fe1a4b535a771f4f993e06728b5515c, type: 2}
+  - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -609,9 +609,9 @@ MonoBehaviour:
   speed: 1
   powRate: 1
   delayRate: 0.5
-  score: 4
+  score: 20
   Bullets:
-  - {fileID: 1346584302783252, guid: 3fe1a4b535a771f4f993e06728b5515c, type: 2}
+  - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -646,9 +646,9 @@ MonoBehaviour:
   speed: 1
   powRate: 1
   delayRate: 0.5
-  score: 4
+  score: 20
   Bullets:
-  - {fileID: 1346584302783252, guid: 3fe1a4b535a771f4f993e06728b5515c, type: 2}
+  - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -683,9 +683,9 @@ MonoBehaviour:
   speed: 1
   powRate: 1
   delayRate: 0.5
-  score: 4
+  score: 20
   Bullets:
-  - {fileID: 1346584302783252, guid: 3fe1a4b535a771f4f993e06728b5515c, type: 2}
+  - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0

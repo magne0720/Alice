@@ -23,6 +23,7 @@ public class HomingBullet : Bullet {
         {
             Enemy = searchTag(gameObject, "Player");
         }
+        gameObject.transform.Rotate(0, 0,180);
         //Enemy = GameObject.FindGameObjectWithTag("Enemy");
     }
 
