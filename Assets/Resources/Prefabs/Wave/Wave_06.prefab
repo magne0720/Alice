@@ -132,7 +132,7 @@ MonoBehaviour:
   - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
   - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
   - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
-  - {fileID: 1589643293428288, guid: 05298f69dfa534341bc1b0455d2879c6, type: 2}
+  - {fileID: 1443233430151782, guid: 2d98bb80a1072ad44a265d562161b600, type: 2}
   - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
   - {fileID: 1212518500537394, guid: d53a9d192c6d82141bd4fa9acf085a7d, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
