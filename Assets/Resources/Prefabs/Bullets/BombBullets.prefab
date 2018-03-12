@@ -22,7 +22,6 @@ GameObject:
   - component: {fileID: 212147616031339672}
   - component: {fileID: 50773938149913956}
   - component: {fileID: 114787151774172162}
-  - component: {fileID: 114229144376792448}
   - component: {fileID: 61365386644907896}
   - component: {fileID: 95562732521971550}
   m_Layer: 10
@@ -107,24 +106,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114229144376792448
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1452548415935140}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5f6378d5bbf0fe4ab516c65ec661ef1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  pow: 10
-  recoil: 1
-  ExplosionObj: {fileID: 1297319248099656, guid: fc90078034effa4469b55f170e0ac181,
-    type: 2}
-  Timer: 2
-  Scale: 10
 --- !u!114 &114787151774172162
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -137,10 +118,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  pow: 1
+  pow: 10
   recoil: 2
   ExplosionObj: {fileID: 1297319248099656, guid: fc90078034effa4469b55f170e0ac181,
     type: 2}
+  clip: {fileID: 0}
   Timer: 1
   Scale: 5
 --- !u!212 &212147616031339672

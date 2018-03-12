@@ -113,7 +113,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1990326606455450}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.86595917, y: 1.8862703, z: 0.123712644}
+  m_LocalPosition: {x: -5.31, y: 1.8862703, z: 0.123712644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4577195504680644}
@@ -126,7 +126,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1570044484169788}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.86595917, y: 1.8862703, z: 0.123712644}
+  m_LocalPosition: {x: -7.66, y: 1.8862703, z: 0.123712644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4577195504680644}
@@ -169,7 +169,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1676034610750068}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.86595917, y: 1.8862703, z: 0.123712644}
+  m_LocalPosition: {x: -2.79, y: 1.8862703, z: 0.123712644}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4577195504680644}
@@ -394,14 +394,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8dcc81cacc6574daa94fe1c5f0cfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 100
-  HP: 100
+  MAX_HP: 1
+  HP: 30
   speed: 3
   powRate: 1
   delayRate: 0.5
-  score: 3
+  score: 20
   Bullets:
-  - {fileID: 1346584302783252, guid: 3fe1a4b535a771f4f993e06728b5515c, type: 2}
+  - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -427,14 +427,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8dcc81cacc6574daa94fe1c5f0cfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 100
-  HP: 100
+  MAX_HP: 1
+  HP: 30
   speed: 3
   powRate: 1
   delayRate: 0.5
-  score: 3
+  score: 20
   Bullets:
-  - {fileID: 1346584302783252, guid: 3fe1a4b535a771f4f993e06728b5515c, type: 2}
+  - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -460,14 +460,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8dcc81cacc6574daa94fe1c5f0cfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 100
-  HP: 100
+  MAX_HP: 1
+  HP: 30
   speed: 3
   powRate: 1
   delayRate: 0.5
-  score: 3
+  score: 20
   Bullets:
-  - {fileID: 1346584302783252, guid: 3fe1a4b535a771f4f993e06728b5515c, type: 2}
+  - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -493,14 +493,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c8dcc81cacc6574daa94fe1c5f0cfca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  MAX_HP: 100
-  HP: 100
+  MAX_HP: 1
+  HP: 30
   speed: 3
   powRate: 1
   delayRate: 0.5
-  score: 3
+  score: 20
   Bullets:
-  - {fileID: 1346584302783252, guid: 3fe1a4b535a771f4f993e06728b5515c, type: 2}
+  - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0

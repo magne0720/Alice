@@ -30,9 +30,11 @@ public class SickleBullet :Bullet {
             if (c.gameObject.layer == 9)//Enemy
             {
                 //c.gameObject.GetComponent<Character>().HP -= (int)pow;
-                int HPD = c.gameObject.GetComponent<Character>().HP -= (int)pow;
+                int HPD = c.gameObject.GetComponent<Character>().HP - (int)pow;
+                
                 if (HPD > 0)
                 {
+                    Debug.Log(c.gameObject.GetComponent<Character>().HP);
                     Destroy(gameObject);
                 }
             }
