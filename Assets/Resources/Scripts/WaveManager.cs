@@ -42,7 +42,7 @@ public class WaveManager : MonoBehaviour {
         {
             timer = 60;
         }
-        if (emiter.currentWave >= emiter.waves.Length)
+        if (emiter.currentWave > emiter.waves.Length)
         {
             isGameClear = true;
             return;
@@ -57,15 +57,18 @@ public class WaveManager : MonoBehaviour {
             //敵がまだいるなら
             if (emiter.wave.transform.childCount != 0)
             {
-                Wavecount = emiter.currentWave;
+                Wavecount = emiter.currentWave ;
 
                 Wave.text = ("WAVE  ") + Wavecount.ToString();
             }
             else
             {
                 isWaving = false;
+                if (emiter.isLastWave)
+                {
+                    isGameClear = true;
+                }
             }
-            Debug.Log(Wavecount);
         }
         else
         {
@@ -74,11 +77,17 @@ public class WaveManager : MonoBehaviour {
             {
                 isWaving = true;
                 timer = 0;
-                Alert.Play(SET_WAVE_TIME-1);
-                emiter.SetInstanceTime(SET_WAVE_TIME);
+                Alert.Play(SET_WAVE_TIME - 1);
+                if (!emiter.isLastWave)
+                {
+                    WaveStart();
+                }
+                //emiter.SetInstanceTime(SET_WAVE_TIME);
             }
             int time = (int)(WaitTime - timer);
-            Wave.text = ("\t\t\t\t次のWAVEまで  ") + time.ToString()+("秒");
+
+            if (!isWaving)
+                Wave.text = ("\t\t\t\t次のWAVEまで  ") + time.ToString() + ("秒");
         }
     }
 
@@ -96,6 +105,12 @@ public class WaveManager : MonoBehaviour {
     }
     public void WaveResset()
     {
+        isWaving = false;
         emiter.currentWave = 0;
+        emiter.isLastWave = false;
+    }
+    public void Skip()
+    {
+        timer = WaitTime;
     }
 }

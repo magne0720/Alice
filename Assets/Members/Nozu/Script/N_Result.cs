@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class N_Result : MonoBehaviour
 {
-
+    public GameObject TitleButton;
     public GameObject[] objs;
     private int count;
     private float timer;
@@ -15,6 +15,7 @@ public class N_Result : MonoBehaviour
     void Start()
     {
         timer = 0;
+        TitleButton.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class N_Result : MonoBehaviour
                 if (count >= objs.Length)
                 {
                     StopDisp();
+                    TitleButton.SetActive(true);
                     return;
                 }
                 objs[count++].GetComponent<N_ResultItem>().StartAnimation();
@@ -50,5 +52,8 @@ public class N_Result : MonoBehaviour
             g.GetComponent<N_ResultItem>().Reset();
         }
         timer = 0;
+        count = 0;
+        TitleButton.SetActive(false);
+
     }
 }

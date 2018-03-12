@@ -57,6 +57,7 @@ public class Character : MonoBehaviour {
     // Update is called once per frame
     protected virtual void Update()
     {
+        CheckClamp();
         HealthCheck();
     }
 
@@ -73,9 +74,9 @@ public class Character : MonoBehaviour {
             gameObject.layer = 13;
             if (deathObj != null)
             {
-                for (int i = 0; i < score * 0.1 + 1; i++)
+                for (int i = 0; i < score ; i++)
                 {
-                    Instantiate(deathObj, transform.position, new Quaternion());
+                  //  Instantiate(deathObj, transform.position, new Quaternion());
                 }
             }
             Destroy(gameObject);
@@ -99,6 +100,27 @@ public class Character : MonoBehaviour {
 
         // 制限をかけた値をプレイヤーの位置とする
         transform.position = pos;
+    }
+    public void CheckClamp()
+    {
+        // 画面左下のワールド座標をビューポートから取得
+        Vector2 min = Camera.main.ViewportToWorldPoint(new Vector2(0, 0));
+
+        // 画面右上のワールド座標をビューポートから取得
+        Vector2 max = Camera.main.ViewportToWorldPoint(new Vector2(1, 1));
+
+        // プレイヤーの座標を取得
+        Vector2 pos = transform.position;
+
+        if(transform.position.x < min.x || transform.position.y < min.y ||
+            transform.position.x > max.x || transform.position.y > max.y)
+        {
+            canShot = false;
+        }
+        else
+        {
+            canShot = true;
+        }
     }
 
     /// <summary>
@@ -196,6 +218,11 @@ public class Character : MonoBehaviour {
             g.GetComponent<HPVer>().SetCharacter(this);
         }
     }
+    public virtual void SetType(int i)
+    {
+
+    }
+
     public void SetLock(bool isok)
     {
         isLock = isok;
@@ -204,13 +231,45 @@ public class Character : MonoBehaviour {
     public void Damage(int point)
     {
         GameObject obj = Instantiate(DamageObj);
-        obj.transform.parent = transform;
+        obj.transform.SetParent(transform);
 
         DamageText dt = obj.GetComponent<DamageText>();
 
         HP -= point;
         dt.SetPoint(point);
         dt.SetPosition(transform.position);
+    }
+
+    public int GetCharacterLevel()
+    {
+        float hp =  (HP<=0)? 0:MAX_HP/HP;
+        float pow = powRate;
+        float delay = delayRate;
+        int level= (int)(hp + pow + delay);
+        return level;
+    }
+    public string GetCharacterLevelRank()
+    {
+        int level = GetCharacterLevel();
+        string rank="S";
+        if (level <= 10)
+        {
+            rank = "A";
+        }
+        if (level <= 7)
+        {
+            rank = "B";
+        }
+        if (level <= 5)
+        {
+            rank = "C";
+        }
+        if (level <= 3)
+        {
+            rank = "E";
+        }
+
+        return rank;
     }
 
     public virtual void OnTriggerEnter2D(Collider2D c)

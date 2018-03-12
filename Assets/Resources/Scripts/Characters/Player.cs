@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player : Character {
 
+    public int ControlType;
     Vector3 lastTarget;
     bool isTouch;
     bool isRightTouch, isLeftTouch;
@@ -37,6 +38,8 @@ public class Player : Character {
     // Update is called once per frame
     void Update()
     {
+        InputMass();
+
         //if (HP <= 0)
         //{
         //    // Managerコンポーネントをシーン内から探して取得し、GameOverメソッドを呼び出す
@@ -61,85 +64,35 @@ public class Player : Character {
         {
            // canShot = false;
         }
-
-        //タッチ情報
-        //Touch myTouch = Input.GetTouch(0);
-
-        Touch[] myTouches = Input.touches;
-        for (int i = 0; i < Input.touchCount; i++)
+        Vector3 shotPos = new Vector3();
+        if (ControlType == 0)
         {
-            Debug.Log("Touch");
-
-            //右側
-            if (myTouches[i].position.x >= Screen.width / 2)
-            {
-                if (!isRightTouch)
-                {
-                    mouseStartShotPos = mouseDragShotPos = myTouches[i].position;
-                    isRightTouch = true;
-                }
-                else
-                {
-                    mouseDragShotPos = myTouches[i].position;
-                }
-            }
-            else
-            {
-                if (!isLeftTouch)
-                {
-                    mouseStartMovePos = mouseDragMovePos = myTouches[i].position;
-                    isLeftTouch = true;
-                }
-                else
-                {
-                    mouseDragMovePos = myTouches[i].position;
-                }
-            }
-            target = (mouseDragMovePos - mouseStartMovePos).normalized;
+            shotPos = Math.GetRotateVector(this.transform.up, mouseDragShotPos - mouseStartShotPos);
         }
-        if (Input.GetMouseButtonDown(0))
+        else
         {
-            isTouch = true;
-            mouseStartShotPos = mouseDragShotPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            shotPos =  (mouseDragShotPos - mouseStartShotPos).normalized;
         }
-        if (isTouch)
-        {
-            mouseDragShotPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
-        //最初のタッチ位置     
-        if (Input.GetMouseButtonUp(0))
-        {
-            mouseStartMovePos = mouseDragMovePos = Vector2.zero;
-            //mouseStartShotPos = Vector3.zero;
-            isTouch = false;
-            isLeftTouch = false;
-            isRightTouch = false;
-        }
-    
-        if (Math.Length(mouseDragShotPos - mouseStartShotPos) > 2.0f)
-        {
-            mouseStartShotPos += (mouseDragShotPos-mouseStartShotPos).normalized * 0.6f;
-        }
-        Vector3 shotPos = mouseDragShotPos - mouseStartShotPos;
-        
         // 移動方向を取得する
         Rigidbody2D rd = GetComponent<Rigidbody2D>();
         Vector2 v = rd.velocity;
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(-shotPos.x, shotPos.y) * Mathf.Rad2Deg);
+
+        target = (mouseDragMovePos - mouseStartMovePos).normalized;
 
         //位置の更新
         transform.position += target * speed * Time.deltaTime;
 
         Shot(currentBullet,shotPos);
 
-        Clamp();
+        Clamp();        
 
         base.Update();
 
         //チートコード
         if (Input.GetKeyDown(KeyCode.M))
         {
-            powRate = 3000;
+            powRate = GameManager.GAMEPLAYER_MAXPOW;
             //delayRate = GameManager.GAMEPLAYER_MAXDELAY;
             score = 9999999;
         }
@@ -163,10 +116,65 @@ public class Player : Character {
         {
             target.y -= 1;
         }
-        if (Input.GetMouseButtonDown(1))
+        //if (Input.GetMouseButtonDown(1))
+        //{
+        //    ChangeEquip(currentBullet+1);
+        //    timer = 100;
+        //}
+    }
+
+    void InputTouch()
+    {
+
+        //タッチ情報
+        //Touch myTouch = Input.GetTouch(0);
+
+        Touch[] myTouches = Input.touches;
+
+        for (int i = 0; i < Input.touchCount; i++)
         {
-            ChangeEquip(currentBullet+1);
-            timer = 100;
+            if (i >= 2) { break; }
+            Debug.Log("Touch");
+
+
+            //myTouches[i].phase
+
+            //    //右側
+            //    if (myTouches[i].position.x >= Screen.width / 2)
+            //    {
+            //        if (!isRightTouch)
+            //        {
+            //            mouseStartShotPos = mouseDragShotPos = myTouches[i].position;
+            //            isRightTouch = true;
+            //        }
+            //        else
+            //        {
+            //            mouseDragShotPos = myTouches[i].position;
+            //            //shotTarget = Math.GetRotateVector(mouseDragShotPos - mouseStartShotPos);
+            //        }
+            //    }
+            //    //左側
+            //    else
+            //    {
+            //        if (!isLeftTouch)
+            //        {
+            //            mouseStartMovePos = mouseDragMovePos = myTouches[i].position;
+            //            isLeftTouch = true;
+            //        }
+            //        else
+            //        {
+            //            mouseDragMovePos = myTouches[i].position;
+            //            //if(Math.Length(mouseDragMovePos-mouseStartMovePos)>7.0f)
+            //            target = (mouseDragMovePos-mouseStartMovePos).normalized;
+            //        }
+            //    }
+            //}
+            //if (myTouches.Length == 0)
+            //{
+            //    isRightTouch = false;
+            //    isLeftTouch = false;
+            //    // isTouch = false;
+            //}
         }
     }
 
@@ -181,4 +189,66 @@ public class Player : Character {
     //        HP -= c.gameObject.GetComponent<Bullet>().pow;
     //    }
     //}
+
+            public override void SetType(int i)
+        {
+            ControlType = i;
+        }
+
+    void InputMass()
+    {
+        foreach (Touch t in Input.touches)
+        {
+            var id = t.fingerId;
+            Vector3 pos = Camera.main.ScreenToWorldPoint(t.position);
+
+            switch (t.phase)
+            {
+                case TouchPhase.Began:
+                    Debug.LogFormat("{0}:いまタッチした", id);
+                    if (t.position.x >= Screen.width / 2)
+                    {
+                        mouseDragShotPos = mouseStartShotPos = pos;
+                    }
+                    else
+                    {
+                        mouseStartMovePos = mouseDragMovePos = pos;
+                    }
+                        break;
+
+                case TouchPhase.Moved:
+                case TouchPhase.Stationary:
+                    Debug.LogFormat("{0}:タッチしている", id);
+                    if (t.position.x >= Screen.width / 2)
+                    {
+                        mouseDragShotPos  = pos;
+                    }
+                    else
+                    {
+                        mouseDragMovePos = pos;
+                    }
+                    break;
+
+                case TouchPhase.Ended:
+                case TouchPhase.Canceled:
+                    Debug.LogFormat("{0}:いま離された", id);
+                    if (t.position.x >= Screen.width / 2)
+                    {
+                        if (ControlType == 0)
+                        {
+                            mouseStartShotPos = mouseDragShotPos = pos;
+                        }
+                        else
+                        {
+                            mouseDragShotPos = pos;
+                        }
+                    }
+                    else
+                    {
+                        mouseStartMovePos = mouseDragMovePos = pos;
+                    }
+                    break;
+            }
+        }
+    }
 }

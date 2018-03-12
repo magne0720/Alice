@@ -14,6 +14,7 @@ public class AlertDisplay : MonoBehaviour {
     Vector2 EndPos;
     bool isMid;
     bool isPlay;
+    int waveNum;
 
     public Text text;
     public enum SCREEN_POINT
@@ -124,6 +125,7 @@ public class AlertDisplay : MonoBehaviour {
     }
     public void SetWave(int wave)
     {
-        text.text = "Wave " + (wave+1);
+        waveNum = wave + 1;
+        text.text = "Wave " + (waveNum);
     }
 }

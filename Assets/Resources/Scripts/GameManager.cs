@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
         }
         if (isPlay)
         {
-            if (playerStatus.HP <= 0 || homeStatus.HP <= 0)
+            if (playerStatus.HP <= 0)
             {
                 GameOver();
             }
@@ -116,20 +116,21 @@ public class GameManager : MonoBehaviour
             }
         }
     }
-    public void GameStart()
+    public void GameStart(int mode=0)
     {
         isPlay = true;
         if (player != null)
         {
             Destroy(playerObj);
-            Destroy(homebaseObj);
+            //Destroy(homebaseObj);
         }
         playerObj = Instantiate(player, new Vector3(0, -1, 0), new Quaternion());
         //プレイヤーとしてみるオブジェクトを登録
         playerStatus = playerObj.GetComponent<Character>();
+        playerStatus.SetType(mode);
 
-        homebaseObj = Instantiate(homebase, new Vector3(0, -5, 0), new Quaternion());
-        homeStatus = homebaseObj.GetComponent<HomeBase>();
+        //homebaseObj = Instantiate(homebase, new Vector3(0, -5, 0), new Quaternion());
+        //homeStatus = homebaseObj.GetComponent<HomeBase>();
 
         KilledValue = 0;
 
@@ -144,7 +145,9 @@ public class GameManager : MonoBehaviour
         {
             c.ItemResset();
         }
+        AllClear();
 
+        IntervalUI.SetActive(false);
 
         title.SetActive(false);
         clear.SetActive(false);
@@ -169,6 +172,22 @@ public class GameManager : MonoBehaviour
         result.StartDisp();
     }
 
+    public void GmmeTitle()
+    {
+        isPlay = false;
+        clear.SetActive(false);
+        wave.WaveStop();
+        wave.WaveResset();
+
+        title.SetActive(true);
+        grad.StartMask(true);
+        Debug.Log("intervalEnd");
+
+        playerStatus.SetLock(false);
+        //homeStatus.SetLock(false);
+        result.Reset();
+    }
+
     void WaveIntervalStart()
     {
         virtualPlayer.GetComponent<VirtualCharactor>().SetPlayer(playerStatus);
@@ -186,7 +205,7 @@ public class GameManager : MonoBehaviour
         grad.StartMask(false);
         Debug.Log("intervalStart");
         playerStatus.SetLock(true);
-       homeStatus.SetLock(true);
+       //homeStatus.SetLock(true);
     }
     void WaveInterval()
     {
@@ -198,6 +217,22 @@ public class GameManager : MonoBehaviour
         Debug.Log("intervalEnd");
 
         playerStatus.SetLock(false);
-        homeStatus.SetLock(false);
+        //homeStatus.SetLock(false);
+    }
+
+    void AllClear()
+    {
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("PlayerBullet"))
+        {
+            Destroy(g);
+        }
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            Destroy(g);
+        }
+        foreach (GameObject g in GameObject.FindGameObjectsWithTag("EnemyBullet"))
+        {
+            Destroy(g);
+        }
     }
 }

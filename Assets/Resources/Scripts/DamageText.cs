@@ -20,6 +20,12 @@ public class DamageText : MonoBehaviour {
         text = GetComponentInChildren<Text>();
         text.text = point.ToString();
 
+        Vector2 pos = Camera.main.ScreenToViewportPoint(transform.parent.position)+transform.parent.position;
+        if (transform.parent != null) 
+        transform.parent = null;
+
+        transform.position = pos;
+
         transform.position += new Vector3(Random.Range(-1.0f,1.0f), Random.Range(-1.0f,1.0f), 0);
 
         size = new Vector3(StartSize, StartSize, 1);

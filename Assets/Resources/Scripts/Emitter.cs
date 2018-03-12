@@ -8,6 +8,7 @@ public class Emitter : MonoBehaviour {
     public int currentWave;
     public GameObject wave;
     public bool isWaving;
+    public bool isLastWave;
 
     float SetTime;
     float timer;
@@ -119,6 +120,11 @@ public class Emitter : MonoBehaviour {
         wave.transform.parent = transform;
 
         currentWave++;
+        if (currentWave == waves.Length)
+        {
+            isLastWave = true;
+        }
+
         isWaving = true;
     }
 }

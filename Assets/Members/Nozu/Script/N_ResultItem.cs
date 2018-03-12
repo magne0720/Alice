@@ -7,7 +7,7 @@ public class N_ResultItem : MonoBehaviour {
 
     public GameObject ScriptObj;
     public Text label;
-    private int value;
+    private string value;
     public float speed;
     public float startDelay;
     private float timer;
@@ -16,7 +16,7 @@ public class N_ResultItem : MonoBehaviour {
 
     public enum RESULT_TYPE
     {
-        NONE,   SCORE,KILL,HOME
+        NONE,   SCORE,KILL,HOME,RANK
     }
     public RESULT_TYPE type;
     // Use this for initialization
@@ -71,7 +71,7 @@ public class N_ResultItem : MonoBehaviour {
 
     public void Setvalue(int val)
     {
-        value = val;
+        value = val.ToString();
     }
     public void Reset()
     {
@@ -80,17 +80,22 @@ public class N_ResultItem : MonoBehaviour {
     }
     void SetStatusTarget()
     {
+        value = "";
         switch (type)
         {
             case RESULT_TYPE.NONE:
                 break;
             case RESULT_TYPE.SCORE:
-                value = GameManager.playerStatus.score;
+                value = GameManager.playerStatus.score.ToString();
                 break;
             case RESULT_TYPE.KILL:
-                value = GameManager.KilledValue;
+                value = GameManager.KilledValue.ToString();
                 break;
             case RESULT_TYPE.HOME:
+                value = GameManager.playerStatus.GetCharacterLevel().ToString();
+                break;
+            case RESULT_TYPE.RANK:
+                value = GameManager.playerStatus.GetCharacterLevelRank();
                 break;
             default:
                 break;

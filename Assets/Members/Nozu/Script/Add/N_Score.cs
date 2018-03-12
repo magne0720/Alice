@@ -5,14 +5,16 @@ using UnityEngine;
 public class N_Score : MonoBehaviour {
 
     public GameObject targetObj;
+    public int point;
     private float speed;
 
 	// Use this for initialization
 	void Start () {
         GetComponent<Rigidbody2D>().AddForce(new Vector2(Random.Range(-100, 100), Random.Range(-100, 100)));
-        speed = 0;
+        speed = 8;
         targetObj = GameObject.FindGameObjectWithTag("Player");
         gameObject.layer = 0;
+        point = 1000;
 	}
 	
 	// Update is called once per frame
@@ -23,7 +25,7 @@ public class N_Score : MonoBehaviour {
         }
         else
         {
-            speed += Time.deltaTime*10.0f;
+//            speed += Time.deltaTime*10.0f;
             Vector3 move = (targetObj.transform.position - transform.position).normalized;
             transform.position += move * speed * Time.deltaTime;
         }
@@ -34,7 +36,7 @@ public class N_Score : MonoBehaviour {
     {
         if (c.tag == "Player")
         {
-            c.GetComponent<Character>().score += (int)speed*25;
+            c.GetComponent<Character>().score +=point;
             Destroy(gameObject);
         }
     }

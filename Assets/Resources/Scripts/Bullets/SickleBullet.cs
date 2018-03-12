@@ -8,6 +8,7 @@ public class SickleBullet :Bullet {
     // Use this for initialization
     void Start()
     {
+        Initialize();
         speed = 0;
         timer = 0;
     }
@@ -23,34 +24,34 @@ public class SickleBullet :Bullet {
         transform.position += transform.TransformDirection(vec3);
         timer += Time.deltaTime;
     }
-    public void OnTriggerEnter2D(Collider2D c)
-    {
-        if (gameObject.layer == 10)//PlayerBullet
-        {
-            if (c.gameObject.layer == 9)//Enemy
-            {
-                //c.gameObject.GetComponent<Character>().HP -= (int)pow;
-                int HPD = c.gameObject.GetComponent<Character>().HP -= (int)pow;
-                if (HPD > 0)
-                {
-                    Destroy(gameObject);
-                }
-            }
-            else if (c.gameObject.layer == 11)
-            {
-            }
-        }
-        else if (gameObject.layer == 11)//EnemyBullet
-        {
-            if (c.gameObject.layer == 8)//Player
-            {
-                //c.gameObject.GetComponent<Character>().HP -= (int)pow;
-                Destroy(gameObject);
-            }
-            else if (c.gameObject.layer == 10)
-            {
-                Destroy(gameObject);
-            }
-        }
-    }
+    //public void OnTriggerEnter2D(Collider2D c)
+    //{
+    //    if (gameObject.layer == 10)//PlayerBullet
+    //    {
+    //        if (c.gameObject.layer == 9)//Enemy
+    //        {
+    //            //c.gameObject.GetComponent<Character>().HP -= (int)pow;
+    //            int HPD = c.gameObject.GetComponent<Character>().HP -= (int)pow;
+    //            if (HPD > 0)
+    //            {
+    //                Destroy(gameObject);
+    //            }
+    //        }
+    //        else if (c.gameObject.layer == 11)
+    //        {
+    //        }
+    //    }
+    //    else if (gameObject.layer == 11)//EnemyBullet
+    //    {
+    //        if (c.gameObject.layer == 8)//Player
+    //        {
+    //            //c.gameObject.GetComponent<Character>().HP -= (int)pow;
+    //            Destroy(gameObject);
+    //        }
+    //        else if (c.gameObject.layer == 10)
+    //        {
+    //            Destroy(gameObject);
+    //        }
+    //    }
+    //}
 }

@@ -16,8 +16,8 @@ public class TitleGameButton : MonoBehaviour {
 	void Update () {
 		
 	}
-    public void OnClick()
+    public void OnClick(int mode)
     {
-        GameObject.FindObjectOfType<GameManager>().GameStart();
+        FindObjectOfType<GameManager>().GameStart(mode);
     }
 }

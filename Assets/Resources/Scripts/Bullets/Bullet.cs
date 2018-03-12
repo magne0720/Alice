@@ -18,12 +18,7 @@ public class Bullet : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        if (gameObject.tag == "PlayerBullet")
-        {
-            Sound = gameObject.AddComponent<AudioSource>();
-            Sound.clip = clip;
-            Sound.Play();
-        }
+        Initialize();
     }
 
     // Update is called once per frame
@@ -34,6 +29,13 @@ public class Bullet : MonoBehaviour
     public void Initialize()
     {
         GetComponent<Rigidbody2D>().gravityScale = 0;
+
+        if (gameObject.tag == "PlayerBullet")
+        {
+            Sound = gameObject.AddComponent<AudioSource>();
+            Sound.clip = clip;
+            Sound.Play();
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D c)

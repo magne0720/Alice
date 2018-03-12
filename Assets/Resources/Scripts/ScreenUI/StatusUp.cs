@@ -92,13 +92,13 @@ public class StatusUp: MonoBehaviour {
                     isMAX = true;
                 break;
             case STATUS_TYPE.PowerRate:
-                value = POWValue + POWValue * Vc.Vpowrate;
-                if (Vc.Vpowrate > GameManager.GAMEPLAYER_MAXPOW)
+                value = POWValue * Vc.Vpowrate*Vc.Vpowrate;
+                if (Vc.Vpowrate >= GameManager.GAMEPLAYER_MAXPOW)
                     isMAX = true;
                 break;
             case STATUS_TYPE.DelayRate:
-                value = DELAYValue + DELAYValue * Vc.Vdelayrate;
-                if (Vc.Vdelayrate > GameManager.GAMEPLAYER_MAXDELAY)
+                value = DELAYValue * Vc.Vdelayrate*Vc.Vdelayrate;
+                if (Vc.Vdelayrate >= GameManager.GAMEPLAYER_MAXDELAY)
                     isMAX = true;
                 break;
             default:
@@ -108,7 +108,7 @@ public class StatusUp: MonoBehaviour {
         if (!isMAX)
             text.text = ((int)value).ToString();
         else
-            text.text = "MAXValue   ";
+            text.text = "MAXValue";
 
     }
 }

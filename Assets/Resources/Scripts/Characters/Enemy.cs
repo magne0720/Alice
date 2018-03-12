@@ -8,9 +8,10 @@ public class Enemy : Character {
 
     public void Initialize()
     {
-        LoadData(enemtype);
+        //LoadData(enemtype);
         base.Start();
 
+        gameObject.tag = "Enemy";
         gameObject.layer = 9;//Enemy
 
         canShot = true;
@@ -36,7 +37,6 @@ public class Enemy : Character {
     {
         //transform.position += target * speed * Time.deltaTime;
 
-        Shot(currentBullet,shotTarget);
 
         //SetDirection();
 
@@ -46,6 +46,8 @@ public class Enemy : Character {
         }
 
         base.Update();
+
+        Shot(currentBullet,shotTarget);
     }
     public void SetTarget(Vector3 t)
     {
@@ -54,7 +56,7 @@ public class Enemy : Character {
     }
     protected void InitData(int num=0)
     {
-        LoadData(num);
+        //LoadData(num);
     }
     void SetData(int hp,float sp,int sc)
     {
