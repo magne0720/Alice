@@ -10,8 +10,10 @@ public class HexagonBullet : Bullet {
     // Use this for initialization
     void Start()
     {
-        time = 0;
         Destroy(gameObject, DesTime);
+        Initialize();
+        time = 0;
+        
     }
 
     // Update is called once per frame
@@ -19,7 +21,7 @@ public class HexagonBullet : Bullet {
     {
         //  gameObject.transform.Rotate(0, 0,50*Time.deltaTime);
         time += Time.deltaTime;
-        if (time > 0.2)
+        if (time > 0.8)
         {
             CreateBulet(0f);
             CreateBulet(45f);

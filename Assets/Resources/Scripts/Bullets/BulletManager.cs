@@ -9,6 +9,7 @@ public class BulletManager : Bullet
 
     void Start()
     {
+        Initialize();
         Mother = GetAll(gameObject);
         for (int i = 0; i < Mother.Count; i++)
         {

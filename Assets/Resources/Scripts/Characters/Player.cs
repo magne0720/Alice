@@ -67,7 +67,7 @@ public class Player : Character {
         Vector3 shotPos = new Vector3();
         if (ControlType == 0)
         {
-            shotPos = Math.GetRotateVector(this.transform.up, mouseDragShotPos - mouseStartShotPos);
+            shotPos = Math.GetRotateVector(this.transform.up, mouseDragShotPos - mouseStartShotPos,3);
         }
         else
         {

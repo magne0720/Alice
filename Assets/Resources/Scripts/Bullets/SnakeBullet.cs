@@ -9,6 +9,7 @@ public class SnakeBullet : Bullet {
     // Use this for initialization
     void Start()
     {
+        Initialize();
         times = 3;
         times += Time.deltaTime;
         range = 10;

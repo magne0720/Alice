@@ -245,10 +245,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  pow: 100
+  pow: 5
   recoil: 0
   ExplosionObj: {fileID: 0}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: c9e96d019d83f614998feb9780b6b4f9, type: 3}
   Radius: 6
 --- !u!114 &114254893748192552
 MonoBehaviour:
@@ -262,10 +262,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  pow: 100
+  pow: 5
   recoil: 0
   ExplosionObj: {fileID: 0}
-  clip: {fileID: 0}
+  clip: {fileID: 8300000, guid: c9e96d019d83f614998feb9780b6b4f9, type: 3}
   Radius: 6
 --- !u!114 &114899908829596546
 MonoBehaviour:
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  pow: 10
+  pow: 5
   recoil: 3
   ExplosionObj: {fileID: 0}
   clip: {fileID: 8300000, guid: c9e96d019d83f614998feb9780b6b4f9, type: 3}

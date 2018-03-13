@@ -105,7 +105,9 @@ public class WaveManager : MonoBehaviour {
     }
     public void WaveResset()
     {
+        isPlay = false;
         isWaving = false;
+        emiter.isWaving = false;
         emiter.currentWave = 0;
         emiter.isLastWave = false;
     }

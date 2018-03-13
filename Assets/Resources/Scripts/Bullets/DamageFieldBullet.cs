@@ -11,6 +11,7 @@ public class DamageFieldBullet : Bullet {
     void Start()
     {
         Destroy(gameObject, 5);
+        Initialize();
     }
 
     // Update is called once per frame

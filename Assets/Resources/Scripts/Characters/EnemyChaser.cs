@@ -20,14 +20,15 @@ public class EnemyChaser : Enemy {
         {
             target = GameObject.FindGameObjectWithTag("Player");
         }
+        Vector3 move = (target.transform.position - transform.position).normalized;
+
         if (Math.Length(target.transform.position - transform.position) > 4.0f)
         {
-            Vector3 move = (target.transform.position - transform.position).normalized;
-
+            
             transform.position += move * Time.deltaTime * speed;
+        }
             SetTarget(move);
             shotTarget = move;
-        }
         base.Update();
     }
 }

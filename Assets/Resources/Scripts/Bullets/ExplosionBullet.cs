@@ -9,6 +9,7 @@ public class ExplosionBullet :Bullet {
     {
         Destroy(gameObject, 0.2f);
         gameObject.layer = 0;
+        Initialize();
     }
 
     // Update is called once per frame

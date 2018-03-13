@@ -91,7 +91,7 @@ public class Math : MonoBehaviour {
 
         return vector;
     }
-    public static Vector2 GetRotateVector(Vector2 pos,Vector2 target)
+    public static Vector2 GetRotateVector(Vector2 pos,Vector2 target,int rate)
     {
         Vector2 temp = new Vector2();
         int mag = 0;
@@ -100,7 +100,7 @@ public class Math : MonoBehaviour {
 
         mag = (target.x > 0) ? -1 : 1;
 
-       temp = getDirectionDegree(pos, mag);
+       temp = getDirectionDegree(pos, mag*rate);
 
         return temp;
     }

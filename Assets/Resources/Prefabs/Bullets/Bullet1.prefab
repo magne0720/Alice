@@ -144,7 +144,7 @@ MonoBehaviour:
   pow: 5
   recoil: 0.6
   ExplosionObj: {fileID: 0}
-  clip: {fileID: 8300000, guid: 84ae4fe861c374e498d44a4898ff62db, type: 3}
+  clip: {fileID: 0}
   Mother: []
 --- !u!114 &114415799026802952
 MonoBehaviour:

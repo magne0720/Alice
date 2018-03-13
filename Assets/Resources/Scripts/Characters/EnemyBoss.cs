@@ -29,7 +29,7 @@ public class EnemyBoss : Enemy {
     {
         base.Update();
 
-        if (moveTimer >=moveCounts[currentCount])
+        if (moveTimer >= moveCounts[currentCount])
         {
             afterPos = transform.position;
             moveTimer = 0;
@@ -43,17 +43,21 @@ public class EnemyBoss : Enemy {
             {
                 moveCounts[currentCount] = 1;
             }
+            if (enemtype != 0)
+            {
+                ChangeEquip(currentBullet++);
+            }
         }
         else
         {
         }
-        Vector2 pos = moveTimer/moveCounts[currentCount] * beforePos + (1 - moveTimer/moveCounts[currentCount]) * afterPos;
+        Vector2 pos = moveTimer / moveCounts[currentCount] * beforePos + (1 - moveTimer / moveCounts[currentCount]) * afterPos;
         //target =   (Vector3)pos- transform.position;
-        
+
         SetTarget(attacks[currentCount]);
 
         transform.position = pos;
-        
+
         moveTimer += Time.deltaTime;
 
     }

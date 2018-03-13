@@ -1,4 +1,5 @@
-﻿sickleBullet,0,sicle
-MineBullet,12000,LOGO
-BombBullets,30000,BombBullets
-HexagonBullet,30000,HexsagonGun
+﻿SnakeBullet,0,Snace
+MineBullet,17000,mine
+BombBullets,42000,BombBullets
+HexagonBullet,70000,HexsagonGun
+sickleBullet,120000,sicle

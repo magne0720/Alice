@@ -76,7 +76,7 @@ public class Character : MonoBehaviour {
             {
                 for (int i = 0; i < score ; i++)
                 {
-                  //  Instantiate(deathObj, transform.position, new Quaternion());
+                    Instantiate(deathObj, transform.position, new Quaternion());
                 }
             }
             Destroy(gameObject);
@@ -157,6 +157,7 @@ public class Character : MonoBehaviour {
             else if (gameObject.layer == 9)
             {
                 obj.gameObject.layer = 11;
+                //obj.GetComponent<SpriteRenderer>().sortingOrder = 3;
                 obj.tag = "EnemyBullet";
             }
 
@@ -170,6 +171,10 @@ public class Character : MonoBehaviour {
 
             //反動を設定(軽減率も計算)
             delay = b.recoil - delayRate;
+            if (delay <= 0)
+            {
+                delay = 0.1f;
+            }
         }
     }
     public void SetDirection()
@@ -242,34 +247,40 @@ public class Character : MonoBehaviour {
 
     public int GetCharacterLevel()
     {
-        float hp =  (HP<=0)? 0:MAX_HP/HP;
+        float sc = score;
+        float hp = (HP <= 0) ? 1 : MAX_HP / HP;
         float pow = powRate;
         float delay = delayRate;
-        int level= (int)(hp + pow + delay);
+        int level = (int)(sc * pow * delay);
         return level;
     }
     public string GetCharacterLevelRank()
     {
         int level = GetCharacterLevel();
         string rank="S";
-        if (level <= 10)
+        if (level <= 500000)
         {
             rank = "A";
         }
-        if (level <= 7)
+        if (level <= 220000)
         {
             rank = "B";
         }
-        if (level <= 5)
+        if (level <= 134000)
         {
             rank = "C";
         }
-        if (level <= 3)
+        if (level <= 80000)
         {
             rank = "E";
         }
 
         return rank;
+    }
+
+    public int GetCurrentBulletNum()
+    {
+        return currentBullet;
     }
 
     public virtual void OnTriggerEnter2D(Collider2D c)

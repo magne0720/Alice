@@ -14,6 +14,7 @@ public class HomingBullet : Bullet {
     // Use this for initialization
     void Start()
     {
+        Initialize();
         speed = LowSpeed;
         Destroy(gameObject, 10.0f);
         if (gameObject.tag == "PlayerBullet")

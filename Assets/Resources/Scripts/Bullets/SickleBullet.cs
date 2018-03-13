@@ -8,6 +8,7 @@ public class SickleBullet :Bullet {
     // Use this for initialization
     void Start()
     {
+        Initialize();
         speed = 0;
         timer = 0;
     }

@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  pow: 5
+  pow: 3
   recoil: 0
   ExplosionObj: {fileID: 0}
   clip: {fileID: 0}
@@ -262,7 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   pow: 0
-  recoil: 0.7
+  recoil: 1.8
   ExplosionObj: {fileID: 0}
   clip: {fileID: 0}
   Timer: 2
@@ -279,7 +279,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  pow: 5
+  pow: 3
   recoil: 0
   ExplosionObj: {fileID: 0}
   clip: {fileID: 0}

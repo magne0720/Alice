@@ -180,8 +180,8 @@ public class GameManager : MonoBehaviour
         wave.WaveResset();
 
         title.SetActive(true);
-        grad.StartMask(true);
         Debug.Log("intervalEnd");
+        timer = 0;
 
         playerStatus.SetLock(false);
         //homeStatus.SetLock(false);

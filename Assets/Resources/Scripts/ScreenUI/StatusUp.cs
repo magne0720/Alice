@@ -5,9 +5,9 @@ using UnityEngine.UI;
 
 public class StatusUp: MonoBehaviour {
 
-    const int HPValue = 1000;
-    const int POWValue = 30000;
-    const int DELAYValue = 50000;
+    const int HPValue = 3000;
+    const int POWValue = 12000;
+    const int DELAYValue = 40000;
 
     public float value;
 

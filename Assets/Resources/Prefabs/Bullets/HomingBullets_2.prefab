@@ -294,10 +294,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 0
-  pow: 1
+  pow: 2
   recoil: 2
   ExplosionObj: {fileID: 0}
-  clip: {fileID: 8300000, guid: 8d4d105f1c54c61489c075e094855910, type: 3}
+  clip: {fileID: 8300000, guid: 84ae4fe861c374e498d44a4898ff62db, type: 3}
   Mother: []
 --- !u!114 &114854616080321214
 MonoBehaviour:

@@ -399,7 +399,7 @@ MonoBehaviour:
   speed: 3
   powRate: 1
   delayRate: 0.5
-  score: 20
+  score: 4
   Bullets:
   - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
@@ -432,7 +432,7 @@ MonoBehaviour:
   speed: 3
   powRate: 1
   delayRate: 0.5
-  score: 20
+  score: 4
   Bullets:
   - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
@@ -465,7 +465,7 @@ MonoBehaviour:
   speed: 3
   powRate: 1
   delayRate: 0.5
-  score: 20
+  score: 4
   Bullets:
   - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
@@ -498,7 +498,7 @@ MonoBehaviour:
   speed: 3
   powRate: 1
   delayRate: 0.5
-  score: 20
+  score: 4
   Bullets:
   - {fileID: 1323692542987118, guid: 0cf55a2988ae8144fafe4f85e3cd9b1c, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
@@ -548,7 +548,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e472ded663e299046a75d6e17144a63d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -592,7 +592,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e472ded663e299046a75d6e17144a63d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -636,7 +636,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e472ded663e299046a75d6e17144a63d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -680,7 +680,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e472ded663e299046a75d6e17144a63d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

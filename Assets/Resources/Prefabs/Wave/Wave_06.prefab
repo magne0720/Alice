@@ -119,25 +119,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MAX_HP: 200
-  HP: 200
+  HP: 500
   speed: 1
   powRate: 5
   delayRate: 0.5
-  score: 1000
+  score: 25
   Bullets:
-  - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
-  - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
-  - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
-  - {fileID: 1589643293428288, guid: 05298f69dfa534341bc1b0455d2879c6, type: 2}
-  - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
-  - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
-  - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
   - {fileID: 1443233430151782, guid: 2d98bb80a1072ad44a265d562161b600, type: 2}
-  - {fileID: 1545659441099774, guid: 342dd0119de317a49bfa48feeface351, type: 2}
-  - {fileID: 1212518500537394, guid: d53a9d192c6d82141bd4fa9acf085a7d, type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
-  enemtype: 0
+  enemtype: 1
   moves:
   - {x: -3.6, y: 2.3}
   - {x: 3.6, y: 2.3}
@@ -186,7 +177,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: e56a7bda15996f74bad5e613b160eddf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

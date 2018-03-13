@@ -677,13 +677,11 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 2.4
-  score: 1
   powRate: 10
   delayRate: 0.5
+  score: 1
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  OptionBullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008,
-    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -701,12 +699,11 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 10
-  score: 1
   powRate: 0
   delayRate: 0
+  score: 1
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   enemtype: 0
@@ -729,13 +726,11 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 3
-  score: 1
   powRate: 10
   delayRate: 0.5
+  score: 1
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  OptionBullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008,
-    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -753,12 +748,11 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 10
-  score: 1
   powRate: 0
   delayRate: 0
+  score: 1
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   enemtype: 0
@@ -781,13 +775,11 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 3
-  score: 1
   powRate: 10
   delayRate: 0.5
+  score: 1
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  OptionBullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008,
-    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -805,12 +797,11 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 6
-  score: 1
   powRate: 20
   delayRate: 1
+  score: 1
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   enemtype: 0
@@ -832,12 +823,11 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 6
-  score: 1
   powRate: 20
   delayRate: 1
+  score: 1
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  OptionBullet: {fileID: 0}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
   enemtype: 0
@@ -859,13 +849,11 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 2.4
-  score: 1
   powRate: 10
   delayRate: 0.5
+  score: 1
   Bullets:
   - {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008, type: 2}
-  OptionBullet: {fileID: 1408935365017934, guid: c28799586c73cbe479e8b59c5a1c8008,
-    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1578506910286398, guid: d7a1bd22f5a7ecc4b8ebc9a8e9c5138e, type: 2}
   enemtype: 0
@@ -902,7 +890,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -946,7 +934,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -990,7 +978,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1034,7 +1022,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1078,7 +1066,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1122,7 +1110,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1166,7 +1154,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1210,7 +1198,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

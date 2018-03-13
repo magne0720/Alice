@@ -477,8 +477,8 @@ MonoBehaviour:
   recoil: 0
   ExplosionObj: {fileID: 0}
   clip: {fileID: 0}
-  RootSpeed: 100
-  _Adjust: 5
+  RootSpeed: 35
+  _Adjust: 35
   LowSpeed: 1
   MaxSpeed: 12
   PulssSpeed: 0.2
@@ -515,8 +515,8 @@ MonoBehaviour:
   recoil: 0
   ExplosionObj: {fileID: 0}
   clip: {fileID: 0}
-  RootSpeed: 100
-  _Adjust: 30
+  RootSpeed: 35
+  _Adjust: 35
   LowSpeed: 1
   MaxSpeed: 12
   PulssSpeed: 0.2
@@ -536,8 +536,8 @@ MonoBehaviour:
   recoil: 0
   ExplosionObj: {fileID: 0}
   clip: {fileID: 0}
-  RootSpeed: 100
-  _Adjust: 30
+  RootSpeed: 35
+  _Adjust: 35
   LowSpeed: 1
   MaxSpeed: 12
   PulssSpeed: 0.2
@@ -557,8 +557,8 @@ MonoBehaviour:
   recoil: 0
   ExplosionObj: {fileID: 0}
   clip: {fileID: 0}
-  RootSpeed: 100
-  _Adjust: 5
+  RootSpeed: 35
+  _Adjust: 35
   LowSpeed: 1
   MaxSpeed: 12
   PulssSpeed: 0.2

@@ -10,7 +10,7 @@ public class BombBullet : Bullet {
     // Use this for initialization
     void Start()
     {
-
+        Initialize();
     }
 
     // Update is called once per frame

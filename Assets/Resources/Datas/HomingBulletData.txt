@@ -1,3 +1,3 @@
 ﻿HomingBullets_2,0,Misa0
-BounsBullet,15000,BounsBullet
-PoisonBullet,30000,Missile
+BounsBullet,46000,BounsBullet
+PoisonBullet,99999,Missile

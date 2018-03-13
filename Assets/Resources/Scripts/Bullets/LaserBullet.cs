@@ -15,7 +15,7 @@ public class LaserBullet : Bullet {
         Player = GameObject.FindGameObjectWithTag("Player");
         gameObject.transform.parent = Player.transform;
         Destroy(gameObject, 4);
-        
+        Initialize();
     }
 
     // Update is called once per frame

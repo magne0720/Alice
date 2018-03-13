@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   pow: 5
-  recoil: 1
+  recoil: 1.5
   ExplosionObj: {fileID: 0}
   clip: {fileID: 8300000, guid: ebe6a33605a13754f8a607af12662dc4, type: 3}
 --- !u!212 &212989797598896086

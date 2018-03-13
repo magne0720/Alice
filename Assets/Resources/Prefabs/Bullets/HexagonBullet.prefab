@@ -100,11 +100,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  pow: 5
-  recoil: 2
+  pow: 3
+  recoil: 5
   ExplosionObj: {fileID: 1013456442300624, guid: c3ae613afc560c04abe0ad94e5904809,
     type: 2}
-  clip: {fileID: 8300000, guid: 107ed3ed2d0c13741b2545e7c47332ee, type: 3}
+  clip: {fileID: 0}
   Timer: 1
   Scale: 2
 --- !u!212 &212802140918162272

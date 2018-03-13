@@ -365,17 +365,13 @@ MonoBehaviour:
   MAX_HP: 252
   HP: 100
   speed: 0.2
-  score: 1
-  delay: 0.2
-  canShot: 0
   powRate: 0
   delayRate: 0
-  currentBullet: 0
+  score: 1
   Bullets: []
-  OptionBullet: {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db,
-    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
+  enemtype: 0
   moves:
   - {x: -5, y: 5}
   - {x: -3, y: 3}
@@ -396,17 +392,13 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 0.2
-  score: 1
-  delay: 0.2
-  canShot: 0
   powRate: 0
   delayRate: 0
-  currentBullet: 0
+  score: 1
   Bullets: []
-  OptionBullet: {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db,
-    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
+  enemtype: 0
   moves:
   - {x: 5, y: 5}
   - {x: 3, y: 3}
@@ -427,17 +419,13 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 6
-  score: 14
-  delay: 0
-  canShot: 0
   powRate: 20
   delayRate: 1
-  currentBullet: 0
+  score: 14
   Bullets: []
-  OptionBullet: {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db,
-    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
+  enemtype: 0
   moves:
   - {x: -2, y: 6}
   - {x: -2, y: 2}
@@ -456,17 +444,13 @@ MonoBehaviour:
   MAX_HP: 0
   HP: 100
   speed: 6
-  score: 14
-  delay: 0
-  canShot: 0
   powRate: 20
   delayRate: 1
-  currentBullet: 0
+  score: 14
   Bullets: []
-  OptionBullet: {fileID: 1233851289735346, guid: fb272482c81a2224483ae343b87b89db,
-    type: 2}
   deathObj: {fileID: 1642220867495264, guid: 0f8841a32b0666b49b62177c12ad390e, type: 2}
   hpVerObj: {fileID: 1948891201147522, guid: 788c82cce480a0d4fb341fd8f9c3a110, type: 2}
+  enemtype: 0
   moves:
   - {x: 2, y: 6}
   - {x: 2, y: 2}
@@ -504,7 +488,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -548,7 +532,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -592,7 +576,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -636,7 +620,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 74e97fa5593e714499d8b90a4c6d2241, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
