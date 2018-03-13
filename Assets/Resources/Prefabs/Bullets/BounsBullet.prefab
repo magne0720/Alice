@@ -23,7 +23,6 @@ GameObject:
   - component: {fileID: 50922663542634786}
   - component: {fileID: 58688540182233022}
   - component: {fileID: 114570006024785344}
-  - component: {fileID: 114857509610037780}
   m_Layer: 10
   m_Name: BounsBullet
   m_TagString: PlayerBullet
@@ -91,24 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  pow: 1
+  pow: 3
   recoil: 1.5
-  ExplosionObj: {fileID: 0}
-  clip: {fileID: 0}
---- !u!114 &114857509610037780
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1841804794235352}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d33a15ea6931a6d41bb74fb4c69af52e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
-  pow: 1
-  recoil: 0.8
   ExplosionObj: {fileID: 0}
   clip: {fileID: 0}
 --- !u!212 &212114094163137070

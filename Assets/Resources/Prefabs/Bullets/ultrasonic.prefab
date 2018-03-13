@@ -90,9 +90,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  pow: 5
-  recoil: 1
+  pow: 8
+  recoil: 1.2
   ExplosionObj: {fileID: 0}
+  clip: {fileID: 0}
   Acceleration: 0.05
   Scale: 4
 --- !u!212 &212149977405179608

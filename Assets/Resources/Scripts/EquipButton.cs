@@ -21,30 +21,58 @@ public class EquipButton : MonoBehaviour {
     {
         if (!isLoad)
         {
-            if (player == null)
-            {
-                player = GameObject.FindGameObjectWithTag("Player");
-            }
-            else
-            {
-                isLoad = true;
-                playerStatus = player.GetComponent<Character>();
-            }
+            SetPlayer();
         }
         else
         {
+            if (player != null)
+            {
+                if (playerStatus.GetCurrentBulletNum() == Type)
+                {
+                    image.enabled = true;
+                }
+                else
+                {
+                    image.enabled = false;
+                }
+            }
+        }
+    }
+    public void OnClick()
+    {
+        SetPlayer();
+        if (player != null)
+        {
+
+
+            playerStatus.ChangeEquip(Type);
             if (playerStatus.GetCurrentBulletNum() == Type)
             {
                 image.enabled = true;
             }
             else
             {
-                image.enabled = false;            
+                image.enabled = false;
             }
         }
     }
-    public void OnClick()
+    void SetPlayer()
     {
-        playerStatus.ChangeEquip(Type);
+        player = GameObject.FindGameObjectWithTag("Player");
+
+
+        if (player != null)
+        {
+            isLoad = true;
+            playerStatus = player.GetComponent<Character>();
+            if (playerStatus.GetCurrentBulletNum() == Type)
+            {
+                image.enabled = true;
+            }
+            else
+            {
+                image.enabled = false;
+            }
+        }
     }
 }

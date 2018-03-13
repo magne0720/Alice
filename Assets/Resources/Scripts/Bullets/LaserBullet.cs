@@ -77,7 +77,7 @@ public class LaserBullet : Bullet {
         {
             for (int i = 0; i < Enemy.Count; i++)
             {
-                Enemy[i].gameObject.GetComponent<Character>().Damage(damage);
+                Enemy[i].gameObject.GetComponent<Character>().Damage((int)pow);
             }
             time = 0;
         }
